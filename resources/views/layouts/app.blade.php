@@ -16,6 +16,7 @@
             <a href="" class="py-1 px-4 hover:text-[#DFAC6B] duration-100">Home</a>
             <a href="" class="py-1 px-4 hover:text-[#DFAC6B] duration-100">Product</a>
             <a href="" class="py-1 px-4 hover:text-[#DFAC6B] duration-100">About Us</a>
+            <a href="/dashboard" class="py-1 px-4 hover:text-[#DFAC6B] duration-100">Dashboard</a>
             <a href="" class="py-1 px-4 hover:text-[#DFAC6B] duration-100">Login</a>
         </div>
     </header>

@@ -9,10 +9,23 @@
 @theme {
     --font-poppins: "Poppins", sans-serif;
     --font-norican: "Norican", cursive; 
+    --color-dominant: #FEFEFE;
+    --color-secondary: #493C32;
+    --color-accent: #DFAC6B;
 }
 
 @layer base {
     body {
         font-family: var(--font-poppins);
+    }
+}
+
+@layer components {
+    .nav-link-selected {
+      @apply font-bold rounded-md bg-gray-300 text-accent
+    }
+
+    .nav-link {
+        @apply rounded-md text-gray-700 hover:bg-gray-300 hover:text-accent
     }
 }
