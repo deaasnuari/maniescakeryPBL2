@@ -36,3 +36,7 @@ Route::get('pages/profil', function () {
     return view('pages/profil');
 });
 
+Route::get('about_us', function () {
+    return view('pages.about_us');
+});
+
