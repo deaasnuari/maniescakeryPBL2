@@ -27,3 +27,12 @@ Route::get('/login', function () {
 Route::get('/register', function () {
     return view('pages.register');
 })->name('register');
+
+Route::get('pages/landingadmin', function () {
+    return view('pages/landingadmin');
+});
+
+Route::get('pages/profil', function () {
+    return view('pages/profil');
+});
+
