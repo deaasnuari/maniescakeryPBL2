@@ -19,7 +19,7 @@
             </div>
         @endif
 
-        <form method="POST" action="{{ route('login') }}">
+        <form method="get" action="{{ url('/') }}">
             @csrf
 
             <div class="mb-6">
