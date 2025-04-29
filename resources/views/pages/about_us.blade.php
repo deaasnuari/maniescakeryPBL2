@@ -63,39 +63,39 @@
     <div class="flex justify-center min-h-screen p-8 mb-[-400px]">
         <div class="grid grid-cols-6 grid-rows-4 gap-4 max-w-5xl w-full h-[700px]">
             <!-- Large vertical image (left) -->
-            <div class="col-span-2 row-span-3">
+            <div class="col-start-1 col-span-2 row-start-1 row-span-2 items-center justify-center">
             <img src="" alt="Image 1"
-                class="w-50 h-75 object-cover rounded-4xl shadow-md ml-16" />
+                class="w-50 h-65 object-cover rounded-4xl shadow-md ml-16" />
             </div>
 
             <!-- Wide image (top-center) -->
             <div class="col-span-2 row-span-2">
             <img src="https://source.unsplash.com/random/700x400?sig=2" alt="Image 2"
-                class="w-60 h-45 object-cover rounded-4xl shadow-md ml-12" />
+                class="w-70 h-45 object-cover rounded-4xl shadow-md ml-8" />
             </div>
 
             <!-- Large vertical image (far right) -->
             <div class="col-span-2 row-span-3">
             <img src="https://source.unsplash.com/random/300x800?sig=3" alt="Image 3"
-                class="w-65 h-100 object-cover rounded-4xl shadow-md" />
+                class="w-65 h-100 object-cover rounded-4xl shadow-md mr-4" />
             </div>
 
             <!-- Small square image (bottom-left) -->
-            <div class="col-span-1 row-start-4 flex items-center justify-center">
+            <div class="col-start-1 col-span-2 row-start-3 row-span-1 flex items-center justify-center">
             <img src="https://source.unsplash.com/random/400x400?sig=4" alt="Image 4"
-                class="w-60 h-40 object-cover rounded-2xl shadow-md mb-50" />
+                class="w-50 h-30 object-cover rounded-2xl shadow-md mb-50" />
             </div>
 
             <!-- Tiny horizontal image (bottom-center-left) -->
-            <div class="col-span-1 row-start-4 flex items-center justify-center">
+            <div class="col-start-3 col-span-1 row-start-3 row-span-1 flex items-center justify-center">
             <img src="https://source.unsplash.com/random/500x300?sig=5" alt="Image 5"
-                class="w-50 h-35 object-cover rounded-2xl shadow-md mb-50" />
+                class="w-50 h-35 object-cover rounded-2xl shadow-md mb-50 mr-2  " />
             </div>
 
             <!-- Small square image (bottom-center-right) -->
-            <div class="col-span-1 row-start-4 flex items-center justify-center">
+            <div class="col-start-3 col-span-2 row-start-3 row-span-1 flex items-center justify-center">
             <img src="https://source.unsplash.com/random/300x300?sig=6" alt="Image 6"
-                class="w-60 h-40 object-cover rounded-2xl shadow-md mb-70" />
+                class="w-50 h-30 object-cover rounded-2xl shadow-md mb-80 ml-24" />
             </div>
         </div>
   </div>
