@@ -41,7 +41,7 @@
             </div>
         </div>
         <div class="bg-[#493C32] text-white flex justify-center py-5">
-            <p>copyright © 2023 Manies Cakery</p>
+            <p>copyright © 2025 Manies Cakery</p>
         </div>
     </footer>
     
