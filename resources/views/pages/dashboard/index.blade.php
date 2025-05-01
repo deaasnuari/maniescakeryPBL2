@@ -8,7 +8,7 @@
     <div class="text-left font-extrabold text-3xl text-gray-800 -mt-2">HOME</div>
     <div class="bg-gradient-to-r from-[#F7F7F7] via-[#FFFFFF] to-[#F7F7F7] border border-gray-300 rounded-xl px-8 py-6 shadow-lg">
         <div class="text-2xl font-bold text-[#493C32]">
-            Selamat datang, <span class="italic text-[#8B4513]">Fatra Simanjuntak</span>
+            Selamat datang, <span class="italic text-[#8B4513]">Fatra SimanjuntaX</span>
         </div>
         <div class="text-md text-gray-600 mt-2">Anda login sebagai <span class="font-semibold text-[#493C32]">Admin</span></div>
     </div>
