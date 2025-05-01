@@ -19,24 +19,31 @@
         <img src="assets/maniescakery2.png" alt="" class="w-40">
     </header>
     <div class="flex flex-1">
-        <aside class="w-60 fixed top-[64px] h-full">
-            <nav class="bg-gray-200 flex flex-col py-4 px-6 h-full gap-5">
-                <a href="{{ route('dashboard') }}" class="py-1 px-4 {{ request()->routeIs('dashboard') ? 'font-bold nav-link-selected' : '' }}">
-                    Home
-                </a>
-                <a href="{{ route('productsdashboard') }}" class="py-1 px-4 {{ request()->routeIs('productsdashboard') ? 'font-bold nav-link-selected' : '' }}">
-                    Products
-                </a>
-                <a href="{{ route('usersdashboard') }}" class="py-1 px-4 {{ request()->routeIs('usersdashboard') ? 'font-bold nav-link-selected' : '' }}">
-                    Users
-                </a>
+            <aside id="sidebar" class="fixed top-0 left-0 z-40 w-60 h-screen pt-16 transition-transform -translate-x-full lg:translate-x-0 bg-gray-200" aria-label="Sidebar">
+            <nav class="flex flex-col h-full py-4 px-6">
+                <div class="flex flex-col gap-5 flex-grow">
+                    <a href="{{ route('dashboard') }}" class="py-1 px-4 {{ request()->routeIs('dashboard') ? 'font-bold nav-link-selected' : '' }}">
+                        Home
+                    </a>
+                    <a href="{{ route('productsdashboard') }}" class="py-1 px-4 {{ request()->routeIs('productsdashboard') ? 'font-bold nav-link-selected' : '' }}">
+                        Products
+                    </a>
+                    <a href="{{ route('usersdashboard') }}" class="py-1 px-4 {{ request()->routeIs('usersdashboard') ? 'font-bold nav-link-selected' : '' }}">
+                        Users
+                    </a>
+                </div>
+                <div class="pt-4 border-t">
+                    <a href="{{ route('catalog') }}" class="text-blue-600 hover:underline block">
+                        Back to catalog page
+                    </a>
+                </div>
             </nav>
-            
         </aside>
+
        <main class="flex-1 flex flex-col ml-60 p-10">
             @yield('content')
+            
         </main>
-       </main>
     </div>
 </body>
 </html>
