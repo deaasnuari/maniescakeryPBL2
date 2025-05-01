@@ -40,3 +40,11 @@ Route::get('about_us', function () {
     return view('pages.about_us');
 });
 
+Route::get('about_us_admin', function () {
+    return view('pages.about_us_admin');
+});
+
+Route::get('ulasanproduk', function () {
+    return view('pages.ulasanproduk');
+});
+
