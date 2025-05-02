@@ -48,3 +48,52 @@ Route::get('ulasanproduk', function () {
     return view('pages.ulasanproduk');
 });
 
+Route::get('/dashboard/users', function () {
+    return view('pages.dashboard.users'); // sesuai dengan nama file kamu
+});
+
+// Route ke product dashboard 
+Route::get('/productsdashboard', function () {
+    // Data contoh untuk ditampilkan di dashboard
+    $products = [
+        [
+            'nama_produk' => 'Jhon doe',
+            'desc' => 'jhon.doe@gmail.com',
+            'gambar' => '0844656677',
+            'kategori' => 'Jhon756'
+        ],
+        [
+            'nama_produk' => 'Jhon doe',
+            'desc' => 'jhon.doe@gmail.com',
+            'gambar' => '0844656677',
+            'kategori' => 'Jhon756'
+        ],
+        [
+            'nama_produk' => 'Jhon doe',
+            'desc' => 'jhon.doe@gmail.com',
+            'gambar' => '0844656677',
+            'kategori' => 'Jhon756'
+        ],
+        [
+            'nama_produk' => 'Jhon doe',
+            'desc' => 'jhon.doe@gmail.com',
+            'gambar' => '0844656677',
+            'kategori' => 'Jhon756'
+        ],
+        [
+            'nama_produk' => 'Jhon doe',
+            'desc' => 'jhon.doe@gmail.com',
+            'gambar' => '0844656677',
+            'kategori' => 'Jhon756'
+        ],
+    ];
+    
+    // Perhatikan path view yang sesuai dengan struktur direktori Anda
+    return view('pages.dashboard.products', compact('products'));
+})->name('productsdashboard');
+
+Route::get('/catalog', function () {
+    return view('catalog'); // atau controller kamu
+})->name('catalog');
+
+

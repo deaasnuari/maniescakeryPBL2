@@ -59,7 +59,7 @@
            
 
             <p class="text-sm text-center text-gray-600 mt-6">
-                Buat account? <a href="{{ route('register') }}" class="font-semibold text-[#4B372F] hover:underline">Buat account</a>
+                Belum Punya Akun? <a href="{{ route('register') }}" class="font-semibold text-[#4B372F] hover:underline">Daftar </a>
             </p>
         </form>
     </div>
