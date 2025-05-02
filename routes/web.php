@@ -100,4 +100,7 @@ Route::get('/about_us', function () {
     return view('pages.about_us');
 })->name('about_us');
 
+Route::get('products', function () {
+    return view('pages.productpage');
+})->name('products');
 
