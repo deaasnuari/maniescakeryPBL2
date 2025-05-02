@@ -10,12 +10,6 @@
 </style>
 @endpush
 
-<!-- Banner Section -->
-<div class="relative w-full mx-auto mt-0 group">
-    <img src="/assets/natal.png" alt="Image" class="w-full h-100 editable-image" data-key="banner">
-    <div class="edit-icon hidden group-hover:block" onclick="editImage(this)">✎</div>
-</div>
-
 <!-- Main Section -->
 <div class="max-w-5xl mx-auto px-6 md:px-12 py-8 space-y-16">
 
