@@ -33,7 +33,7 @@
                     </a>
                 </div>
                 <div class="pt-4 border-t">
-                    <a href="{{ route('catalog') }}" class="text-blue-600 hover:underline block">
+                    <a href="{{ url('/') }}" class="text-blue-600 hover:underline block">
                         Back to catalog page
                     </a>
                 </div>

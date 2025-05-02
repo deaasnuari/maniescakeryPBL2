@@ -96,4 +96,8 @@ Route::get('/catalog', function () {
     return view('catalog'); // atau controller kamu
 })->name('catalog');
 
+Route::get('/about_us', function () {
+    return view('pages.about_us');
+})->name('about_us');
+
 

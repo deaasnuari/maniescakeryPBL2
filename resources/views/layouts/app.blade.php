@@ -13,9 +13,9 @@
     <header class="bg-[#493C32] flex items-center py-4 px-10 justify-between">
         <img src="assets/maniescakery2.png" alt="" class="w-40">
         <div class="text-white flex gap-15">
-            <a href="" class="py-1 px-4 hover:text-[#DFAC6B] duration-100">Home</a>
-            <a href="" class="py-1 px-4 hover:text-[#DFAC6B] duration-100">Product</a>
-            <a href="" class="py-1 px-4 hover:text-[#DFAC6B] duration-100">About Us</a>
+            <a href="/" class="py-1 px-4 hover:text-[#DFAC6B] duration-100">Home</a>
+            <a href="/products" class="py-1 px-4 hover:text-[#DFAC6B] duration-100">Product</a>
+            <a href="/about_us" class="py-1 px-4 hover:text-[#DFAC6B] duration-100">About Us</a>
             <a href="/dashboard" class="py-1 px-4 hover:text-[#DFAC6B] duration-100">Dashboard</a>
             <a href="/login" class="py-1 px-4 hover:text-[#DFAC6B] duration-100">Login</a>
         </div>
