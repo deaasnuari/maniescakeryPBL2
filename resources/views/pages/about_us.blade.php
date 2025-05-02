@@ -64,32 +64,32 @@
         <div class="grid grid-cols-6 grid-rows-4 gap-4 max-w-5xl w-full h-[700px]">
            
             <div class="col-start-1 col-span-2 row-start-1 row-span-2 items-center justify-center">
-            <img src="assets/CustomMatcha.jpg" alt="Image 1"
+            <img src="assets/CustomMatcha.jpg" alt="Custom Matcha"
                 class="w-50 h-65 object-cover rounded-4xl shadow-md ml-16" />
             </div>
 
             <div class="col-span-2 row-span-2">
-            <img src="assets/DuoBrownies.jpg" alt="Image 2"
+            <img src="assets/DuoBrownies.jpg" alt="Duo Brownies"
                 class="w-70 h-45 object-cover rounded-4xl shadow-md ml-4" />
             </div>
 
             <div class="col-span-2 row-span-3">
-            <img src="assets/BoluPisang.jpg" alt="Image 3"
+            <img src="assets/BoluPisang.jpg" alt="Bolu Pisang"
                 class="w-65 h-100 object-cover rounded-4xl shadow-md mr-4" />
             </div>
 
             <div class="col-start-1 col-span-2 row-start-3 row-span-1 flex items-center justify-center">
-            <img src="assets/CustomBrownies.jpg" alt="Image 4"
+            <img src="assets/CustomBrownies.jpg" alt="Custom Brownies"
                 class="w-50 h-30 object-cover rounded-2xl shadow-md mb-50" />
             </div>
 
             <div class="col-start-3 col-span-1 row-start-3 row-span-1 flex items-center justify-center">
-            <img src="assets/MiniBrowkies.jpg" alt="Image 5"
+            <img src="assets/MiniBrowkies.jpg" alt="Mini Browkies"
                 class="w-50 h-35 object-cover rounded-2xl shadow-md mb-55 mr-2  " />
             </div>
 
             <div class="col-start-3 col-span-2 row-start-3 row-span-1 flex items-center justify-center">
-            <img src="assets/Bround_U.jpg" alt="Image 6"
+            <img src="assets/Bround_U.jpg" alt="BROUND U"
                 class="w-30 h-30 object-cover rounded-2xl shadow-md mb-80 ml-42" />
             </div>
 
