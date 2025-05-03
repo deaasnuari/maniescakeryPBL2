@@ -1,107 +1,136 @@
-@extends('layouts.dashboard')
-@section('title', 'Ulasan Produk')
+@extends('layouts.app')
+
 @section('content')
-
-<div x-data="commentSection()" class="max-w-xl mx-auto p-6">
-    <!-- Produk -->
-    <h1 class="text-2xl font-bold mb-4">Chocolate Cake</h1>
-
-    <!-- Tombol buka modal -->
-    <button @click="openModal = true"
-        class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
-        Beri Rating & Komentar
+<div class="max-w-4xl mx-auto mt-10 text-center">
+    <button id="openModal" class="bg-yellow-500 text-white px-6 py-2 rounded hover:bg-yellow-600">
+        Ulasan
     </button>
-
-    <!-- Modal -->
-    <div x-show="openModal"
-         x-transition
-         class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-        <div @click.away="openModal = false"
-             class="bg-white p-6 rounded shadow-lg w-full max-w-md">
-            <h2 class="text-xl font-bold mb-4">Tulis Komentar</h2>
-
-            <!-- Form -->
-            <div class="space-y-4">
-                <!-- Rating -->
-                <div>
-                    <label class="font-semibold">Rating:</label>
-                    <div class="flex gap-1 mt-1">
-                        <template x-for="i in 5">
-                            <button type="button"
-                                    @click="rating = i"
-                                    :class="rating >= i ? 'text-yellow-400' : 'text-gray-300'"
-                                    class="text-2xl focus:outline-none">★</button>
-                        </template>
-                    </div>
-                </div>
-
-                <!-- Komentar -->
-                <div>
-                    <label class="font-semibold">Komentar:</label>
-                    <textarea x-model="newComment" rows="3"
-                              class="w-full border rounded p-2 mt-1"
-                              placeholder="Tulis komentar..."></textarea>
-                </div>
-
-                <!-- Tombol Kirim -->
-                <div class="flex justify-end gap-2">
-                    <button @click="openModal = false" class="text-gray-600">Batal</button>
-                    <button @click="submitComment()"
-                            class="bg-blue-600 text-white px-4 py-1 rounded">
-                        Kirim
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Daftar Komentar -->
-    <div class="mt-6">
-        <h3 class="text-lg font-bold mb-2">Ulasan:</h3>
-        <template x-for="(comment, index) in comments" :key="index">
-            <div class="border-b py-3">
-                <div class="flex items-center gap-2 text-yellow-500">
-                    <template x-for="i in comment.rating">
-                        <span>★</span>
-                    </template>
-                    <template x-for="i in 5 - comment.rating">
-                        <span class="text-gray-300">★</span>
-                    </template>
-                </div>
-                <p class="text-gray-700 text-sm mt-1" x-text="comment.text"></p>
-            </div>
-        </template>
-    </div>
 </div>
 
-<!-- Alpine JS Component -->
-<script>
-    function commentSection() {
-        return {
-            openModal: false,
-            rating: 0,
-            newComment: '',
-            comments: [
-                { rating: 5, text: 'Cake-nya super enak dan moist banget!' },
-                { rating: 4, text: 'Rasa oke, cuma manisnya agak berlebihan.' },
-            ],
-            submitComment() {
-                if (this.rating === 0 || this.newComment.trim() === '') {
-                    alert('Harap isi rating dan komentar!');
-                    return;
-                }
+<!-- Modal Overlay -->
+<div id="openReview" class="fixed inset-0 backdrop-blur-sm hidden opacity-0 items-center justify-center z-50 transition-opacity duration-300">
+    <!-- Modal Content -->
+    <div id="modal-content" class="bg-white max-w-5xl w-full rounded-lg p-6 relative transform scale-95 opacity-0 transition-all duration-300">
+        <button id="close-modal" class="absolute top-3 right-4 text-gray-500 hover:text-gray-700 text-xl">&times;</button>
 
-                this.comments.unshift({
-                    rating: this.rating,
-                    text: this.newComment,
-                });
+        <h2 class="text-xl font-semibold mb-4">Ulasan Produk</h2>
 
-                this.rating = 0;
-                this.newComment = '';
-                this.openModal = false;
-            }
-        }
-    }
-</script>
+        <!-- Rata-rata rating -->
+        <div class="text-center mb-6">
+            <p class="text-2xl font-bold" id="average-rating">0</p>
+            <p class="text-sm text-gray-500">dari 5</p>
+            <div id="stars-average" class="text-yellow-400 text-xl mt-1">☆☆☆☆☆</div>
+        </div>
 
+        <!-- Container untuk Review Ulasan -->
+        <div class="mb-6 p-4 bg-gray-50 rounded-lg border border-gray-200 max-h-64 overflow-y-auto">
+            <h3 class="font-semibold mb-2">Review Ulasan</h3>
+            <div id="review-list" class="space-y-4">
+                <!-- Review akan ditampilkan di sini -->
+            </div>
+        </div>
+
+        <!-- Container untuk Form Ulasan -->
+        <div class="p-4 bg-white rounded-lg border border-gray-200">
+            <h3 class="font-semibold mb-2">Tulis Ulasan Anda</h3>
+            <form id="review-form" class="space-y-4">
+                <textarea id="review" placeholder="Tulis ulasan Anda..." class="w-full border border-gray-300 rounded px-4 py-2" required></textarea>
+                <select id="rating" class="w-full border border-gray-300 rounded px-4 py-2" required>
+                    <option value="" disabled selected>Pilih rating</option>
+                    <option value="1">1 - Buruk</option>
+                    <option value="2">2 - Kurang</option>
+                    <option value="3">3 - Cukup</option>
+                    <option value="4">4 - Baik</option>
+                    <option value="5">5 - Sangat Baik</option>
+                </select>
+                <button type="submit" class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600">Kirim Ulasan</button>
+            </form>
+        </div>
+    </div>
+</div>
 @endsection
+
+@push('scripts')
+<script>
+const overlay      = document.getElementById('openReview');
+const modalContent = document.getElementById('modal-content');
+const openBtn      = document.getElementById('openModal');
+const closeBtn     = document.getElementById('close-modal');
+
+// Buka modal
+openBtn.addEventListener('click', () => {
+    overlay.classList.remove('hidden');
+    overlay.classList.add('flex');
+    setTimeout(() => {
+        overlay.classList.add('opacity-100');
+        modalContent.classList.remove('scale-95', 'opacity-0');
+        modalContent.classList.add('scale-100', 'opacity-100');
+    }, 10);
+});
+
+// Tutup modal
+function closeModal() {
+    overlay.classList.remove('opacity-100');
+    modalContent.classList.remove('scale-100', 'opacity-100');
+    modalContent.classList.add('scale-95', 'opacity-0');
+    setTimeout(() => {
+        overlay.classList.add('hidden');
+        overlay.classList.remove('flex');
+    }, 300);
+}
+closeBtn.addEventListener('click', closeModal);
+overlay.addEventListener('click', e => {
+    if (e.target === overlay) closeModal();
+});
+
+// Ulasan logic
+const form       = document.getElementById('review-form');
+const reviewList = document.getElementById('review-list');
+const avgText    = document.getElementById('average-rating');
+const starsAvg   = document.getElementById('stars-average');
+const reviews    = [];
+
+form.addEventListener('submit', e => {
+    e.preventDefault();
+    const review = document.getElementById('review').value;
+    const rating = parseInt(document.getElementById('rating').value);
+    reviews.push({ name: 'User', review, rating });
+    renderReviews();
+    updateAverage();
+    form.reset();
+});
+
+function renderReviews() {
+    reviewList.innerHTML = '';
+    reviews.forEach(r => {
+        const div = document.createElement('div');
+        div.className = 'border border-gray-200 rounded p-4';
+        div.innerHTML = `
+            <div class="flex items-center mb-2">
+                <div class="bg-yellow-100 text-yellow-800 font-bold w-8 h-8 flex items-center justify-center rounded-full mr-2">
+                    ${r.name.charAt(0).toUpperCase()}
+                </div>
+                <div>
+                    <p class="font-semibold">${r.name}</p>
+                    <div class="text-yellow-400">${'★'.repeat(r.rating)}${'☆'.repeat(5 - r.rating)}</div>
+                </div>
+            </div>
+            <p class="text-sm text-gray-700">${r.review}</p>
+        `;
+        reviewList.appendChild(div);
+    });
+}
+
+function updateAverage() {
+    if (!reviews.length) {
+        avgText.textContent = '0';
+        starsAvg.textContent = '☆☆☆☆☆';
+        return;
+    }
+    const sum = reviews.reduce((a, c) => a + c.rating, 0);
+    const avg = (sum / reviews.length).toFixed(1);
+    avgText.textContent = avg;
+    starsAvg.textContent = '★'.repeat(Math.round(avg)) + '☆'.repeat(5 - Math.round(avg));
+}
+</script>
+@endpush

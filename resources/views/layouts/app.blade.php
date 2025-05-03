@@ -44,6 +44,8 @@
             <p>copyright © 2025 Manies Cakery</p>
         </div>
     </footer>
+
+    @stack('scripts')
     
 </body>
 </html>
