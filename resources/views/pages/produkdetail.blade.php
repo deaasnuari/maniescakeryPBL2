@@ -44,7 +44,7 @@
         <div class="relative group overflow-hidden rounded-2xl bg-white shadow-lg transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
           <a href="products">
             <!-- Background blur -->
-            <img src="{{ asset($item['image']) }}" alt="{{ $item['title'] }}" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+            <img src="assets/{{ $item['image'] }}" alt="{{ $item['title'] }}" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
       
             <!-- Gradient Overlay -->
             <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/30 to-black/60 group-hover:backdrop-blur-sm transition-all duration-500"></div>
