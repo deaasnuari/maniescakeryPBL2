@@ -65,7 +65,7 @@
            
 
             <p class="text-sm text-center text-gray-600 mt-6">
-                Belum Punya Akun? <a href="{{ route('register') }}" class="font-semibold text-[#4B372F] hover:underline">Daftar </a>
+                Belum Punya Akun?? <a href="{{ route('register') }}" class="font-semibold text-[#4B372F] hover:underline">Daftar </a>
             </p>
         </form>
     </div>
