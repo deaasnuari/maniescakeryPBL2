@@ -20,11 +20,93 @@
         <div class="text-2xl text-secondary font-bold">cake</div>
         <br>
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-15">
-        @for($i = 0; $i < 5; $i++)
-            @include('components.catalogcard', ['productId' => $i])
-            @include('components.reviewmodal')
-        @endfor
+            @for($i = 0; $i < 4; $i++)
+                @include('components.catalogcard', ['productId' => $i])
+                @include('components.reviewmodal')
+            @endfor
+            <div id="openAddNewCatalog" class="flex border border-gray-500 rounded overflow-hidden justify-center items-center cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"stroke-linejoin="round" class="feather feather-plus-square size-20 stroke-gray-500"><rect x="3" y="3" width="18"height="18" rx="2" ry="2"></rect><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8"y1="12" x2="16" y2="12"></line></svg> 
+            </div>
 
+            
+            <div class="fixed top-0 left-0 w-full z-50 h-screen transition-opacity duration-300 flex items-center justify-center">
+                <div id="modal-content" class="bg-white max-w-5xl w-full rounded-lg p-6 relative transform scale-95 opacity-100 transition-all duration-300">
+                    <button id="close-modal" class="absolute top-3 right-4 text-gray-500 hover:text-gray-700 text-xl">&times;</button>
+            
+                    <h2 class="text-xl font-semibold mb-4">Tambah Catalog</h2>
+                    <div class="h-100 border rounded-xl">
+                       <table class="w-full">
+                        <tr class="h-10 border-b-2">
+                            <td class="font-bold px-4">Nama Produk</td>
+                            <td class="font-bold">Status</td>
+                        </tr>
+                        <tr class="border-b h-15">
+                            <td class="px-4">produk 1</td>
+                            <td class="">
+                                <div class="flex gap-2 items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 stroke-white fill-green-500">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                      </svg>
+                                      
+                                      
+                                    <a href="" class="text-green-500 capitalize">aktif</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="border-b h-15">
+                            <td class="px-4">produk 2</td>
+                            <td class="">
+                                <div class="flex gap-2 items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 stroke-white fill-red-500">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                      </svg>
+                                      
+                                    <a href="" class="text-red-500 capitalize">tidak aktif</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="border-b h-15">
+                            <td class="px-4">produk 2</td>
+                            <td class="">
+                                <div class="flex gap-2 items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 stroke-white fill-red-500">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                      </svg>
+                                      
+                                    <a href="" class="text-red-500 capitalize">tidak aktif</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="border-b h-15">
+                            <td class="px-4">produk 2</td>
+                            <td class="">
+                                <div class="flex gap-2 items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 stroke-white fill-red-500">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                      </svg>
+                                      
+                                    <a href="" class="text-red-500 capitalize">tidak aktif</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="border-b h-15">
+                            <td class="px-4">produk 2</td>
+                            <td class="">
+                                <div class="flex gap-2 items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 stroke-white fill-red-500">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                      </svg>
+                                      
+                                    <a href="" class="text-red-500 capitalize">tidak aktif</a>
+                                </div>
+                            </td>
+                        </tr>
+                       </table>
+                    </div>
+                   
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
