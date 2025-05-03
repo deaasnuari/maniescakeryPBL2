@@ -8,7 +8,7 @@
     <img src="assets/natal.png" alt="Main Image" class="w-full h-100">
   </div>
 
- {{-- Kategori Gambar --}}
+ {{-- Kategori Gambarr --}}
 
 <div class="max-w-4xl mx-auto p-6 space-y-6">
  <!-- Cake -->
