@@ -22,11 +22,11 @@
             <div id="stars-average" class="text-yellow-400 text-xl mt-1">☆☆☆☆☆</div>
         </div>
 
-        <!-- Container untuk Daftar Ulasan -->
+        <!-- Container untuk Review Ulasan -->
         <div class="mb-6 p-4 bg-gray-50 rounded-lg border border-gray-200 max-h-64 overflow-y-auto">
-            <h3 class="font-semibold mb-2">Daftar Ulasan</h3>
+            <h3 class="font-semibold mb-2">Review Ulasan</h3>
             <div id="review-list" class="space-y-4">
-                <!-- Review akan dirender di sini -->
+                <!-- Review akan ditampilkan di sini -->
             </div>
         </div>
 
