@@ -28,7 +28,7 @@
                     name="email" 
                     id="email" 
                     required 
-                    placeholder="Username or Email"
+                    placeholder="Email"
                     class="block w-full p-4 text-base text-gray-900 bg-gray-200 border border-transparent rounded focus:ring-[#DFAC6B] focus:border-[#DFAC6B] focus:outline-none"
                 >
             </div>
@@ -54,6 +54,12 @@
                     Masuk
                 </button>
             </div>
+            <div class="flex items-center justify-center gap-2">
+                <hr class="w-1/4 border" />
+                <span class="text-sm text-gray-500">OR</span>
+                <hr class="w-1/4 border" />
+            </div>
+            <button class="w-full bg-[#E1AD61] text-white py-2 rounded">Login sebagai guest</button>
 
 
            

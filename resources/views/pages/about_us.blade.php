@@ -2,14 +2,6 @@
 @section('title', 'About Us')
 @section('content')
 
-    <!-- Banner Section -->
-    <div class="w-full mx-auto mt-0">
-        <div class="overflow-hidden bg-gray-200 h-100">
-        <!-- Image fills entire container -->
-        <img src="/assets/natal.png" alt="Image" class="w-full h-100">
-        </div>
-    </div>
-
     <!-- Main Section -->
     <div class="max-w-5xl mx-auto px-6 md:px-12 py-8 space-y-16">
         
