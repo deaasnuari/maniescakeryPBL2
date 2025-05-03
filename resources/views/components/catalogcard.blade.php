@@ -1,5 +1,5 @@
-<card class="border border-gray-500 w-fit h-fit rounded overflow-hidden cursor-pointer">
-    <img src="assets/CustomMatcha.jpg" alt="Custom Matcha" class="object-cover w-60 h-55"/>
+<a href="{{ route('produkdetail') }}" class="border border-gray-500 w-fit h-fit rounded overflow-hidden">
+    <img src="../../assets/CustomMatcha.jpg" alt="Custom Matcha" class="object-cover w-60 h-55"/>
     <div class="h-12 text-center flex items-center justify-center font-bold bg-white text-secondary">Brownies coklat</div>
     <div class="px-2 h-8 flex items-center justify-between bg-secondary text-white">
         <div class="flex gap-1">
@@ -21,4 +21,4 @@
         </div>
         <div>ulasan ></div>
     </div>
-</card>
+</a>

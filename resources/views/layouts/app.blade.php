@@ -20,7 +20,7 @@
             <a href="/login" class="py-1 px-4 hover:text-[#DFAC6B] duration-100">Login</a>
         </div>
     </header>
-    <main class="min-h-screen mb-46">
+    <main class="min-h-screen mb-46 p-10">
         @yield('content')
     </main>
     <footer class="flex flex-col">
