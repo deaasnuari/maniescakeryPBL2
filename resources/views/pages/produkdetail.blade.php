@@ -2,6 +2,8 @@
 @section('title', 'detail product')
 @section('content')
 
+<div class="p-10">
+
     <div class="flex w-full gap-5">
         <div class="flex flex-col">
             <div class="min-w-100 rounded-xl overflow-hidden h-50 shadow-md border">
@@ -59,4 +61,5 @@
         @endforeach
       </div>
 </section>
+</div>
 @endsection
