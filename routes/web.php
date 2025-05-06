@@ -104,3 +104,7 @@ Route::get('products', function () {
     return view('pages.productpage');
 })->name('products');
 
+Route::get('produkdetail', function () {
+    return view('pages.produkdetail');
+})->name('produkdetail');
+

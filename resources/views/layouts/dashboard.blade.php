@@ -34,7 +34,7 @@
                 </div>
                 <div class="pt-4 border-t">
                     <a href="{{ url('/') }}" class="text-blue-600 hover:underline block">
-                        Back to catalog page
+                        Kembali ke katalog
                     </a>
                 </div>
             </nav>

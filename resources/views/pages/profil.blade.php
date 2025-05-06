@@ -1,3 +1,14 @@
+{{-- 
+NAMA : Hamdan Azmi
+NIM  : 3312411004
+KELAS: IF 2 A Malam
+
+--}}
+
+
+
+
+
 @extends('layouts.app')
 @section('title', 'profil')
 @section('content')

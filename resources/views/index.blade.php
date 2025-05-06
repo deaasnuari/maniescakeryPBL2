@@ -1,3 +1,14 @@
+{{-- 
+NAMA : Hamdan Azmi
+NIM  : 3312411004
+KELAS: IF 2 A Malam
+
+--}}
+
+
+
+
+
 @extends('layouts.app')
 @section('title', 'landing page')
 @section('content')
@@ -8,7 +19,7 @@
     <img src="assets/natal.png" alt="Main Image" class="w-full h-100">
   </div>
 
- {{-- Kategori Gambar --}}
+ {{-- Kategori Gambarr --}}
 
 <div class="max-w-4xl mx-auto p-6 space-y-6">
  <!-- Cake -->
@@ -79,7 +90,7 @@
 
 
 
-<div class="max-w-6xl mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+{{-- <div class="max-w-6xl mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
   <!-- Item Start -->
   @foreach ([
     ['title' => 'Cake', 'image' => 'Cake-M.png'],
@@ -110,7 +121,7 @@
     </a>
   </div>
   @endforeach
-</div>
+</div> --}}
 
 
 

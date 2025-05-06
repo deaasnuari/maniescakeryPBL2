@@ -1,3 +1,12 @@
+{{-- 
+NAMA : Hamdan Azmi
+NIM  : 3312411004
+KELAS: IF 2 A Malam
+
+--}}
+
+
+
 @extends('layouts.dashboard')
 @section('title', 'dashboard admin')
 @section('content')
