@@ -1,3 +1,6 @@
+<!-- nama: dea asnuari
+nim: 3312411001 -->
+
 @extends('layouts.app')
 
 @section('content')
