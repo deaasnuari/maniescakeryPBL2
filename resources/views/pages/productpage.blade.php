@@ -1,3 +1,17 @@
+<!-- 
+    Modal Ulasan 
+    Nama : Fatra Syahreza
+    NIM  : 3312411031
+    Kelas: IF 2A Malam
+-->
+
+<!-- 
+    Produk Page
+    Nama : Christian Marcelino
+    NIM  : 3312411008
+    Kelas: IF 2A Malam
+-->
+
 @extends('layouts.app')
 @section('title', 'catalog')
 @section('content')
