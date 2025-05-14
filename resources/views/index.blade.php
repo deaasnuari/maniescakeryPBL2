@@ -1,3 +1,14 @@
+{{-- 
+NAMA : Hamdan Azmi
+NIM  : 3312411004
+KELAS: IF 2 A Malam
+
+--}}
+
+
+
+
+
 @extends('layouts.app')
 @section('title', 'landing page')
 @section('content')
@@ -8,7 +19,7 @@
     <img src="assets/natal.png" alt="Main Image" class="w-full h-100">
   </div>
 
- {{-- Kategori Gambar --}}
+ {{-- Kategori Gambarr --}}
 
 <div class="max-w-4xl mx-auto p-6 space-y-6">
  <!-- Cake -->
