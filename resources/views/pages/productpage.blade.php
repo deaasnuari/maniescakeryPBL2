@@ -23,89 +23,57 @@
             @for($i = 0; $i < 4; $i++)
                 @include('components.catalogcard', ['productId' => $i])
                 @include('components.reviewmodal')
-            @endfor
-            <div id="openAddNewCatalog" class="flex border border-gray-500 rounded overflow-hidden justify-center items-center cursor-pointer">
+            @endfor 
+            <div data-modal-target="new-catalog" data-modal-toggle="new-catalog" class="flex border border-gray-500 rounded overflow-hidden justify-center items-center cursor-pointer">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"stroke-linejoin="round" class="feather feather-plus-square size-20 stroke-gray-500"><rect x="3" y="3" width="18"height="18" rx="2" ry="2"></rect><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8"y1="12" x2="16" y2="12"></line></svg> 
             </div>
 
-            
-            <div class="fixed top-0 left-0 w-full z-50 h-screen transition-opacity duration-300 flex items-center justify-center">
-                <div id="modal-content" class="bg-white max-w-5xl w-full rounded-lg p-6 relative transform scale-95 opacity-100 transition-all duration-300">
-                    <button id="close-modal" class="absolute top-3 right-4 text-gray-500 hover:text-gray-700 text-xl">&times;</button>
-            
-                    <h2 class="text-xl font-semibold mb-4">Tambah Catalog</h2>
-                    <div class="h-100 border rounded-xl">
-                       <table class="w-full">
-                        <tr class="h-10 border-b-2">
-                            <td class="font-bold px-4">Nama Produk</td>
-                            <td class="font-bold">Status</td>
-                        </tr>
-                        <tr class="border-b h-15">
-                            <td class="px-4">produk 1</td>
-                            <td class="">
-                                <div class="flex gap-2 items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 stroke-white fill-green-500">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                                      </svg>
-                                      
-                                      
-                                    <a href="" class="text-green-500 capitalize">aktif</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="border-b h-15">
-                            <td class="px-4">produk 2</td>
-                            <td class="">
-                                <div class="flex gap-2 items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 stroke-white fill-red-500">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                                      </svg>
-                                      
-                                    <a href="" class="text-red-500 capitalize">tidak aktif</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="border-b h-15">
-                            <td class="px-4">produk 2</td>
-                            <td class="">
-                                <div class="flex gap-2 items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 stroke-white fill-red-500">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                                      </svg>
-                                      
-                                    <a href="" class="text-red-500 capitalize">tidak aktif</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="border-b h-15">
-                            <td class="px-4">produk 2</td>
-                            <td class="">
-                                <div class="flex gap-2 items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 stroke-white fill-red-500">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                                      </svg>
-                                      
-                                    <a href="" class="text-red-500 capitalize">tidak aktif</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="border-b h-15">
-                            <td class="px-4">produk 2</td>
-                            <td class="">
-                                <div class="flex gap-2 items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 stroke-white fill-red-500">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                                      </svg>
-                                      
-                                    <a href="" class="text-red-500 capitalize">tidak aktif</a>
-                                </div>
-                            </td>
-                        </tr>
-                       </table>
-                    </div>
-                   
-                    </div>
+        </div>
+    </div>
+</div>
+
+<div id="new-catalog" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative p-4 w-full max-w-2xl max-h-full">
+            <!-- Modal content -->
+        <div class="relative bg-white rounded-lg shadow-sm">
+                <!-- Modal header -->
+            <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t border-gray-200">
+                <h3 class="text-xl font-semibold text-gray-900">
+                    Tambah Catalog
+                </h3>
+            </div>
+            <!-- Modal body -->
+            <div class="p-4 md:p-5 space-y-4">
+                <div class="border rounded overflow-hidden overflow-y-auto max-h-64">
+                    <table class="table-auto w-full text-sm text-left text-gray-500">
+                        <thead class="bg-gray-200 sticky top-0 z-10">
+                            <tr class="h-10">
+                                <th class="px-4 py-2">Produk ID</th>
+                                <th class="px-4 py-2">Nama Produk</th>
+                                <th class="px-4 py-2">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for($i = 0; $i < 20; $i++)
+                            <tr class="border-t">
+                                <td class="px-4 py-2">1</td>
+                                <td class="px-4 py-2">Brownies</td>
+                                <td class="px-4 py-2">
+                                    <a href="#" 
+                                    onclick="toggleStatus(this)" 
+                                    class="status-link text-green-600 cursor-pointer">
+                                    Tersedia
+                                    </a>
+                                </td>
+                            </tr>
+                            @endfor
+                        </tbody>
+                    </table>
                 </div>
+            </div>
+            <!-- Modal footer -->
+            <div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b">
+                <button data-modal-hide="new-catalog" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">kembali</button>
             </div>
         </div>
     </div>
@@ -154,88 +122,103 @@
 </div>
 
 @push('scripts')
-<script>
-const overlay      = document.getElementById('openReview');
-const modalContent = document.getElementById('modal-content');
-const openBtn      = document.getElementById('openModal');
-const closeBtn     = document.getElementById('close-modal');
+    <script>
+        function toggleStatus(element) {
+            const isAvailable = element.textContent.trim().toLowerCase() === 'tersedia';
 
-// Buka modal
-openBtn.addEventListener('click', () => {
-    overlay.classList.remove('hidden');
-    overlay.classList.add('flex');
-    setTimeout(() => {
-        overlay.classList.add('opacity-100');
-        modalContent.classList.remove('scale-95', 'opacity-0');
-        modalContent.classList.add('scale-100', 'opacity-100');
-    }, 10);
-});
+            if (isAvailable) {
+                element.textContent = 'Tidak Tersedia';
+                element.classList.remove('text-green-600');
+                element.classList.add('text-red-600');
+            } else {
+                element.textContent = 'Tersedia';
+                element.classList.remove('text-red-600');
+                element.classList.add('text-green-600');
+            }
+        }
+    </script>
+    <script>
+    const overlay      = document.getElementById('openReview');
+    const modalContent = document.getElementById('modal-content');
+    const openBtn      = document.getElementById('openModal');
+    const closeBtn     = document.getElementById('close-modal');
 
-// Tutup modal
-function closeModal() {
-    overlay.classList.remove('opacity-100');
-    modalContent.classList.remove('scale-100', 'opacity-100');
-    modalContent.classList.add('scale-95', 'opacity-0');
-    setTimeout(() => {
-        overlay.classList.add('hidden');
-        overlay.classList.remove('flex');
-    }, 300);
-}
-closeBtn.addEventListener('click', closeModal);
-overlay.addEventListener('click', e => {
-    if (e.target === overlay) closeModal();
-});
-
-// Ulasan logic
-const form       = document.getElementById('review-form');
-const reviewList = document.getElementById('review-list');
-const avgText    = document.getElementById('average-rating');
-const starsAvg   = document.getElementById('stars-average');
-const reviews    = [];
-
-form.addEventListener('submit', e => {
-    e.preventDefault();
-    const review = document.getElementById('review').value;
-    const rating = parseInt(document.getElementById('rating').value);
-    reviews.push({ name: 'User', review, rating });
-    renderReviews();
-    updateAverage();
-    form.reset();
-});
-
-function renderReviews() {
-    reviewList.innerHTML = '';
-    reviews.forEach(r => {
-        const div = document.createElement('div');
-        div.className = 'border border-gray-200 rounded p-4';
-        div.innerHTML = `
-            <div class="flex items-center mb-2">
-                <div class="bg-yellow-100 text-yellow-800 font-bold w-8 h-8 flex items-center justify-center rounded-full mr-2">
-                    ${r.name.charAt(0).toUpperCase()}
-                </div>
-                <div>
-                    <p class="font-semibold">${r.name}</p>
-                    <div class="text-yellow-400">${'★'.repeat(r.rating)}${'☆'.repeat(5 - r.rating)}</div>
-                </div>
-            </div>
-            <p class="text-sm text-gray-700">${r.review}</p>
-        `;
-        reviewList.appendChild(div);
+    // Buka modal
+    openBtn.addEventListener('click', () => {
+        overlay.classList.remove('hidden');
+        overlay.classList.add('flex');
+        setTimeout(() => {
+            overlay.classList.add('opacity-100');
+            modalContent.classList.remove('scale-95', 'opacity-0');
+            modalContent.classList.add('scale-100', 'opacity-100');
+        }, 10);
     });
-}
 
-function updateAverage() {
-    if (!reviews.length) {
-        avgText.textContent = '0';
-        starsAvg.textContent = '☆☆☆☆☆';
-        return;
+    // Tutup modal
+    function closeModal() {
+        overlay.classList.remove('opacity-100');
+        modalContent.classList.remove('scale-100', 'opacity-100');
+        modalContent.classList.add('scale-95', 'opacity-0');
+        setTimeout(() => {
+            overlay.classList.add('hidden');
+            overlay.classList.remove('flex');
+        }, 300);
     }
-    const sum = reviews.reduce((a, c) => a + c.rating, 0);
-    const avg = (sum / reviews.length).toFixed(1);
-    avgText.textContent = avg;
-    starsAvg.textContent = '★'.repeat(Math.round(avg)) + '☆'.repeat(5 - Math.round(avg));
-}
-</script>
+    closeBtn.addEventListener('click', closeModal);
+    overlay.addEventListener('click', e => {
+        if (e.target === overlay) closeModal();
+    });
+
+    // Ulasan logic
+    const form       = document.getElementById('review-form');
+    const reviewList = document.getElementById('review-list');
+    const avgText    = document.getElementById('average-rating');
+    const starsAvg   = document.getElementById('stars-average');
+    const reviews    = [];
+
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        const review = document.getElementById('review').value;
+        const rating = parseInt(document.getElementById('rating').value);
+        reviews.push({ name: 'User', review, rating });
+        renderReviews();
+        updateAverage();
+        form.reset();
+    });
+
+    function renderReviews() {
+        reviewList.innerHTML = '';
+        reviews.forEach(r => {
+            const div = document.createElement('div');
+            div.className = 'border border-gray-200 rounded p-4';
+            div.innerHTML = `
+                <div class="flex items-center mb-2">
+                    <div class="bg-yellow-100 text-yellow-800 font-bold w-8 h-8 flex items-center justify-center rounded-full mr-2">
+                        ${r.name.charAt(0).toUpperCase()}
+                    </div>
+                    <div>
+                        <p class="font-semibold">${r.name}</p>
+                        <div class="text-yellow-400">${'★'.repeat(r.rating)}${'☆'.repeat(5 - r.rating)}</div>
+                    </div>
+                </div>
+                <p class="text-sm text-gray-700">${r.review}</p>
+            `;
+            reviewList.appendChild(div);
+        });
+    }
+
+    function updateAverage() {
+        if (!reviews.length) {
+            avgText.textContent = '0';
+            starsAvg.textContent = '☆☆☆☆☆';
+            return;
+        }
+        const sum = reviews.reduce((a, c) => a + c.rating, 0);
+        const avg = (sum / reviews.length).toFixed(1);
+        avgText.textContent = avg;
+        starsAvg.textContent = '★'.repeat(Math.round(avg)) + '☆'.repeat(5 - Math.round(avg));
+    }
+    </script>
 @endpush
 
 
