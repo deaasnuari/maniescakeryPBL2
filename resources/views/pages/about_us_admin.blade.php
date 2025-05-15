@@ -33,7 +33,8 @@
                         that presents a variety of sweet choices made with all the heart, serving a variety of 
                         brownies, cookies, breads, and other special cakes with delicious flavors and perfect textures.
                     </p>
-                <div class="edit-icon hidden group-hover:block" onclick="editText(this)">✎</div>
+                    <div class="hidden group-hover:block absolute top-2 right-2 text-lg text-amber-700 bg-white border border-amber-700 p-2 rounded cursor-pointer hover:bg-amber-700 hover:text-white transition duration-150" onclick="editText(this)">✎</div>
+
             </div>
 
             <div class="relative group">
@@ -42,7 +43,8 @@
                     Menggabungkan resep tradisional dengan kreasi modern, setiap produk kami memiliki rasa otentik, 
                     tekstur yang lembut, dan kualitas yang selalu terjaga.
                 </p>
-                <div class="edit-icon hidden group-hover:block" onclick="editText(this)">✎</div>
+                <div class="hidden group-hover:block absolute top-2 right-2 text-lg text-amber-700 bg-white border border-amber-700 p-2 rounded cursor-pointer hover:bg-amber-700 hover:text-white transition duration-150" onclick="editText(this)">✎</div>
+
             </div>
 
         </div>
@@ -61,7 +63,8 @@
                     Where smiles are served daily<br>
                     Enjoy delicious pastries, warm breads, stunning cakes and expertly brewed drinks while feeling right at home
                 </p>
-                <div class="edit-icon hidden group-hover:block" onclick="editText(this)">✎</div>
+                <div class="hidden group-hover:block absolute top-2 right-2 text-lg text-amber-700 bg-white border border-amber-700 p-2 rounded cursor-pointer hover:bg-amber-700 hover:text-white transition duration-150" onclick="editText(this)">✎</div>
+
             </div>
 
             <div class="relative group">
@@ -69,7 +72,8 @@
                     Cake & Brownies Manies Cakery, we prioritize quality, taste, and presentation in every product we create. 
                     We believe that excellence is achieved through a combination of passion, precision, and innovation.
                 </p>
-                <div class="edit-icon hidden group-hover:block" onclick="editText(this)">✎</div>
+                <div class="hidden group-hover:block absolute top-2 right-2 text-lg text-amber-700 bg-white border border-amber-700 p-2 rounded cursor-pointer hover:bg-amber-700 hover:text-white transition duration-150" onclick="editText(this)">✎</div>
+
             </div>
         </div>
     </div>
@@ -90,7 +94,8 @@
             <div class="relative group col-span-2 row-span-{{ $index < 3 ? 2 : 1 }}">
                 <img src="/assets/{{ $img }}" alt="Image {{ $index+1 }}"
                      class="w-full h-full object-cover rounded-2xl shadow-md editable-image" data-key="image{{ $index }}">
-                <div class="edit-icon hidden group-hover:block" onclick="editImage(this)">✎</div>
+                     <div class="hidden group-hover:block absolute top-2 right-2 text-lg text-amber-700 bg-white border border-amber-700 p-2 rounded cursor-pointer hover:bg-amber-700 hover:text-white transition duration-150" onclick="editText(this)">✎</div>
+
             </div>
         @endforeach
 
