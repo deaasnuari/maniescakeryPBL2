@@ -137,7 +137,7 @@ KELAS: IF 2 A Malam
 </div>
 
 
-<!-- Riwayat Aktivitas (Timeline) -->
+{{-- <!-- Riwayat Aktivitas (Timeline) -->
 <div class="bg-white rounded-xl p-6 shadow-md border border-gray-100 mt-6">
     <div class="flex items-center justify-between mb-6">
         <h3 class="text-lg font-semibold text-gray-800">Riwayat Aktivitas</h3>
@@ -171,7 +171,7 @@ KELAS: IF 2 A Malam
             <span class="text-xs text-gray-500">30 April 2025 • 14:10</span>
         </div>
     </div>
-</div>
+</div> --}}
 
 
 {{-- END Content --}}
