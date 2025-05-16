@@ -28,11 +28,11 @@ Route::get('/register', function () {
     return view('pages.register');
 })->name('register');
 
-Route::get('pages/landingadmin', function () {
-    return view('pages/landingadmin');
+Route::get(' /landingadmin', function () {
+    return view('pages/landing_admin');
 });
 
-Route::get('pages/profil', function () {
+Route::get('/profil', function () {
     return view('pages/profil');
 });
 
@@ -45,7 +45,7 @@ Route::get('about_us_admin', function () {
 });
 
 Route::get('ulasanproduk', function () {
-    return view('pages.ulasanproduk');
+    return view('pages.ulasan_produk');
 });
 
 Route::get('/dashboard/users', function () {
@@ -101,10 +101,10 @@ Route::get('/about_us', function () {
 })->name('about_us');
 
 Route::get('products', function () {
-    return view('pages.productpage');
+    return view('pages.product_page');
 })->name('products');
 
 Route::get('produkdetail', function () {
-    return view('pages.produkdetail');
+    return view('pages.produk_detail');
 })->name('produkdetail');
 
