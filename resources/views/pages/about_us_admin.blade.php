@@ -1,7 +1,7 @@
 <!-- 
-    Nama : Fatra Syahreza
-    NIM  : 3312411031
-    Kelas: IF 2A Malam
+    Nama  : Fatra Syahreza
+    NIM   : 3312411031
+    Kelas : IF 2A Malam
 -->
 
 @extends('layouts.app')
