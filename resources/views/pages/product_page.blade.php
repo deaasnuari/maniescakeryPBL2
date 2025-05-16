@@ -29,10 +29,10 @@
         {{-- role togle --}}
         <div>
             <label class="inline-flex items-center cursor-pointer">
-                <span class="me-3 text-sm font-medium text-gray-900 dark:text-gray-300">costumer</span>
+                <span class="me-3 text-sm font-medium text-gray-900 ">costumer</span>
                 <input type="checkbox" value="" id="roleToggle" class="sr-only peer">
-                    <div class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600 dark:peer-checked:bg-blue-600"></div>
-                <span class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300">admin</span>
+                    <div class="relative w-11 h-6 bg-gray-200 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600 dark:peer-checked:bg-blue-600"></div>
+                <span class="ms-3 text-sm font-medium text-gray-900">admin</span>
             </label>
         </div>
     </div>
@@ -50,7 +50,7 @@
         <br>
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-15">
             @for($i = 0; $i < 4; $i++)
-                @include('components.catalogcard', ['productId' => $i])
+                @include('components.catalogcard')
                 @include('components.review_modal')
             @endfor 
             <div id="admin-only" data-modal-target="new-catalog" data-modal-toggle="new-catalog" class="hidden border border-gray-500 rounded overflow-hidden justify-center items-center cursor-pointer">
@@ -265,8 +265,4 @@
     </script>
 @endpush
 
-
-    <!-- Main Section -->
-    
-</section>
 @endsection
