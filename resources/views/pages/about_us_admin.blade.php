@@ -33,7 +33,7 @@
                         that presents a variety of sweet choices made with all the heart, serving a variety of 
                         brownies, cookies, breads, and other special cakes with delicious flavors and perfect textures.
                     </p>
-                <div class="edit-icon hidden group-hover:block" onclick="editText(this)">✎</div>
+                <div class="edit-icon hidden group-hover:block text-3xl" onclick="editText(this)">✎</div>
             </div>
 
             <div class="relative group">
@@ -42,7 +42,7 @@
                     Menggabungkan resep tradisional dengan kreasi modern, setiap produk kami memiliki rasa otentik, 
                     tekstur yang lembut, dan kualitas yang selalu terjaga.
                 </p>
-                <div class="edit-icon hidden group-hover:block" onclick="editText(this)">✎</div>
+                <div class="edit-icon hidden group-hover:block text-3xl" onclick="editText(this)">✎</div>
             </div>
 
         </div>
@@ -61,15 +61,15 @@
                     Where smiles are served daily<br>
                     Enjoy delicious pastries, warm breads, stunning cakes and expertly brewed drinks while feeling right at home
                 </p>
-                <div class="edit-icon hidden group-hover:block" onclick="editText(this)">✎</div>
+                <div class="edit-icon hidden group-hover:block text-3xl" onclick="editText(this)">✎</div>
             </div>
 
             <div class="relative group">
-                <p class="text-sm leading-relaxed editable-text">
+                <p class="text-sm leading-relaxed p-4 editable-text">
                     Cake & Brownies Manies Cakery, we prioritize quality, taste, and presentation in every product we create. 
                     We believe that excellence is achieved through a combination of passion, precision, and innovation.
                 </p>
-                <div class="edit-icon hidden group-hover:block" onclick="editText(this)">✎</div>
+                <div class="edit-icon hidden group-hover:block text-3xl" onclick="editText(this)">✎</div>
             </div>
         </div>
     </div>
