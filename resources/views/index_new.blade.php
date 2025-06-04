@@ -8,8 +8,8 @@ KELAS: IF 2 A Malam
 @extends('layouts.app')
 @section('title', 'landing page')
 @section('content')
-<div class="w-full border">
-    <img src="assets/natal.png" alt="Main Image" class="w-full h-80 border">
+<div class="w-full">
+    <img src="assets/natal.png" alt="Main Image" class="w-full h-80">
 </div>
 <div class="flex flex-col">
   <section class="flex items-center justify-center p-10 gap-20">
@@ -28,7 +28,7 @@ KELAS: IF 2 A Malam
       <p class="text-center text-xl"><br>
       Kami menyediakan berbagai varian kue lengkap dan kekinian, cocok untuk segala momen spesial Anda. Dengan bahan berkualitas dan cita rasa terbaik, kami juga siap memenuhi permintaan khusus sesuai keinginan pelanggan.
       <p><br>
-      <a href="about_us" class="bg-secondary text-white px-16 py-2 inline-block rounded-xl">All Products</a>
+      <a href="products" class="bg-secondary text-white px-16 py-2 inline-block rounded-xl">All Products</a>
     </div>
     <div class="w-1/2 flex justify-center">
       <img src="{{ asset('assets/cake6.png') }}" alt="" class="w-120 rounded-3xl">
