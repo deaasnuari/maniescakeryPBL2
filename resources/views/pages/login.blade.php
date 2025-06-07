@@ -22,17 +22,17 @@ nim: 3312411001 -->
             </div>
         @endif
 
-        <form method="get" action="{{ url('/') }}">
+        <form method="POST" action="{{ route('login.post') }}">
             @csrf
 
             <div class="mb-6">
                 <input 
                     type="text" 
-                    name="email" 
-                    id="email" 
+                    name="username" 
+                    id="username" 
                     required 
-                    placeholder="Email"
-                    class="block w-full p-4 text-base text-gray-900 bg-gray-200 border border-transparent rounded focus:ring-[#DFAC6B] focus:border-[#DFAC6B] focus:outline-none"
+                    placeholder="Username"
+                    c class="block w-full p-4 text-base text-gray-900 bg-gray-200 border border-transparent rounded focus:ring-[#DFAC6B] focus:border-[#DFAC6B] focus:outline-none"
                 >
             </div>
 
@@ -73,4 +73,7 @@ nim: 3312411001 -->
         </form>
     </div>
 </div>
+
+
+
 @endsection
