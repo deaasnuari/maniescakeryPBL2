@@ -48,7 +48,7 @@ nim: 3312411001 -->
             </div>
 
             <div class="flex justify-end mb-6">
-                <a href="#" class="text-sm text-[#4B372F] hover:underline">Lupa Password</a>
+                <a href="/lupapassword" class="text-sm text-[#4B372F] hover:underline">Lupa Password</a>
             </div>
 
             
