@@ -17,14 +17,20 @@ Route::post('/logout', function () {
     Auth::logout();
     return redirect('/login');
 })->name('logout');
-
 // END Routes LOGIN
-
 
 // Routes Register
 Route::get('/register', [RegisterController::class, 'showRegisterForm'])->name('register');
 Route::post('/register', [RegisterController::class, 'register'])->name('register.post');
 // END Routes Register
+
+// Routes lupa password
+
+Route::get('/lupapassword', function () {
+    return view('pages.lupa_password');
+})->name('lupapassword');
+// END Routes lupa password
+
 
 
 Route::get('/', function () {
