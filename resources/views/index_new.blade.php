@@ -9,7 +9,7 @@ KELAS: IF 2 A Malam
 @section('title', 'landing page')
 @section('content')
 <div class="w-full">
-    <img src="assets/natal.png" alt="Main Image" class="w-full h-80">
+    <img src="assets/natal.png" alt="Main Image" class="w-full h-120">
 </div>
 <div class="flex flex-col">
   <section class="flex items-center justify-center p-10 gap-20">
@@ -26,7 +26,7 @@ KELAS: IF 2 A Malam
     <div class="text-center flex-1">
       <p class="text-2xl text-accent">TASTE OUR INGREDIENTS <br> Discover our Products</p>
       <p class="text-center text-xl"><br>
-      Kami menyediakan berbagai varian kue lengkap dan kekinian, cocok untuk segala momen spesial Anda. Dengan bahan berkualitas dan cita rasa terbaik, kami juga siap memenuhi permintaan khusus sesuai keinginan pelanggan.
+      Kami menyediakan berbagai varian kue lengkap dan kekinian, cocok untuk segala moment spesial Anda. Dengan bahan berkualitas dan cita rasa terbaik, kami juga siap memenuhi permintaan khusus sesuai keinginan pelanggan.
       <p><br>
       <a href="products" class="bg-secondary text-white px-16 py-2 inline-block rounded-xl">All Products</a>
     </div>
@@ -35,39 +35,39 @@ KELAS: IF 2 A Malam
     </div>
   </section>
   </section>
-    <div class="grid grid-cols-2 grid-rows-2 gap-x-6 mx-10">
+    <div class="grid grid-cols-2 grid-rows-2 gap-x-8 mx-10">
       <div class="relative group overflow-hidden rounded-lg shadow-xl hover:shadow-2xl mb-6 transition-all duration-300 transform">
         <a href="products">
-          <img src="{{ asset('assets/Cookies-M.png') }}" alt="Cookies" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+          <img src="{{ asset('assets/Cookies-M.png') }}" alt="Cookies" class="w-full h-90 object-cover transition-transform duration-500 group-hover:scale-110">
           <div class="hover:bg-black/30 w-full h-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center flex-col text-center text-white">
-            <h2 class="text-4xl">Cookies</h2>
+            <h2 class="text-5xl">Cookies</h2>
             <span class="transition-transform duration-300 hidden group-hover:inline-block">See More</span>
           </div>
         </a>
       </div>
       <div class="relative group overflow-hidden rounded-lg shadow-xl hover:shadow-2xl mb-6 transition-all duration-300 transform">
         <a href="products">
-          <img src="{{ asset('assets/Brownies-M.png') }}" alt="Cookies" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+          <img src="{{ asset('assets/Brownies-M.png') }}" alt="Cookies" class="w-full h-90 object-cover transition-transform duration-500 group-hover:scale-110">
           <div class="hover:bg-black/30 w-full h-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center flex-col text-center text-white">
-            <h2 class="text-4xl">Brownies</h2>
+            <h2 class="text-5xl">Brownies</h2>
             <span class="transition-transform duration-300 hidden group-hover:inline-block">See More</span>
           </div>
         </a>
       </div>
       <div class="relative group overflow-hidden rounded-lg shadow-xl hover:shadow-2xl mb-6 transition-all duration-300 transform">
         <a href="products">
-          <img src="{{ asset('assets/Cake-M.png') }}" alt="Cookies" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+          <img src="{{ asset('assets/Cake-M.png') }}" alt="Cookies" class="w-full h-90 object-cover transition-transform duration-500 group-hover:scale-110">
           <div class="hover:bg-black/30 w-full h-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center flex-col text-center text-white">
-            <h2 class="text-4xl">Cake</h2>
+            <h2 class="text-5xl">Cake</h2>
             <span class="transition-transform duration-300 hidden group-hover:inline-block">See More</span>
           </div>
         </a>
       </div>
        <div class="relative group overflow-hidden rounded-lg shadow-xl hover:shadow-2xl mb-6 transition-all duration-300 transform">
         <a href="products">
-          <img src="{{ asset('assets/Hampers-M.png') }}" alt="Cookies" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+          <img src="{{ asset('assets/Hampers-M.png') }}" alt="Cookies" class="w-full h-90 object-cover transition-transform duration-500 group-hover:scale-110">
           <div class="hover:bg-black/30 w-full h-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center flex-col text-center text-white">
-            <h2 class="text-4xl">Hampers</h2>
+            <h2 class="text-5xl">Hampers</h2>
             <span class="transition-transform duration-300 hidden group-hover:inline-block">See More</span>
           </div>
         </a>
@@ -80,7 +80,7 @@ KELAS: IF 2 A Malam
             @for($i = 0; $i < 8; $i++)
             <div class="flex flex-col border border-gray-400 shadow rounded overflow-hidden">
               <a href="{{ route('produkdetail') }}" class="w-full">
-                  <img src="../../assets/CustomMatcha.jpg" alt="Custom Matcha" class="object-cover w-full h-55"/>
+                  <img src="../../assets/CustomMatcha.jpg" alt="Custom Matcha" class="object-cover w-full h-80"/>
                   <div class="h-12 text-center flex items-center justify-center font-bold bg-white text-secondary">Brownies coklat</div>
               </a>
             </div>
