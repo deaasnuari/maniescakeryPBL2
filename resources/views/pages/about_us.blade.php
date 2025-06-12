@@ -36,7 +36,7 @@
                     </p>
                 </div>
                 <div>
-                    <p class="text-sm p-4 leading-relaxed">
+                    <p class="text-M p-8 leading-relaxed">
                     Produk Kami menghasilkan cake & brownies premium yang dibuat dengan bahan-bahan alami berkualitas tinggi. 
                     Menggabungkan resep tradisional dengan kreasi modern, setiap produk kami memiliki rasa otentik, 
                     tekstur yang lembut, dan kualitas yang selalu terjaga.
@@ -59,7 +59,7 @@
                 </p>
                 </div>
                 <div>
-                    <p class="text-sm leading-relaxed">
+                    <p class="text-M leading-relaxed">
                     Cake & Brownies Manies Cakery, we prioritize quality, taste, and presentation in every product we create. 
                     We believe that excellence is achieved through a combination of passion, precision, and innovation.
                     </p>
@@ -78,27 +78,27 @@
 
             <div class="col-span-2 row-span-2">
             <img src="assets/DuoBrownies.jpg" alt="Duo Brownies"
-                class="w-70 h-45 object-cover rounded-4xl shadow-md ml-4" />
+                class="w-80 h-45 object-cover rounded-4xl shadow-md ml-4" />
             </div>
 
             <div class="col-span-2 row-span-3">
             <img src="assets/BoluPisang.jpg" alt="Bolu Pisang"
-                class="w-65 h-100 object-cover rounded-4xl shadow-md mr-4" />
+                class="w-75 h-100 object-cover rounded-4xl shadow-md mr-4" />
             </div>
 
             <div class="col-start-1 col-span-2 row-start-3 row-span-1 flex items-center justify-center">
             <img src="assets/CustomBrownies.jpg" alt="Custom Brownies"
-                class="w-50 h-30 object-cover rounded-2xl shadow-md mb-50" />
+                class="w-70 h-35 object-cover rounded-2xl shadow-md mb-50" />
             </div>
 
             <div class="col-start-3 col-span-1 row-start-3 row-span-1 flex items-center justify-center">
             <img src="assets/MiniBrowkies.jpg" alt="Mini Browkies"
-                class="w-50 h-35 object-cover rounded-2xl shadow-md mb-55 mr-2  " />
+                class="w-60 h-40 object-cover rounded-2xl shadow-md mb-55 mr-2  " />
             </div>
 
             <div class="col-start-3 col-span-2 row-start-3 row-span-1 flex items-center justify-center">
             <img src="assets/Bround_U.jpg" alt="BROUND U"
-                class="w-30 h-30 object-cover rounded-2xl shadow-md mb-80 ml-42" />
+                class="w-40 h-40 object-cover rounded-2xl shadow-md mb-80 ml-42" />
             </div>
 
         </div>

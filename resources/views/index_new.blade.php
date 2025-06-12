@@ -15,7 +15,7 @@ KELAS: IF 2 A Malam
   <section class="flex items-center justify-center p-10 gap-20">
     <div class="text-center flex-1">
       <p class="font-norican text-accent text-6xl capitalize">manies cakery</p>
-      <p class="text-center text-xl">is a home-made cake shop that presents a variety of sweet choices made with all the heart. Serving a variety of brownies, cookies, breads, and other special cakes with delicious flavors and perfect textures. We also offer customizable cakes to suit your personal preferences, whether it's for birthdays, weddings, or any celebration. Every order is freshly made to ensure quality and satisfaction in every bite.<p><br>
+      <p class="text-center text-xl">Toko kue rumahan yang menyajikan berbagai pilihan manisan yang dibuat dengan sepenuh hati. Menyajikan berbagai brownies, kue kering, roti, dan kue-kue istimewa lainnya dengan cita rasa lezat dan tekstur yang sempurna. Kami juga menawarkan kue-kue yang dapat disesuaikan dengan preferensi pribadi Anda, baik untuk ulang tahun, pernikahan, atau perayaan apa pun. Setiap pesanan dibuat segar untuk memastikan kualitas dan kepuasan dalam setiap gigitan.<p><br>
       <a href="about_us" class="bg-secondary text-white px-16 py-2 inline-block rounded-xl">About Us</a>
     </div>
     <div class="w-1/2 flex justify-center">
@@ -24,7 +24,7 @@ KELAS: IF 2 A Malam
   </section>
   <section class="flex flex-row-reverse items-center justify-center p-10 gap-20 bg-white">
     <div class="text-center flex-1">
-      <p class="text-2xl text-accent">TASTE OUR INGREDIENTS <br> Discover our Products</p>
+      <p class="text-2xl text-accent">RASAKAN LEZATNYA BAHAN PILIHAN! <br> Temukan Produk Kami </p>
       <p class="text-center text-xl"><br>
       Kami menyediakan berbagai varian kue lengkap dan kekinian, cocok untuk segala moment spesial Anda. Dengan bahan berkualitas dan cita rasa terbaik, kami juga siap memenuhi permintaan khusus sesuai keinginan pelanggan.
       <p><br>
