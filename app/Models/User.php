@@ -14,7 +14,7 @@ class User extends Authenticatable
 
     public $timestamps = false;  // nonaktifkan timestamps
 
-   protected $fillable = ['username', 'email', 'password', 'role'];
+    protected $fillable = ['username', 'email', 'password', 'role'];
 
     protected $hidden = ['password'];
 }

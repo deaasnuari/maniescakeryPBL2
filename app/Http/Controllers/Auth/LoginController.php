@@ -10,25 +10,25 @@ use App\Models\User;
 
 class LoginController extends Controller
 {
-   public function login(Request $request)
-{
-    $request->validate([
-        'username' => 'required|string',
-        'password' => 'required',
-    ]);
+    public function login(Request $request)
+    {
+        $request->validate([
+            'username' => 'required|string',
+            'password' => 'required',
+        ]);
 
-    $user = User::where('username', $request->username)->first();
+        $user = User::where('username', $request->username)->first();
 
-    if (!$user) {
-        return back()->withErrors(['Username tidak ditemukan'])->withInput();
+        if (!$user) {
+            return back()->withErrors(['Username tidak ditemukan'])->withInput();
+        }
+
+        if (!Hash::check($request->password, $user->password)) {
+            return back()->withErrors(['Password salah'])->withInput();
+        }
+
+        Auth::login($user);
+        return redirect()->intended('/');
     }
-
-    if (!Hash::check($request->password, $user->password)) {
-        return back()->withErrors(['Password salah'])->withInput();
-    }
-
-    Auth::login($user);
-    return redirect()->intended('/');
-}
 
 }

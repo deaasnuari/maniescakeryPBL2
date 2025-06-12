@@ -14,7 +14,7 @@
         <img src="{{ asset('assets/maniescakery2.png') }}" alt="" class="w-40">
         <div class="text-white flex gap-15 items-center">
             <a href="/" class="py-1 px-4 hover:text-[#DFAC6B] duration-100">Home</a>
-            <a href="/products" class="py-1 px-4 hover:text-[#DFAC6B] duration-100">Product</a>
+            <a href="{{ url('/produk/kategori/6') }}" class="py-1 px-4 hover:text-[#DFAC6B] duration-100">Product</a>
             <a href="/about_us" class="py-1 px-4 hover:text-[#DFAC6B] duration-100">About Us</a>
             <a href="/profil" class="py-1 px-4 hover:text-[#DFAC6B] duration-100">Profil</a>
 

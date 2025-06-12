@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\ProdukController;
 
 // Routes LOGIN
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
@@ -131,9 +132,8 @@ Route::get('/about_us', function () {
     return view('pages.about_us');
 })->name('about_us');
 
-Route::get('products', function () {
-    return view('pages.product_page');
-})->name('products');
+Route::get('/products', [ProdukController::class, 'show']);
+Route::get('/produk/kategori/{id}', [ProdukController::class, 'showByKategori']);
 
 Route::get('produkdetail', function () {
     return view('pages.produk_detail');
