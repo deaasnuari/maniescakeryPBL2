@@ -1,5 +1,5 @@
 <div class="flex flex-col border border-gray-500 rounded overflow-hidden">
-  <a href="{{ route('produkdetail') }}" class="w-fit h-fit">
+  <a href="{{ route('produk.detail', $produk->id_produk) }}" class="w-fit h-fit">
       <img src="../../assets/CustomMatcha.jpg" alt="Custom Matcha" class="object-cover w-60 h-55"/>
       <div class="h-12 text-center flex items-center justify-center font-bold bg-white text-secondary">{{ $produk->nama }}</div>
   </a>

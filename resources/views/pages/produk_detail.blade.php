@@ -23,10 +23,8 @@
             </div>
         </div>
         <div>
-            <p class="text-2xl font-bold capitalize">fudgy brownies nubery</p>
-            <p>Brownies Panggang Fudgy Mix Topping dengan Nutella dan Strawberry, add on Almond, chochochip, chochoball, lotus, biskuit, glaze coklat, other Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate aspernatur error, perspiciatis eaque natus fugiat culpa corrupti. Accusamus quia praesentium facilis autem repudiandae, voluptatem aut unde rem ullam esse fugit!
-            detail produk brownies panggang fudgy mix topping dengan nutella dan strawberry, add on almond, chochochip, chochoball, lotus, biskuit, glaze coklat, other Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate aspernatur error, perspiciatis eaque natus fugiat culpa corrupti. Accusamus quia praesentium facilis autem repudiandae, voluptatem aut unde rem ullam esse fugit!
-            </p>
+            <p class="text-2xl font-bold capitalize">{{ $produk->nama }}</p>
+            <p>{{ $produk->deskripsi }}</p>
             <br><br>
         </div>
     </div>

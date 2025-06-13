@@ -134,6 +134,7 @@ Route::get('/about_us', function () {
 
 Route::get('/products', [ProdukController::class, 'show']);
 Route::get('/produk/kategori/{id}', [ProdukController::class, 'showByKategori']);
+Route::get('/produk/{id}', [ProdukController::class, 'produkDetail'])->name('produk.detail');
 
 Route::get('produkdetail', function () {
     return view('pages.produk_detail');
