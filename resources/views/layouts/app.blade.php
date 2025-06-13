@@ -34,7 +34,7 @@
         </div>
     </header>
 
-    <main class="min-h-screen mb-46">
+    <main class="min-h-screen mb-46 mx-10">
         @yield('content')
     </main>
 
