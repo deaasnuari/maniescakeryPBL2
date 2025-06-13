@@ -133,7 +133,7 @@ Route::get('/about_us', function () {
 })->name('about_us');
 
 Route::get('/products', [ProdukController::class, 'show']);
-Route::get('/produk/kategori/{id}', [ProdukController::class, 'showByKategori']);
+Route::get('/produk/kategori/{id}', [ProdukController::class, 'showByKategori'])->name('catalog');
 Route::get('/produk/{id}', [ProdukController::class, 'produkDetail'])->name('produk.detail');
 
 Route::get('produkdetail', function () {

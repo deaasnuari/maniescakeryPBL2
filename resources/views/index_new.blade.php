@@ -65,7 +65,7 @@ KELAS: IF 2 A Malam
             <p class="text-accent font-norican text-5xl capitalize">manies cakery</p><br>
             <p class="text-xl">Toko kue rumahan yang menyajikan berbagai pilihan manisan yang dibuat dengan sepenuh hati. Menyajikan berbagai brownies, kue kering, roti, dan kue-kue istimewa lainnya dengan cita rasa lezat dan tekstur yang sempurna. Kami juga menawarkan kue-kue yang dapat disesuaikan dengan preferensi pribadi Anda, baik untuk ulang tahun, pernikahan, atau perayaan apa pun. Setiap pesanan dibuat segar untuk memastikan kualitas dan kepuasan dalam setiap gigitan.</p>
             <br><br>
-            <a href="#" class="bg-secondary px-10 py-2 text-white font-bold tracking-wide uppercase rounded">
+            <a href="{{ route('about_us') }}" class="bg-secondary px-10 py-2 text-white font-bold tracking-wide uppercase rounded">
             about us</a>
         </div>
         <img src="{{ asset('assets/image.png') }}" alt="" class="w-120 rounded-2xl">
@@ -76,7 +76,7 @@ KELAS: IF 2 A Malam
             <p class="text-accent text-3xl capitalize">RASAKAN LEZATNYA BAHAN PILIHAN! <br> Temukan Produk Kami</p><br>
             <p class="text-xl">Kami menyediakan berbagai varian kue lengkap dan kekinian, cocok untuk segala moment spesial Anda. Dengan bahan berkualitas dan cita rasa terbaik, kami juga siap memenuhi permintaan khusus sesuai keinginan pelanggan.</p>
             <br><br>
-            <a href="#" class="italic tracking-wide rounded underline text-xl text-secondary">lihat produk manies cakery -></a>
+            <a href="{{ route('catalog', '6') }}" class="italic tracking-wide rounded underline text-xl text-secondary">lihat produk manies cakery -></a>
         </div>
         <img src="{{ asset('assets/cake6.png') }}" alt="" class="w-120 rounded-2xl">
     </section>
