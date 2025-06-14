@@ -10,7 +10,7 @@ KELAS: IF 2 A Malam
 
 
 @extends('layouts.app')
-@section('title', 'profil')
+@section('title', 'Manies Cakery - Profil')
 @section('content')
 
 {{-- CONTENT --}}

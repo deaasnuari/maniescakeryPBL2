@@ -5,7 +5,7 @@
 -->
 
 @extends('layouts.app')
-@section('title', 'About Us')
+@section('title', 'Manies Cakery - About Us')
 @section('content')
 
 <!-- Button kecil fixed di kiri atas -->

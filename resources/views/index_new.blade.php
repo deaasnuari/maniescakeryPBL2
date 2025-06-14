@@ -135,7 +135,7 @@ KELAS: IF 2 A Malam
                 <a href="products">
                 <img src="{{ asset('assets/CustomMatcha.jpg') }}" alt="Cookies" class="w-full object-cover  transition-transform duration-500 group-hover:scale-110">
                 </a>
-                <div class="hover:bg-black/30 w-full h-full absolute top-1/2 left-1/2 transform -translate-x-1/2    -translate-y-1/2 flex justify-center items-center flex-col text-center text-white">
+                <div class="w-full h-full absolute top-1/2 left-1/2 transform -translate-x-1/2    -translate-y-1/2 flex justify-center items-center flex-col text-center text-white">
                 <h2 class="text-xl">cake 1</h2>
                 </div>
             </div>
@@ -143,7 +143,7 @@ KELAS: IF 2 A Malam
                 <a href="products">
                 <img src="{{ asset('assets/CustomMatcha.jpg') }}" alt="Cookies" class="w-full object-cover transition-transform duration-500 group-hover:scale-110">
                 </a>
-                <div class="hover:bg-black/30 w-full h-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center flex-col text-center text-white">
+                <div class="w-full h-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center flex-col text-center text-white">
                 <h2 class="text-xl">cake 2</h2>
                 </div>
             </div>
@@ -151,7 +151,7 @@ KELAS: IF 2 A Malam
                 <a href="products">
                 <img src="{{ asset('assets/CustomMatcha.jpg') }}" alt="Cookies" class="w-full object-cover transition-transform duration-500 group-hover:scale-110">
                 </a>
-                <div class="hover:bg-black/30 w-full h-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center flex-col text-center text-white">
+                <div class="w-full h-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center flex-col text-center text-white">
                 <h2 class="text-xl">cake 3</h2>
                 </div>
             </div>

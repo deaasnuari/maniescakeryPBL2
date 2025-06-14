@@ -13,7 +13,7 @@
 -->
 
 @extends('layouts.app')
-@section('title', 'catalog')
+@section('title', 'Manies Cakery - Catalog')
 @section('content')
 
 <div class="mx-10 py-8 min-h-screen">
@@ -33,15 +33,16 @@
         </div> --}}
     </div>
     <br>
-    <div class="flex justify-between">
-        @foreach ($kategori as $k)    
+    <div class="flex justify-between gap-2 flex-wrap">
+        @foreach ($kategori as $k)
             <a href="{{ url('/produk/kategori/' . $k->id) }}">
-                <div class="py-3 w-50 text-center uppercase rounded-md shadow-md inset-shadow-md bg-accent text-white font-bold tracking-widest cursor-pointer">
-                    {{ $k->kategori }}
+                <div class="py-3 w-50 text-center uppercase rounded-md shadow-md inset-shadow-md font-bold tracking-widest cursor-pointer 
+                {{ (isset($kategoriAktif) && $kategoriAktif == $k->id) ? 'bg-accent text-white' : 'bg-white text-accent' }}">{{ $k->kategori }}
                 </div>
             </a>
         @endforeach
     </div>
+
 
     <br>
     <div>

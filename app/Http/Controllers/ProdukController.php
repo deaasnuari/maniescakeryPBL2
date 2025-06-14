@@ -21,7 +21,7 @@ class ProdukController extends Controller
         $kategori = Kategori::all(); // untuk tetap tampilkan semua kategori di view
         $selectedKategori = Kategori::findOrFail($id); // untuk tampilkan nama kategori terpilih
 
-        return view('pages.product_page', compact('produk', 'kategori', 'selectedKategori'));
+        return view('pages.product_page', compact('produk', 'kategori', 'selectedKategori'))->with('kategoriAktif', $id);
     }
 
     public function produkDetail($id)
