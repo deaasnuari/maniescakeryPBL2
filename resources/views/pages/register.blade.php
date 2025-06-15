@@ -21,16 +21,17 @@ nim: 3312411001 -->
             </div>
         @endif
 
-        <form method="get" action="{{ url('/') }}">
+        <form method="POST" action="{{ route('register.post') }}">
+
             @csrf
 
             <div class="mb-4">
                 <input 
                     type="text" 
-                    name="name" 
-                    id="name" 
+                    name="username" 
+                    id="username" 
                     required 
-                    placeholder="Nama lengkap"
+                    placeholder="Username"
                     class="w-full p-3 bg-gray-100 border border-transparent rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#DFAC6B]"
                 >
             </div>

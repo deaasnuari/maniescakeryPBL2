@@ -1,9 +1,41 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\LoginController;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\ProdukController;
+
+// Routes LOGIN
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [LoginController::class, 'login'])->name('login.post');
+
+Route::get('/productsdashboard', function () {
+    return view('pages.dashboard.products');
+})->name('productsdashboard')->middleware('auth');
+
+Route::post('/logout', function () {
+    Auth::logout();
+    return redirect('/login');
+})->name('logout');
+// END Routes LOGIN
+
+// Routes Register
+Route::get('/register', [RegisterController::class, 'showRegisterForm'])->name('register');
+Route::post('/register', [RegisterController::class, 'register'])->name('register.post');
+// END Routes Register
+
+// Routes lupa password
+
+Route::get('/lupapassword', function () {
+    return view('pages.lupa_password');
+})->name('lupapassword');
+// END Routes lupa password
+
+
 
 Route::get('/', function () {
-    return view('index');
+    return view('index_new');
 });
 
 Route::get('/dashboard', function () {
@@ -100,9 +132,9 @@ Route::get('/about_us', function () {
     return view('pages.about_us');
 })->name('about_us');
 
-Route::get('products', function () {
-    return view('pages.product_page');
-})->name('products');
+Route::get('/products', [ProdukController::class, 'show']);
+Route::get('/produk/kategori/{id}', [ProdukController::class, 'showByKategori'])->name('catalog');
+Route::get('/produk/{id}', [ProdukController::class, 'produkDetail'])->name('produk.detail');
 
 Route::get('produkdetail', function () {
     return view('pages.produk_detail');
