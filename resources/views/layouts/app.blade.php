@@ -16,7 +16,15 @@
             <a href="/" class="py-1 px-4 hover:text-[#DFAC6B] duration-100">Home</a>
             <a href="{{ url('/produk/kategori/6') }}" class="py-1 px-4 hover:text-[#DFAC6B] duration-100">Product</a>
             <a href="/about_us" class="py-1 px-4 hover:text-[#DFAC6B] duration-100">About Us</a>
+
+
+            @auth
+                
+            @if (Auth::user()->role === 'customer')
             <a href="/profil" class="py-1 px-4 hover:text-[#DFAC6B] duration-100">Profil</a>
+                
+            @endif
+            @endauth
 
             @auth
                 @if (Auth::user()->role === 'admin')
