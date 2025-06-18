@@ -16,49 +16,31 @@
 @section('title', 'Manies Cakery - Catalog')
 @section('content')
 
-<div class="mx-10 py-8 min-h-screen">
+<div class="py-8 min-h-screen">
     <div class="flex justify-between">
         <div class="flex items-center justify-start -mb-px">
             <span class="inline-block w-16 h-px bg-amber-950 mr-3"></span>
             <h3 class="uppercase tracking-widest text-amber-950 -mb-px font-bold">our products</h3>
         </div>
         {{-- role togle --}}
-        {{-- <div>
+        <div>
             <label class="inline-flex items-center cursor-pointer">
                 <span class="me-3 text-sm font-medium text-gray-900 ">Customer</span>
                 <input type="checkbox" value="" id="roleToggle" class="sr-only peer">
                     <div class="relative w-11 h-6 bg-gray-200 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600 dark:peer-checked:bg-blue-600"></div>
                 <span class="ms-3 text-sm font-medium text-gray-900">Admin</span>
             </label>
-        </div> --}}
+        </div>
     </div>
     <br>
-    <div class="flex justify-between gap-2 flex-wrap">
-        @foreach ($kategori as $k)
-            <a href="{{ url('/produk/kategori/' . $k->id) }}">
-                <div class="py-3 w-50 text-center uppercase rounded-md shadow-md inset-shadow-md font-bold tracking-widest cursor-pointer 
-                {{ (isset($kategoriAktif) && $kategoriAktif == $k->id) ? 'bg-accent text-white' : 'bg-white text-accent' }}">{{ $k->kategori }}
-                </div>
-            </a>
-        @endforeach
-    </div>
-
-
+    <livewire:kategori-list />
     <br>
     <div>
         <br>
         <hr>
         <br>
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-15">
-            @foreach ($produk as $produk)     
-                @include('components.catalogcard')
-                @include('components.review_modal')
-            @endforeach
-            <div id="admin-only" data-modal-target="new-catalog" data-modal-toggle="new-catalog" class="hidden border border-gray-500 rounded overflow-hidden justify-center items-center cursor-pointer">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"stroke-linejoin="round" class="feather feather-plus-square size-20 stroke-gray-500"><rect x="3" y="3" width="18"height="18" rx="2" ry="2"></rect><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8"y1="12" x2="16" y2="12"></line></svg> 
-            </div>
+        <livewire:produk-list />
     </div>
-</div>
 
 <div id="new-catalog" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
     <div class="relative p-4 w-full max-w-2xl max-h-full">
@@ -82,19 +64,19 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @for($i = 0; $i < 20; $i++)
+                            @foreach ($all_product as $item)    
                             <tr class="border-t">
-                                <td class="px-4 py-2">1</td>
-                                <td class="px-4 py-2">Brownies</td>
+                                <td class="px-4 py-2">{{ $item->id_produk }}</td>z
+                                <td class="px-4 py-2">{{ $item->nama }}</td>
                                 <td class="px-4 py-2">
                                     <a href="#" 
                                     onclick="toggleStatus(this)" 
                                     class="status-link text-green-600 cursor-pointer">
-                                    Tersedia
+                                    {{ $item->status }}
                                     </a>
                                 </td>
                             </tr>
-                            @endfor
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
@@ -152,14 +134,14 @@
 @push('scripts')
     <script>
         function toggleStatus(element) {
-            const isAvailable = element.textContent.trim().toLowerCase() === 'tersedia';
+            const isAvailable = element.textContent.trim().toLowerCase() === 'available';
 
             if (isAvailable) {
-                element.textContent = 'Tidak Tersedia';
+                element.textContent = 'available';
                 element.classList.remove('text-green-600');
                 element.classList.add('text-red-600');
             } else {
-                element.textContent = 'Tersedia';
+                element.textContent = 'not available';
                 element.classList.remove('text-red-600');
                 element.classList.add('text-green-600');
             }

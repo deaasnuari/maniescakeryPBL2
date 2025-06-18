@@ -1,6 +1,6 @@
 <div class="flex flex-col border border-gray-500 rounded overflow-hidden">
-  <a href="{{ route('produk.detail', $produk->id_produk) }}" class="w-fit h-fit">
-      <img src="../../assets/CustomMatcha.jpg" alt="Custom Matcha" class="object-cover w-60 h-55"/>
+  <a href="{{ route('produk.detail', $produk->id_produk) }}" class="w-full h-fit">
+      <img src="../../assets/CustomMatcha.jpg" alt="Custom Matcha" class="object-cover w-full h-55"/>
       <div class="h-12 text-center flex items-center justify-center font-bold bg-white text-secondary">{{ $produk->nama }}</div>
   </a>
   <button type="submit" class="px-2 h-8 flex items-center justify-between bg-secondary text-white cursor-pointer" id="openModal">

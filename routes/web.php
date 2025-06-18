@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\ProdukController;
+// use App\Livewire\ProdukCatalog;
 
 // Routes LOGIN
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
@@ -134,6 +135,7 @@ Route::get('/about_us', function () {
 
 Route::get('/products', [ProdukController::class, 'show']);
 Route::get('/produk/kategori/{id}', [ProdukController::class, 'showByKategori'])->name('catalog');
+// Route::get('/products', ProdukCatalog::class);
 Route::get('/produk/{id}', [ProdukController::class, 'produkDetail'])->name('produk.detail');
 
 Route::get('produkdetail', function () {

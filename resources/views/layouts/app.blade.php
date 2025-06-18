@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title', 'Manies Cakery')</title>
-    <link rel="stylesheet" href="css/flowbite.min.css">
-    <script src="js/flowbite.min.js"></script>
+    <link rel="stylesheet" href="{{ asset('css/flowbite.min.css') }}">
+    <script src="{{ asset('js/flowbite.min.js') }}"></script>
+    @livewireStyles
     @vite('resources/css/app.css')
 </head>
 <body class="bg-[#F4EDE1]">
@@ -69,5 +70,6 @@
     </footer>
 
     @stack('scripts')
+    @livewireScripts
 </body>
 </html>
