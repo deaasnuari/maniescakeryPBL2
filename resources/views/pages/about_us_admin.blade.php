@@ -25,9 +25,6 @@
     </a>
 </div>
 
-
-
-
 <!-- Main Section -->
 <div class="max-w-5xl mx-auto px-6 md:px-12 py-8 space-y-16">
 
