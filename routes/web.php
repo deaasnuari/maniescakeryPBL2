@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\AboutController;
 
 // Routes LOGIN
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
@@ -139,4 +140,5 @@ Route::get('/produk/{id}', [ProdukController::class, 'produkDetail'])->name('pro
 Route::get('produkdetail', function () {
     return view('pages.produk_detail');
 })->name('produkdetail');
+
 
