@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\ProdukController;
 use App\Livewire\ProdukCatalog;
+use App\Http\Controllers\UserController;
 
 // Routes LOGIN
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
@@ -81,9 +82,7 @@ Route::get('ulasanproduk', function () {
     return view('pages.ulasan_produk');
 });
 
-Route::get('/dashboard/users', function () {
-    return view('pages.dashboard.users'); // sesuai dengan nama file kamu
-});
+
 
 // Route ke product dashboard 
 Route::get('/productsdashboard', function () {
@@ -141,4 +140,13 @@ Route::get('/produk/{id}', [ProdukController::class, 'produkDetail'])->name('pro
 Route::get('produkdetail', function () {
     return view('pages.produk_detail');
 })->name('produkdetail');
+
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::get('/register', [RegisterController::class, 'showRegisterForm'])->name('register');Route::get('/usersdashboard', [UserController::class, 'index']);
+
+
+Route::get('/usersdashboard', [UserController::class, 'index'])->name('usersdashboard');
+Route::get('/users/{id}/edit', [UserController::class, 'edit'])->name('users.edit');
+Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
+Route::resource('users', UserController::class);
 
