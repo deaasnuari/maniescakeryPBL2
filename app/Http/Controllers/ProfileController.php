@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -17,6 +17,7 @@ class ProfileController extends Controller
     // Menangani pembaruan profil
     public function update(Request $request)
     {
+        /** @var \App\Models\User $user */
         $user = Auth::user(); // Mengambil data pengguna yang sedang login
 
         // Mengupdate data pengguna
