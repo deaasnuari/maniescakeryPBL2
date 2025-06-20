@@ -43,7 +43,7 @@ public function index(Request $request)
         $request->validate([
         'name' => 'required',
         'email' => 'required|email|unique:users',
-        'telephone' => 'required|unique:users',
+        'telepon' => 'required',
         'username' => 'required|unique:users',
         'password' => 'required|min:6',
     ]);
@@ -51,7 +51,7 @@ public function index(Request $request)
     User::create([
         'name' => $request->name,
         'email' => $request->email,
-        'telephone' => $request->telephone,
+        'telepon' => $request->telepon,
         'username' => $request->username,
         'password' => bcrypt($request->password),
     ]);

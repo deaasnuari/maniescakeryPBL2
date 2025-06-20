@@ -22,7 +22,7 @@
             @auth
                 
             @if (Auth::user()->role === 'customer')
-            <a href="/profil" class="py-1 px-4 hover:text-[#DFAC6B] duration-100">Profil</a>
+            <a href="/profile" class="py-1 px-4 hover:text-[#DFAC6B] duration-100">Profil</a>
                 
             @endif
             @endauth

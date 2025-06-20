@@ -5,20 +5,12 @@ use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CatalogController;
 
 // Routes LOGIN
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login'])->name('login.post');
-
-Route::get('/productsdashboard', function () {
-    return view('pages.dashboard.products');
-})->name('productsdashboard')->middleware('auth');
-
-Route::post('/logout', function () {
-    Auth::logout();
-    return redirect('/login');
-})->name('logout');
 // END Routes LOGIN
 
 // Routes Register
@@ -26,14 +18,36 @@ Route::get('/register', [RegisterController::class, 'showRegisterForm'])->name('
 Route::post('/register', [RegisterController::class, 'register'])->name('register.post');
 // END Routes Register
 
-// Routes lupa password
+// Routes Profil
+Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show');
+Route::post('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
+// end Routes Profil
 
+Route::get('/catalog', [CatalogController::class, 'index'])->name('catalog.index');
+Route::get('/catalog/{id}', [CatalogController::class, 'show'])->name('catalog.show');
+Route::get('/productsdashboard', function () {
+    return view('pages.dashboard.products');
+})->name('productsdashboard')->middleware('auth');
+
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::get('/register', [RegisterController::class, 'showRegisterForm'])->name('register');
+
+Route::get('/usersdashboard', [UserController::class, 'index']);
+Route::get('/usersdashboard', [UserController::class, 'index'])->name('usersdashboard');
+Route::get('/users/{id}/edit', [UserController::class, 'edit'])->name('users.edit');
+Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
+Route::resource('users', UserController::class);
+
+Route::post('/logout', function () {
+    Auth::logout();
+        return redirect('/login');
+    })->name('logout');
+
+// Routes lupa password
 Route::get('/lupapassword', function () {
     return view('pages.lupa_password');
 })->name('lupapassword');
 // END Routes lupa password
-
-
 
 Route::get('/', function () {
     return view('index_new');
@@ -65,10 +79,6 @@ Route::get(' /landingadmin', function () {
     return view('pages/landing_admin');
 });
 
-Route::get('/profil', function () {
-    return view('pages/profil');
-});
-
 Route::get('about_us', function () {
     return view('pages.about_us');
 });
@@ -81,48 +91,6 @@ Route::get('ulasanproduk', function () {
     return view('pages.ulasan_produk');
 });
 
-
-
-// Route ke product dashboard 
-Route::get('/productsdashboard', function () {
-    // Data contoh untuk ditampilkan di dashboard
-    $products = [
-        [
-            'nama_produk' => 'Jhon doe',
-            'desc' => 'jhon.doe@gmail.com',
-            'gambar' => '0844656677',
-            'kategori' => 'Jhon756'
-        ],
-        [
-            'nama_produk' => 'Jhon doe',
-            'desc' => 'jhon.doe@gmail.com',
-            'gambar' => '0844656677',
-            'kategori' => 'Jhon756'
-        ],
-        [
-            'nama_produk' => 'Jhon doe',
-            'desc' => 'jhon.doe@gmail.com',
-            'gambar' => '0844656677',
-            'kategori' => 'Jhon756'
-        ],
-        [
-            'nama_produk' => 'Jhon doe',
-            'desc' => 'jhon.doe@gmail.com',
-            'gambar' => '0844656677',
-            'kategori' => 'Jhon756'
-        ],
-        [
-            'nama_produk' => 'Jhon doe',
-            'desc' => 'jhon.doe@gmail.com',
-            'gambar' => '0844656677',
-            'kategori' => 'Jhon756'
-        ],
-    ];
-    
-    // Perhatikan path view yang sesuai dengan struktur direktori Anda
-    return view('pages.dashboard.products', compact('products'));
-})->name('productsdashboard');
-
 Route::get('/catalog', function () {
     return view('catalog'); // atau controller kamu
 })->name('catalog');
@@ -131,23 +99,8 @@ Route::get('/about_us', function () {
     return view('pages.about_us');
 })->name('about_us');
 
-// Route::get('/products', [ProdukController::class, 'show']);
-// Route::get('/produk/kategori/{id}', [ProdukController::class, 'showByKategori'])->name('catalog');
-// // Route::get('/products', ProdukCatalog::class);
-// Route::get('/produk/{id}', [ProdukController::class, 'produkDetail'])->name('produk.detail');
-
-Route::get('/catalog', [CatalogController::class, 'index'])->name('catalog.index');
-Route::get('/catalog/{id}', [CatalogController::class, 'show'])->name('catalog.show');
-
 Route::get('produkdetail', function () {
     return view('pages.produk_detail');
 })->name('produkdetail');
 
-Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
-Route::get('/register', [RegisterController::class, 'showRegisterForm'])->name('register');Route::get('/usersdashboard', [UserController::class, 'index']);
 
-
-Route::get('/usersdashboard', [UserController::class, 'index'])->name('usersdashboard');
-Route::get('/users/{id}/edit', [UserController::class, 'edit'])->name('users.edit');
-Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
-Route::resource('users', UserController::class);
