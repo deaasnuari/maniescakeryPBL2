@@ -37,14 +37,31 @@ nim: 3312411001 -->
             </div>
 
             <div class="mb-4">
-                <input 
-                    type="password" 
-                    name="password" 
-                    id="password" 
-                    required 
-                    placeholder="Password"
-                    class="block w-full p-4 text-base text-gray-900 bg-gray-200 border border-transparent rounded focus:ring-[#DFAC6B] focus:border-[#DFAC6B] focus:outline-none"
-                >
+                <div class="relative">
+                    <input 
+                        type="password" 
+                        name="password" 
+                        id="password"
+                        required 
+                        placeholder="Password"
+                        class="block w-full p-4 pr-12 text-base text-gray-900 bg-gray-200 border border-transparent rounded focus:ring-[#DFAC6B] focus:border-[#DFAC6B] focus:outline-none"
+                    >
+                    <span
+                        onclick="togglePassword('password', this)"
+                        class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-600 cursor-pointer"
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" 
+                            class="h-5 w-5" fill="none" viewBox="0 0 24 24" 
+                            stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" 
+                                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" 
+                                d="M2.458 12C3.732 7.943 7.522 5 12 5c4.478 
+                                0 8.268 2.943 9.542 7-1.274 4.057-5.064 
+                                7-9.542 7-4.478 0-8.268-2.943-9.542-7z" />
+                        </svg>
+                    </span>
+                </div>
             </div>
 
             <div class="flex justify-end mb-6">
@@ -77,3 +94,31 @@ nim: 3312411001 -->
 
 
 @endsection
+
+<script>
+    function togglePassword(inputId, element) {
+        const input = document.getElementById(inputId);
+        const icon = element.querySelector('svg');
+
+        if (input.type === "password") {
+            input.type = "text";
+            icon.innerHTML = `
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0 
+                    -8.268-2.943-9.542-7a10.05 10.05 0 
+                    012.109-3.378M9.88 9.88A3 3 0 
+                    0114.12 14.12M6.1 6.1l11.8 11.8" />
+            `;
+        } else {
+            input.type = "password";
+            icon.innerHTML = `
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                    d="M2.458 12C3.732 7.943 7.522 5 12 5c4.478 
+                    0 8.268 2.943 9.542 7-1.274 4.057-5.064 
+                    7-9.542 7-4.478 0-8.268-2.943-9.542-7z" />
+            `;
+        }
+    }
+</script>
