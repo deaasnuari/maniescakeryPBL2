@@ -30,10 +30,11 @@ class LoginController extends Controller
         Auth::login($user);
         return redirect()->intended('/');
     }
-public function showLoginForm()
-{
-    return view('pages.login');
-}
+    
+    public function showLoginForm()
+    {
+        return view('pages.login');
+    }
 
 
 }

@@ -4,9 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\ProdukController;
-use App\Livewire\ProdukCatalog;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CatalogController;
 
 // Routes LOGIN
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
@@ -132,10 +131,13 @@ Route::get('/about_us', function () {
     return view('pages.about_us');
 })->name('about_us');
 
-Route::get('/products', [ProdukController::class, 'show']);
-Route::get('/produk/kategori/{id}', [ProdukController::class, 'showByKategori'])->name('catalog');
-// Route::get('/products', ProdukCatalog::class);
-Route::get('/produk/{id}', [ProdukController::class, 'produkDetail'])->name('produk.detail');
+// Route::get('/products', [ProdukController::class, 'show']);
+// Route::get('/produk/kategori/{id}', [ProdukController::class, 'showByKategori'])->name('catalog');
+// // Route::get('/products', ProdukCatalog::class);
+// Route::get('/produk/{id}', [ProdukController::class, 'produkDetail'])->name('produk.detail');
+
+Route::get('/catalog', [CatalogController::class, 'index'])->name('catalog.index');
+Route::get('/catalog/{id}', [CatalogController::class, 'show'])->name('catalog.show');
 
 Route::get('produkdetail', function () {
     return view('pages.produk_detail');
@@ -149,4 +151,3 @@ Route::get('/usersdashboard', [UserController::class, 'index'])->name('usersdash
 Route::get('/users/{id}/edit', [UserController::class, 'edit'])->name('users.edit');
 Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
 Route::resource('users', UserController::class);
-

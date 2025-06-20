@@ -2,17 +2,25 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Produk extends Model
 {
-    protected $table = 'produk';
-    protected $primaryKey = 'id_produk';
-    public $timestamps = false;
+    use HasFactory;
 
-    public function kategoriRelasi()
+    public $timestamps = 'false';
+
+    protected $fillable = [
+        'nama',
+        'harga',
+        'deskripsi',
+        'kategori',
+        'status'
+    ];
+
+    public function kategoriModel()
     {
-        return $this->belongsTo(Kategori::class, 'kategori');
+        return $this->belongsTo(Kategori::class, 'kategori', 'nama');
     }
-
 }
