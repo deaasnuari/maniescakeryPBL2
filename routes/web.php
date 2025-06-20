@@ -7,6 +7,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\ProdukController;
 use App\Livewire\ProdukCatalog;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProfileController;
 
 // Routes LOGIN
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
@@ -35,6 +36,10 @@ Route::get('/lupapassword', function () {
 // END Routes lupa password
 
 
+// Routes Profil
+Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show');
+Route::post('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
+// end Routes Profil
 
 Route::get('/', function () {
     return view('index_new');
@@ -66,9 +71,9 @@ Route::get(' /landingadmin', function () {
     return view('pages/landing_admin');
 });
 
-Route::get('/profil', function () {
-    return view('pages/profil');
-});
+// Route::get('/profil', function () {
+//     return view('pages/profil');
+// });
 
 Route::get('about_us', function () {
     return view('pages.about_us');
