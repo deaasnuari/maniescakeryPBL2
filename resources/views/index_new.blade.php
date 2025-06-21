@@ -76,7 +76,7 @@ KELAS: IF 2 A Malam
             <p class="text-accent text-3xl capitalize">RASAKAN LEZATNYA BAHAN PILIHAN! <br> Temukan Produk Kami</p><br>
             <p class="text-xl">Kami menyediakan berbagai varian kue lengkap dan kekinian, cocok untuk segala moment spesial Anda. Dengan bahan berkualitas dan cita rasa terbaik, kami juga siap memenuhi permintaan khusus sesuai keinginan pelanggan.</p>
             <br><br>
-            <a href="{{ route('catalog.index') }}" class="italic tracking-wide rounded underline text-xl text-secondary">lihat produk manies cakery -></a>
+            <a href="{{ route('catalog', '6') }}" class="italic tracking-wide rounded underline text-xl text-secondary">lihat produk manies cakery -></a>
         </div>
         <img src="{{ asset('assets/cake6.png') }}" alt="" class="w-120 rounded-2xl">
     </section>
