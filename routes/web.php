@@ -7,11 +7,8 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\ProdukController;
 use App\Livewire\ProdukCatalog;
 use App\Http\Controllers\UserController;
-<<<<<<< HEAD
-=======
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CatalogController;
->>>>>>> c2fbd9d3578171cdf42e7adb1f76ae00b3a0ca6a
 
 // Routes LOGIN
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
@@ -104,25 +101,19 @@ Route::get('/about_us', function () {
     return view('pages.about_us');
 })->name('about_us');
 
-<<<<<<< HEAD
 Route::get('/products', [ProdukController::class, 'show']);
 Route::get('/produk/kategori/{id}', [ProdukController::class, 'showByKategori'])->name('catalog');
 // Route::get('/products', ProdukCatalog::class);
 Route::get('/produk/{id}', [ProdukController::class, 'produkDetail'])->name('produk.detail');
 
-=======
->>>>>>> c2fbd9d3578171cdf42e7adb1f76ae00b3a0ca6a
 Route::get('produkdetail', function () {
     return view('pages.produk_detail');
 })->name('produkdetail');
 
 
-<<<<<<< HEAD
 
 Route::get('/usersdashboard', [UserController::class, 'index'])->name('usersdashboard');
 Route::get('/users/{id}/edit', [UserController::class, 'edit'])->name('users.edit');
 Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
 Route::resource('users', UserController::class);
 
-=======
->>>>>>> c2fbd9d3578171cdf42e7adb1f76ae00b3a0ca6a
