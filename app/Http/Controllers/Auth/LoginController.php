@@ -62,14 +62,14 @@ public function showLoginForm()
 // Function hapus user guest saat logout
 public function logout(Request $request)
 {
-    $user = Auth::user(); // Simpan user sebelum logout
+   /**
+ * @var \App\Models\User $user
+ */
+$user = Auth::user();
 
-    Auth::logout(); // Logout dulu
-
-    // Hapus akun jika role-nya guest
-    if ($user && $user->role === 'guest') {
-        $user->delete();
-    }
+if ($user && $user->role === 'guest') {
+    $user->delete();
+}
 
     // Hapus semua session
     $request->session()->invalidate();
