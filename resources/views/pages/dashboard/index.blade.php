@@ -17,10 +17,11 @@ KELAS: IF 2 A Malam
     <div class="text-left font-extrabold text-3xl text-gray-800 -mt-2">HOME</div>
     <div class="bg-gradient-to-r from-[#F7F7F7] via-[#FFFFFF] to-[#F7F7F7] border border-gray-300 rounded-xl px-8 py-6 shadow-lg">
         <div class="text-2xl font-bold text-[#493C32]">
-            Selamat datang, <span class="italic text-[#8B4513]">Fatra SimanjuntaX</span>
+            Selamat datang, <span class="italic text-[#8B4513]">{{ Auth::user()->username }}</span>
         </div>
-        <div class="text-md text-gray-600 mt-2">Anda login sebagai <span class="font-semibold text-[#493C32]">Admin</span></div>
-    </div>
+        <div class="text-md text-gray-600 mt-2">
+            Anda login sebagai <span class="font-semibold text-[#493C32]">{{ ucfirst(Auth::user()->role ?? 'Pengguna') }}</span>
+        </div>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <!-- Produk -->
         <div class="bg-gradient-to-r from-[#D1E5F2] to-[#BCCCE4] rounded-xl p-8 border border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
@@ -48,7 +49,7 @@ KELAS: IF 2 A Malam
                 </div>
                 <span class="text-gray-500 text-lg uppercase ml-4">Pengguna</span>
             </div>
-            <div class="text-5xl font-extrabold text-[#493C32]">45</div>
+           <div class="text-5xl font-extrabold text-[#493C32]">{{ $jumlahPengguna }}</div>
             <p class="text-sm text-gray-600 mt-3">Jumlah total pengguna yang terdaftar. Teruskan memperluas komunitas kami!</p>
         </div>
     </div>
@@ -73,28 +74,18 @@ KELAS: IF 2 A Malam
                 </tr>
             </thead>
             <tbody class="divide-y divide-[#E0D2C3]">
-                <tr class="hover:bg-[#F4ECE4] transition">
-                    <td class="py-3 px-4 text-center">Udin</td>
-                    <td class="py-3 px-4 text-center">udin@example.com</td>
-                    <td class="py-3 px-4 text-center">udin123</td>
-                    <td class="py-3 px-4 text-center">081234567890</td>
-                    <td class="py-3 px-4 text-center">2025-04-29</td>
-                </tr>
-                <tr class="hover:bg-[#F4ECE4] transition">
-                    <td class="py-3 px-4 text-center">Budi</td>
-                    <td class="py-3 px-4 text-center">budi@example.com</td>
-                    <td class="py-3 px-4 text-center">budi987</td>
-                    <td class="py-3 px-4 text-center">081198765432</td>
-                    <td class="py-3 px-4 text-center">2025-04-28</td>
-                </tr>
-                <tr class="hover:bg-[#F4ECE4] transition">
-                    <td class="py-3 px-4 text-center">Jack</td>
-                    <td class="py-3 px-4 text-center">jack@example.com</td>
-                    <td class="py-3 px-4 text-center">jackie22</td>
-                    <td class="py-3 px-4 text-center">089876543210</td>
-                    <td class="py-3 px-4 text-center">2025-04-27</td>
-                </tr>
-            </tbody>
+    @foreach ($latestUsers as $user)
+        <tr class="hover:bg-[#F4ECE4] transition">
+            <td class="py-3 px-4 text-center">{{ $user->username }}</td>
+            <td class="py-3 px-4 text-center">{{ $user->email }}</td>
+            <td class="py-3 px-4 text-center">{{ $user->username }}</td>
+            <td class="py-3 px-4 text-center">{{ $user->telepon }}</td>
+            <td class="py-3 px-4 text-center">
+            {{ $user->created_at ? date('Y-m-d', strtotime($user->created_at)) : '-' }}
+        </td>
+        </tr>
+    @endforeach
+</tbody>
         </table>
     </div>
 
@@ -176,4 +167,4 @@ KELAS: IF 2 A Malam
 
 {{-- END Content --}}
 
-@endsection
+@endsection 

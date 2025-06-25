@@ -7,101 +7,76 @@ use App\Models\User;
 
 class UserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-public function index(Request $request)
-{
-    $query = User::query();
-
-    if ($request->has('search')) {
-        $search = $request->search;
-        $query->where('username', 'like', "%{$search}%")
-              ->orWhere('email', 'like', "%{$search}%")
-              ->orWhere('telephone', 'like', "%{$search}%");
-    }
-
-    $users = $query->get();
-    return view('pages.dashboard.users', compact('users'));
-}
-
-
-
-    /**
-     * Show the form for creating a new resource.
-     */
-     public function create() //menampilkan form untuk membuat user baru
+    public function index(Request $request)
     {
-         return view('dashboard.users.create'); // buat file blade-nya nanti
+        $query = User::query();
+
+        if ($request->has('search')) {
+            $search = $request->search;
+            $query->where('username', 'like', "%{$search}%")
+                  ->orWhere('email', 'like', "%{$search}%")
+                  ->orWhere('telepon', 'like', "%{$search}%");
+        }
+
+        $users = $query->get();
+        return view('pages.dashboard.users', compact('users'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request) //Simpan user baru ke DB     
+    public function create()
+    {
+        return view('dashboard.users.create');
+    }
+
+    public function store(Request $request)
     {
         $request->validate([
-        'name' => 'required',
-        'email' => 'required|email|unique:users',
-        'telepon' => 'required',
-        'username' => 'required|unique:users',
-        'password' => 'required|min:6',
-    ]);
+            'name' => 'required',
+            'email' => 'required|email|unique:user',
+            'telepon' => 'required',
+            'username' => 'required|unique:user',
+            'password' => 'required|min:6',
+        ]);
 
-    User::create([
-        'name' => $request->name,
-        'email' => $request->email,
-        'telepon' => $request->telepon,
-        'username' => $request->username,
-        'password' => bcrypt($request->password),
-    ]);
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'telepon' => $request->telepon,
+            'username' => $request->username,
+            'password' => bcrypt($request->password),
+        ]);
 
-    return redirect()->route('users.dashboard')->with('success', 'User berhasil ditambahkan!');
+        return redirect()->route('usersdashboard')->with('success', 'User berhasil ditambahkan!');
     }
 
-    /**
-     * Display the specified resource.
-     */
-
     public function edit($id)
-{
-    $user = User::findOrFail($id);
-    return view('pages.dashboard.edit_user', compact('user'));
-}
+    {
+        $user = User::findOrFail($id);
+        return view('pages.dashboard.edit_user', compact('user'));
+    }
 
-    /**
-     * Update the specified resource in storage.
-     */
-   public function update(Request $request, $id)
-{
-    $request->validate([
-        'username' => 'required|string|max:255',
-        'email' => 'required|email',
-        'telephone' => 'required', //untuk mengubah telephone
-        // 'telephone' => 'nullable|string|max:20',
-    ]);
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'username' => 'required|string|max:255',
+            'email' => 'required|email',
+            'telepon' => 'required',
+        ]);
 
-    $user = User::findOrFail($id);
-    $user->update([
-        'username' => $request->username,
-        'email' => $request->email,
-        'telephone' => $request-> telephone,
-        // 'telephone' => $request->telephone,
-    ]);
+        $user = User::findOrFail($id);
+        $user->update([
+            'username' => $request->username,
+            'email' => $request->email,
+            'telepon' => $request->telepon,
+        ]);
 
-    return redirect()->route('users.index')->with('success', 'User updated successfully.');
-}
+        return redirect()->route('users.index')->with('success', 'User updated successfully.');
+    }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-   public function destroy($id)
-{
-    $user = User::findOrFail($id);
-    $user->delete();
+    public function destroy($id)
+    {
+        $user = User::findOrFail($id);
+        $user->delete();
 
-    return redirect()->route('users.index')->with('success', 'User berhasil dihapus.');
-}
-
-
+        return redirect()->route('users.index')->with('success', 'User berhasil dihapus.');
+    }
 }
