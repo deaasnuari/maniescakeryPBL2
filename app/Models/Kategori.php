@@ -3,13 +3,15 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use app\Models\Produk;
 
-class Kategori extends Model
+class kategori extends Model
 {
     protected $table = 'kategori';
+
     public function produk()
     {
-        return $this->hasMany(Produk::class, 'kategori');
+        return $this->hasMany(Produk::class, 'kategori', 'nama');
     }
 
 }
