@@ -16,4 +16,11 @@ class ProdukController extends Controller
 
         return view('pages.product_page', compact('products', 'categories', 'selectedCategories'));
     }
+
+    public function produkDetail($id)
+    {
+        $produk = Produk::findOrFail($id); // akan throw 404 kalau tidak ketemu
+        return view('pages.produk_detail', compact('produk'));
+    }
+
 }
