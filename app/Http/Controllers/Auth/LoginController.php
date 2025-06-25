@@ -62,22 +62,23 @@ public function showLoginForm()
 // Function hapus user guest saat logout
 public function logout(Request $request)
 {
-   /**
- * @var \App\Models\User $user
- */
-$user = Auth::user();
+    /** @var \App\Models\User $user */
+    $user = Auth::user(); // Simpan user sebelum logout
 
-if ($user && $user->role === 'guest') {
-    $user->delete();
-}
+    Auth::logout(); // Logout user terlebih dahulu
 
-    // Hapus semua session
+    // Hapus akun jika role-nya guest
+    if ($user && $user->role === 'guest') {
+        $user->delete();
+    }
+
+    // Hapus session & regenerate token
     $request->session()->invalidate();
     $request->session()->regenerateToken();
 
-    return redirect('/')->with('success', 'Logout berhasil');
+   
+    return redirect()->route('login')->with('success', 'Logout berhasil. Silakan login kembali.');
 }
-
 
 
 }
