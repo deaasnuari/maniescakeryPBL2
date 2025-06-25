@@ -10,11 +10,22 @@ class UserController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+public function index(Request $request)
 {
-    $users = User::all(); // ambil semua user
+    $query = User::query();
+
+    if ($request->has('search')) {
+        $search = $request->search;
+        $query->where('username', 'like', "%{$search}%")
+              ->orWhere('email', 'like', "%{$search}%")
+              ->orWhere('telephone', 'like', "%{$search}%");
+    }
+
+    $users = $query->get();
     return view('pages.dashboard.users', compact('users'));
 }
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -66,6 +77,7 @@ class UserController extends Controller
     $request->validate([
         'username' => 'required|string|max:255',
         'email' => 'required|email',
+        'telephone' => 'required', //untuk mengubah telephone
         // 'telephone' => 'nullable|string|max:20',
     ]);
 
@@ -73,6 +85,7 @@ class UserController extends Controller
     $user->update([
         'username' => $request->username,
         'email' => $request->email,
+        'telephone' => $request-> telephone,
         // 'telephone' => $request->telephone,
     ]);
 
@@ -89,4 +102,6 @@ class UserController extends Controller
 
     return redirect()->route('users.index')->with('success', 'User berhasil dihapus.');
 }
+
+
 }
