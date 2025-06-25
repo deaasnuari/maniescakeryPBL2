@@ -40,6 +40,7 @@
             @else
                 <a href="/login" class="py-1 px-4 hover:text-[#DFAC6B] duration-100">Login</a>
             @endauth
+           
         </div>
     </header>
 

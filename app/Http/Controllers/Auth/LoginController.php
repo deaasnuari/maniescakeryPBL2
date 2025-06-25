@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use Illuminate\Support\Str;
 
 class LoginController extends Controller
 {
@@ -34,6 +35,49 @@ public function showLoginForm()
 {
     return view('pages.login');
 }
+
+
+// Function Login sebagai Guest
+   public function guestLogin()
+{
+    // Buat user baru dengan username dan email acak
+    $randomUsername = 'guest_' . Str::random(5); // contoh: guest_f93a7
+    $randomEmail = $randomUsername . '@guest.test';
+
+    $guest = User::create([
+        'name' => 'Guest User',
+        'username' => $randomUsername,
+        'email' => $randomEmail,
+        'telepon' => '0000000000',
+        'password' => bcrypt(Str::random(10)), // random password
+        'role' => 'guest',
+    ]);
+
+    Auth::login($guest);
+
+   return redirect('/');
+
+}
+
+// Function hapus user guest saat logout
+public function logout(Request $request)
+{
+   /**
+ * @var \App\Models\User $user
+ */
+$user = Auth::user();
+
+if ($user && $user->role === 'guest') {
+    $user->delete();
+}
+
+    // Hapus semua session
+    $request->session()->invalidate();
+    $request->session()->regenerateToken();
+
+    return redirect('/')->with('success', 'Logout berhasil');
+}
+
 
 
 }
