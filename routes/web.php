@@ -8,7 +8,8 @@ use App\Http\Controllers\ProdukController;
 use App\Livewire\ProdukCatalog;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\AboutController;
+// use App\Http\Controllers\AboutController;
+// use App\Http\Controllers\AboutController;
 
 // Routes LOGIN
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
@@ -166,4 +167,5 @@ Route::get('/usersdashboard', [UserController::class, 'index'])->name('usersdash
 Route::get('/users/{id}/edit', [UserController::class, 'edit'])->name('users.edit');
 Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
 Route::resource('users', UserController::class);
+
 
