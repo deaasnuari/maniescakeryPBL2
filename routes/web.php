@@ -41,6 +41,17 @@ Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show')
 Route::post('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
 // end Routes Profil
 
+
+
+// routes login sebagai guest
+Route::post('/login/guest', [LoginController::class, 'guestLogin'])->name('login.guest');
+
+// Logout sebagai guest
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+// end routes login sebagai guest
+
+
+
 Route::get('/', function () {
     return view('index_new');
 });
