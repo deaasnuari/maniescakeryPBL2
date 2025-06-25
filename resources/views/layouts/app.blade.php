@@ -28,7 +28,7 @@
 
             @auth
                 @if (Auth::user()->role === 'admin')
-                    <a href="/productsdashboard" class="py-1 px-4 hover:text-[#DFAC6B] duration-100">Dashboard</a>
+                    <a href="/dashboard" class="py-1 px-4 hover:text-[#DFAC6B] duration-100">Dashboard</a>
                 @endif
 
                

@@ -1,7 +1,10 @@
 @extends('layouts.dashboard')
 @section('title', 'Product Dashboard')
-
 @section('content')
+{{-- @php
+    dd(Route::currentRouteName());
+@endphp --}}
+
 <div class="text-center font-bold text-xl">Welcome to the Product Dashboard</div>
 <h1 class="text-2xl font-bold mb-6 mt-4">Data Product Dashboard</h1>
 
