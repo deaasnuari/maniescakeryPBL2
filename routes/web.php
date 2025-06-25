@@ -8,6 +8,7 @@ use App\Http\Controllers\ProdukController;
 use App\Livewire\ProdukCatalog;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\AboutController;
 
 // Routes LOGIN
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');

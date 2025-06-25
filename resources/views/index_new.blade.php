@@ -63,7 +63,7 @@ KELAS: IF 2 A Malam
     <section class="flex justify-between items-center">
         <div class="w-1/2 text-center">
             <p class="text-accent font-norican text-5xl capitalize">manies cakery</p><br>
-            <p class="text-xl">Toko kue rumahan yang menyajikan berbagai pilihan manisan yang dibuat dengan sepenuh hati. Menyajikan berbagai brownies, kue kering, roti, dan kue-kue istimewa lainnya dengan cita rasa lezat dan tekstur yang sempurna. Kami juga menawarkan kue-kue yang dapat disesuaikan dengan preferensi pribadi Anda, baik untuk ulang tahun, pernikahan, atau perayaan apa pun. Setiap pesanan dibuat segar untuk memastikan kualitas dan kepuasan dalam setiap gigitan.</p>
+            <p class="text-xl">Toko kue rumahan yang menyajikan berbagai pilihan manisan yang dibuat dengan sepenuh hati. Menyajikan berbagai brownies, kue kering, dan kue-kue istimewa lainnya dengan cita rasa lezat dan tekstur yang sempurna. Kami juga menawarkan kue-kue yang dapat disesuaikan dengan preferensi pribadi Anda, baik untuk ulang tahun, pernikahan, atau perayaan apa pun. Setiap pesanan dibuat segar untuk memastikan kualitas dan kepuasan dalam setiap gigitan.</p>
             <br><br>
             <a href="{{ route('about_us') }}" class="bg-secondary px-10 py-2 text-white font-bold tracking-wide uppercase rounded">
             about us</a>
@@ -73,7 +73,7 @@ KELAS: IF 2 A Malam
 <br><br>
     <section class="flex flex-row-reverse justify-between items-center">
         <div class="w-1/2 text-center">
-            <p class="text-accent text-3xl capitalize">RASAKAN LEZATNYA BAHAN PILIHAN! <br> Temukan Produk Kami</p><br>
+            <p class="text-accent  text-3xl capitalize">RASAKAN LEZATNYA BAHAN PILIHAN! <br> Temukan Produk Kami</p><br>
             <p class="text-xl">Kami menyediakan berbagai varian kue lengkap dan kekinian, cocok untuk segala moment spesial Anda. Dengan bahan berkualitas dan cita rasa terbaik, kami juga siap memenuhi permintaan khusus sesuai keinginan pelanggan.</p>
             <br><br>
             <a href="{{ route('catalog', '6') }}" class="italic tracking-wide rounded underline text-xl text-secondary">lihat produk manies cakery -></a>
@@ -128,7 +128,7 @@ KELAS: IF 2 A Malam
     
     <br>
     <section class="px-10 py-6 bg-white rounded-xl shadow border-2 border-dashed border-secondary">
-        <p class="text-center text-5xl font-norican text-accent capitalize">menu favorit</p>
+        <p class="text-center text-5xl font-norican text-accent capitalize">menu favourite</p>
         <br>
         <div class="flex justify-between">
             <div class="relative group overflow-hidden rounded-full size-70 shadow-xl hover:shadow-2xl hover:scale-90 transition-all duration-300 transform hover:cursor-pointer">

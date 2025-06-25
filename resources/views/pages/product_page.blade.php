@@ -24,6 +24,7 @@
         </div>
         {{-- role togle --}}
         <!-- <div>
+        <div>
             <label class="inline-flex items-center cursor-pointer">
                 <span class="me-3 text-sm font-medium text-gray-900 ">Customer</span>
                 <input type="checkbox" value="" id="roleToggle" class="sr-only peer">
@@ -31,6 +32,7 @@
                 <span class="ms-3 text-sm font-medium text-gray-900">Admin</span>
             </label>
         </div> -->
+        </div>
     </div>
     <br>
     <livewire:kategori-list />
