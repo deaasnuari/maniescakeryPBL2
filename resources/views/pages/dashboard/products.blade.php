@@ -145,7 +145,7 @@
                 <td class="px-6 py-4 whitespace-wrap">{{  $product->gambar }}</td>
                 <td class="px-6 py-4 whitespace-nowrap">Rp {{ number_format($product->harga, 0, ',', '.') }}</td>
                 <td class="px-6 py-4 whitespace-nowrap">
-                    <img src="{{ asset('storage/images' . $product->gambar) }}" alt="{{ $product->gambar }}" class="w-16 h-16 object-cover rounded">
+                    <img src="{{ asset('storage/' . $product->gambar) }}" alt="{{ $product->gambar }}" class="w-16 h-16 object-cover rounded">
                 </td>
                 <td class="px-6 py-4 whitespace-nowrap">{{ $product->kategori }}</td>
                 <td class="px-6 py-4 whitespace-nowrap flex gap-2 items-center h-20">

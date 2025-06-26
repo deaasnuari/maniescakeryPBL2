@@ -34,7 +34,7 @@ class ProdukDashboardController extends Controller
         $gambarName = null;
         if ($request->hasFile('gambar')) {
             $gambar = $request->file('gambar');
-            $gambarName = $gambar->store('images', 'public'); // disimpan ke storage/app/public/images
+            $gambarName = $gambar->store('images', 'public');
             // dd($gambarName);
         }
 
