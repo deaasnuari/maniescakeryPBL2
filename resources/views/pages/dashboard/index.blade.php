@@ -100,28 +100,18 @@ KELAS: IF 2 A Malam
                     <th class="py-3 px-4 rounded-tl-xl text-center">Nama Produk</th>
                     <th class="py-3 px-4 text-center">Kategori</th>
                     <th class="py-3 px-4 text-center">Jumlah Ulasan</th>
-                    <th class="py-3 px-4 rounded-tr-xl text-center">Tangga l Ditambahkan</th>
+                    <th class="py-3 px-4 rounded-tr-xl text-center">Tanggal l Ditambahkan</th>
                 </tr>
             </thead>
             <tbody class="divide-y divide-[#E0D2C3]">
+                @foreach ($latestProducts as $product)     
                 <tr class="hover:bg-[#F4ECE4] transition">
-                    <td class="py-3 px-4 text-center">Kue Coklat</td>
-                    <td class="py-3 px-4 text-center">Kue</td>
-                    <td class="py-3 px-4 text-center">25</td>
-                    <td class="py-3 px-4 text-center">2025-04-29</td>
+                    <td class="py-3 px-4 text-center">{{ $product->nama }}</td>
+                    <td class="py-3 px-4 text-center">{{ $product->kategori }}</td>
+                    <td class="py-3 px-4 text-center">{{ '-' }}</td>
+                    <td class="py-3 px-4 text-center">{{ $product->created_at }}</td>
                 </tr>
-                <tr class="hover:bg-[#F4ECE4] transition">
-                    <td class="py-3 px-4 text-center">Donat Manis</td>
-                    <td class="py-3 px-4 text-center">Donat</td>
-                    <td class="py-3 px-4 text-center">18</td>
-                    <td class="py-3 px-4 text-center">2025-04-28</td>
-                </tr>
-                <tr class="hover:bg-[#F4ECE4] transition">
-                    <td class="py-3 px-4 text-center">Kue Lapis</td>
-                    <td class="py-3 px-4 text-center">Kue</td>
-                    <td class="py-3 px-4 text-center">30</td>
-                    <td class="py-3 px-4 text-center">2025-04-27</td>
-                </tr>
+                @endforeach
             </tbody>
         </table>
     </div>

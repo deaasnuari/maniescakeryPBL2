@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Produk;
 
 class DashboardController extends Controller
 {
@@ -19,7 +20,9 @@ public function index()
     {
         $latestUsers = User::latest()->take(5)->get();
         $jumlahPengguna = User::count();
+        $latestProducts = Produk::latest()->take(5)->get();
+        
 
-        return view('pages.dashboard.index', compact('latestUsers', 'jumlahPengguna'));
+        return view('pages.dashboard.index', compact('latestUsers', 'jumlahPengguna', 'latestProducts'));
     }
 }
