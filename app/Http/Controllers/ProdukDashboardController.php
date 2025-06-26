@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Produk;
 use App\Models\Kategori;
+use Illuminate\Support\Facades\Storage;
+
 
 class ProdukDashboardController extends Controller
 {
@@ -32,8 +34,8 @@ class ProdukDashboardController extends Controller
         $gambarName = null;
         if ($request->hasFile('gambar')) {
             $gambar = $request->file('gambar');
-            $gambarName = time() . '_' . $gambar->getClientOriginalName();
-            $gambar->storeAs('public/images', $gambarName);
+            $gambarName = $gambar->store('images', 'public'); // disimpan ke storage/app/public/images
+            // dd($gambarName);
         }
 
         // Create new product
@@ -43,11 +45,12 @@ class ProdukDashboardController extends Controller
             'harga' => $request->harga,
             'kategori' => $request->kategori,
             'gambar' => $gambarName,
-            'status' => true, // default status
+            'status' => true,
         ]);
 
         return redirect()->back()->with('success', 'Produk berhasil ditambahkan!');
     }
+
 
     /**
      * Show the form for editing the specified resource.

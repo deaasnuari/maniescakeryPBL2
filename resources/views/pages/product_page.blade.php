@@ -12,9 +12,9 @@
 
     <br>
 
-    <div class="flex justify-start flex-wrap gap-2">
+    <div class="flex justify-between flex-wrap gap-2">
         @foreach ($categories as $k)
-            <a href="{{ route('produk.index', $k->nama) }}" class="py-2 px-4 rounded-md shadow font-semibold uppercase text-sm tracking-widest {{ $selectedCategories === $k->nama ? 'bg-amber-800 text-white' : 'bg-white text-amber-800 border border-amber-800' }}">
+            <a href="{{ route('produk.index', $k->nama) }}" class="p-4 w-50 flex justify-center items-center rounded-md shadow font-semibold uppercase text-sm tracking-widest {{ $selectedCategories === $k->nama ? 'bg-accent text-white' : 'bg-white text-accent border border-accent' }}">
                 {{ $k->nama }}
             </a>
         @endforeach

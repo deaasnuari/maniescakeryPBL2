@@ -80,17 +80,22 @@
                 </div>
 
                 <!-- Kategori -->
+                <!-- Kategori -->
                 <div>
                     <label class="block text-sm font-medium text-gray-700">Kategori</label>
                     <select name="kategori" class="w-full border border-gray-300 rounded px-3 py-2" required>
                         <option value="">-- Pilih Kategori --</option>
-                        @foreach(['Brownies', 'Cake', 'Cookies', 'Hampers', 'Small Cake'] as $kategori)
-                            <option value="{{ $kategori }}" {{ $editStatus && $product->kategori === $kategori ? 'selected' : '' }}>
-                                {{ $kategori }}
+                        @foreach($categories as $kategori)
+                            @php
+                                $selectedKategori = old('kategori', $editStatus ? $product->kategori : '');
+                            @endphp
+                            <option value="{{ $kategori->nama }}" {{ $selectedKategori === $kategori->nama ? 'selected' : '' }}>
+                                {{ $kategori->nama }}
                             </option>
                         @endforeach
                     </select>
                 </div>
+
                 
                 <!-- Harga -->
                 <div>
@@ -137,19 +142,21 @@
             @foreach($products as $product)
             <tr class="hover:bg-gray-100">
                 <td class="px-6 py-4 whitespace-nowrap">{{ $product->nama }}</td>
-                <td class="px-6 py-4 whitespace-wrap">{{ $product->deskripsi }}</td>
+                <td class="px-6 py-4 whitespace-wrap">{{  $product->gambar }}</td>
                 <td class="px-6 py-4 whitespace-nowrap">Rp {{ number_format($product->harga, 0, ',', '.') }}</td>
                 <td class="px-6 py-4 whitespace-nowrap">
-                    <img src="{{ asset('storage/images/' . $product->gambar) }}" alt="{{ $product->nama }}" class="w-16 h-16 object-cover rounded">
+                    <img src="{{ asset('storage/images' . $product->gambar) }}" alt="{{ $product->gambar }}" class="w-16 h-16 object-cover rounded">
                 </td>
                 <td class="px-6 py-4 whitespace-nowrap">{{ $product->kategori }}</td>
-                <td class="px-6 py-4 whitespace-nowrap flex gap-2">
-                    <form action="{{ route('dashboard.product.destroy', $product) }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus produk ini?')">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="cursor-pointer px-3 py-1 text-sm font-medium text-red-600 bg-red-100 rounded hover:bg-red-200">🗑️ Delete</button>
-                    </form>
-                    <a href="{{ route('dashboard.product.edit', $product) }}" class="cursor-pointer px-3 py-1 text-sm font-medium text-yellow-600 bg-yellow-100 rounded hover:bg-yellow-200">✏️ Edit</a>
+                <td class="px-6 py-4 whitespace-nowrap flex gap-2 items-center h-20">
+                    <div class="flex gap-10">
+                        <form action="{{ route('dashboard.product.destroy', $product) }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus produk ini?')">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="cursor-pointer px-3 py-1 text-sm font-medium text-red-600 bg-red-100 rounded hover:bg-red-200">🗑️ Delete</button>
+                        </form>
+                        <a href="{{ route('dashboard.product.edit', $product) }}" class="cursor-pointer px-3 py-1 text-sm font-medium text-yellow-600 bg-yellow-100 rounded hover:bg-yellow-200">✏️ Edit</a>
+                    </div>
                 </td>
             </tr>
             @endforeach
