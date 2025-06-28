@@ -79,6 +79,13 @@
             <hr class="w-1/4 border" />
         </div>
 
+        {{-- Form Login sebagai Guest (terpisah) --}}
+        <form method="POST" action="{{ route('login.guest') }}">
+            @csrf
+            <button type="submit" class="w-full bg-[#E1AD61] text-white py-2 rounded mt-2">
+                Login sebagai guest
+            </button>
+        </form>
 
         <p class="text-sm text-center text-gray-600 mt-6">
             Belum Punya Akun?? <a href="{{ route('register') }}" class="font-semibold text-[#4B372F] hover:underline">Daftar </a>
@@ -86,25 +93,3 @@
     </div>
 </div>
 @endsection
-<script>
-    function togglePassword(inputId, el) {
-        const input = document.getElementById(inputId);
-        const isPassword = input.type === "password";
-        input.type = isPassword ? "text" : "password";
-
-        // Ganti icon (opsional - tetap pakai icon yang sama di sini)
-        el.innerHTML = isPassword
-            ? `<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 
-                    0-8.268-2.943-9.542-7a9.973 9.973 0 012.174-3.338M9.88 
-                    9.88a3 3 0 104.24 4.24" />
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 3l18 18" />
-               </svg>`
-            : `<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.522 
-                    5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 
-                    7-9.542 7-4.478 0-8.268-2.943-9.542-7z" />
-               </svg>`;
-    }
-</script>
