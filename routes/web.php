@@ -11,6 +11,10 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\ProdukDashboardController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\SliderController;
+use App\Models\Slider;
+use Illuminate\Support\Facades\Storage;
+
 
 // Routes LOGIN
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
@@ -81,6 +85,23 @@ Route::post('/login/guest', [LoginController::class, 'guestLogin'])->name('login
 // Logout sebagai guest
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 // end routes login sebagai guest
+
+
+// Routes Gambar Slider
+Route::get('/', function () {
+    $sliders = Slider::orderBy('id')->take(5)->get();
+
+    // Tambah null jika data kurang dari 5 agar tetap 5 slot
+    while ($sliders->count() < 5) {
+        $sliders->push(null);
+    }
+
+    return view('index_new', ['sliders' => $sliders]);
+});
+Route::post('/slider/update', [SliderController::class, 'update'])->name('slider.update');
+
+// END Routes Gambar Slider
+
 
 
 
