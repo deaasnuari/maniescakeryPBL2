@@ -8,19 +8,22 @@ use App\Models\User;
 class UserController extends Controller
 {
     public function index(Request $request)
-    {
-        $query = User::query();
+{
+    $query = User::query();
 
-        if ($request->has('search')) {
-            $search = $request->search;
-            $query->where('username', 'like', "%{$search}%")
-                  ->orWhere('email', 'like', "%{$search}%")
-                  ->orWhere('telepon', 'like', "%{$search}%");
-        }
-
-        $users = $query->get();
-        return view('pages.dashboard.users', compact('users'));
+    if ($request->has('search')) {
+        $search = $request->search;
+        $query->where('username', 'like', "%{$search}%")
+              ->orWhere('email', 'like', "%{$search}%")
+              ->orWhere('telepon', 'like', "%{$search}%");
     }
+
+    $users = $query->get();
+    $latestUsers = User::orderBy('created_at', 'desc')->take(5)->get(); // << Tambahkan ini
+
+    return view('pages.dashboard.users', compact('users', 'latestUsers'));
+}
+
 
     public function create()
     {
@@ -37,13 +40,15 @@ class UserController extends Controller
             'password' => 'required|min:6',
         ]);
 
-        User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'telepon' => $request->telepon,
-            'username' => $request->username,
-            'password' => bcrypt($request->password),
-        ]);
+        User::create([ 
+        'name' => $request->name,
+        'email' => $request->email,
+        'telepon' => $request->telepon,
+        'username' => $request->username,
+        'password' => bcrypt($request->password),
+        'created_at' => now(), // << Tambahkan ini
+    ]);
+
 
         return redirect()->route('usersdashboard')->with('success', 'User berhasil ditambahkan!');
     }
