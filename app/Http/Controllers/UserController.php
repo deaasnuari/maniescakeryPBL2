@@ -46,7 +46,8 @@ class UserController extends Controller
         'telepon' => $request->telepon,
         'username' => $request->username,
         'password' => bcrypt($request->password),
-        'created_at' => now(), // << Tambahkan ini
+        'created_at' => now(), 
+        'link_instagram' => $request->link_instagram,
     ]);
 
 
