@@ -56,40 +56,7 @@ KELAS: IF 2 A Malam
 </div>
 
 
-{{-- TABEL --}}
-<div class="w-full bg-white px-8 py-6 space-y-6 rounded-xl shadow-xl mt-8">
- <!-- Tabel User-->
-    <div class="bg-[#FAF4EF] rounded-xl p-6 shadow-md border border-[#E4D9CC] hover:shadow-lg transition">
-        <div class="flex items-center justify-between mb-4">
-            <h3 class="text-lg font-semibold text-[#5D3A00]">👥 User Terbaru</h3>
-        </div>
-        <table class="w-full text-sm text-[#4B3A2C]">
-            <thead>
-                <tr class="text-left uppercase text-[#7A5C3E] tracking-wider bg-[#EFE3D8]">
-                    <th class="py-3 px-4 rounded-tl-xl text-center">Nama</th>
-                    <th class="py-3 px-4 text-center">Email</th>
-                    <th class="py-3 px-4 text-center">Username</th>
-                    <th class="py-3 px-4 text-center">No HP</th>
-                    <th class="py-3 px-4 rounded-tr-xl text-center">Tanggal Bergabung</th>
-                </tr>
-            </thead>
-            <tbody class="divide-y divide-[#E0D2C3]">
-    @foreach ($latestUsers as $user)
-        <tr class="hover:bg-[#F4ECE4] transition">
-            <td class="py-3 px-4 text-center">{{ $user->username }}</td>
-            <td class="py-3 px-4 text-center">{{ $user->email }}</td>
-            <td class="py-3 px-4 text-center">{{ $user->username }}</td>
-            <td class="py-3 px-4 text-center">{{ $user->telepon }}</td>
-            <td class="py-3 px-4 text-center">
-            {{ $user->created_at ? date('Y-m-d', strtotime($user->created_at)) : '-' }}
-        </td>
-        </tr>
-    @endforeach
-</tbody>
-        </table>
-    </div>
-
- <!-- Tabel Produk-->
+<!-- Tabel Produk-->
     <div class="bg-[#FAF4EF] rounded-xl p-6 shadow-md border border-[#E4D9CC] hover:shadow-lg transition">
         <div class="flex items-center justify-between mb-4">
             <h3 class="text-lg font-semibold text-[#5D3A00]">🍰 Produk Terbaru</h3>
@@ -118,14 +85,50 @@ KELAS: IF 2 A Malam
 </div>
 
 
-{{-- <!-- Riwayat Aktivitas (Timeline) -->
-<div class="bg-white rounded-xl p-6 shadow-md border border-gray-100 mt-6">
+{{-- TABEL --}}
+<div class="w-full bg-white px-8 py-6 space-y-6 rounded-xl shadow-xl mt-8">
+ <!-- Tabel User-->
+    <div class="bg-[#FAF4EF] rounded-xl p-6 shadow-md border border-[#E4D9CC] hover:shadow-lg transition">
+        <div class="flex items-center justify-between mb-4">
+            <h3 class="text-lg font-semibold text-[#5D3A00]">👥 User Terbaru</h3>
+        </div>
+        <table class="w-full text-sm text-[#4B3A2C]">
+            <thead>
+                <tr class="text-left uppercase text-[#7A5C3E] tracking-wider bg-[#EFE3D8]">
+                    <th class="py-3 px-4 rounded-tl-xl text-center">Nama</th>
+                    <th class="py-3 px-4 text-center">Email</th>
+                    <th class="py-3 px-4 text-center">Username</th>
+                    <!-- <th class="py-3 px-4 text-center">No HP</th> -->
+                    <th class="py-3 px-4 rounded-tr-xl text-center">Tanggal Bergabung</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-[#E0D2C3]">
+    @foreach ($latestUsers as $user)
+        <tr class="hover:bg-[#F4ECE4] transition">
+            <td class="py-3 px-4 text-center">{{ $user->username }}</td>
+            <td class="py-3 px-4 text-center">{{ $user->email }}</td>
+            <td class="py-3 px-4 text-center">{{ $user->username }}</td>
+            <!-- <td class="py-3 px-4 text-center">{{ $user->telepon }}</td> -->
+            <td class="py-3 px-4 text-center">
+            {{ $user->created_at ? date('Y-m-d', strtotime($user->created_at)) : '-' }}
+        </td>
+        </tr>
+    @endforeach
+</tbody>
+        </table>
+    </div>
+
+ 
+
+
+<!-- riwayat aktivitas -->
+<!-- <div class="bg-white rounded-xl p-6 shadow-md border border-gray-100 mt-6">
     <div class="flex items-center justify-between mb-6">
         <h3 class="text-lg font-semibold text-gray-800">Riwayat Aktivitas</h3>
         <i class="fas fa-clock text-[#8B5E3C] text-xl"></i>
     </div>
     <div class="relative pl-4 border-l-4 border-[#C8B6A6] space-y-6">
- <!-- Act 1 -->
+ Act 1
         <div class="relative pl-4">
             <div class="absolute left-[-0.63rem] top-1 w-4 h-4 bg-[#8B5E3C] border-2 border-white rounded-full shadow"></div>
             <p class="text-sm text-gray-700">
@@ -134,7 +137,7 @@ KELAS: IF 2 A Malam
             <span class="text-xs text-gray-500">01 Mei 2025 • 08:45</span>
         </div>
 
- <!-- Act 2 -->
+ Act 2
         <div class="relative pl-4">
             <div class="absolute left-[-0.63rem] top-1 w-4 h-4 bg-[#8B5E3C] border-2 border-white rounded-full shadow"></div>
             <p class="text-sm text-gray-700">
@@ -143,7 +146,7 @@ KELAS: IF 2 A Malam
             <span class="text-xs text-gray-500">30 April 2025 • 16:20</span>
         </div>
 
- <!-- Act 3 -->
+ Act 3
         <div class="relative pl-4">
             <div class="absolute left-[-0.63rem] top-1 w-4 h-4 bg-[#8B5E3C] border-2 border-white rounded-full shadow"></div>
             <p class="text-sm text-gray-700">
@@ -152,9 +155,9 @@ KELAS: IF 2 A Malam
             <span class="text-xs text-gray-500">30 April 2025 • 14:10</span>
         </div>
     </div>
-</div> --}}
+</div>  -->
 
 
-{{-- END Content --}}
+{{-- END Content --}} 
 
 @endsection 

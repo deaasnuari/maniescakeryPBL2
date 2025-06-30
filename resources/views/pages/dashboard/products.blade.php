@@ -112,6 +112,13 @@
                     @endif
                 </div>
 
+                <!--Link instagram -->
+                <label for="link_instagram" class="block text-sm font-medium">Link Instagram</label>
+                <input type="text" name="link_instagram" id="link_instagram" class="form-input w-full" placeholder="https://www.instagram.com/p/xxxx" value="{{ old('link_instagram', $product->link_instagram ?? '') }}">
+
+>
+                    
+
                 <!-- Tombol -->
                 <div class="flex justify-end gap-2">
                     <a href="{{ route('dashboard.product.index') }}" class="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300">Batal</a>
@@ -135,6 +142,10 @@
                 <th class="w-1/5 px-6 py-3 text-left">Harga</th>
                 <th class="w-1/5 px-6 py-3 text-left">Gambar</th>
                 <th class="w-1/5 px-6 py-3 text-left">Kategori</th>
+                <th class="w-1/5 px-6 py-3 text-left">Instagram</th>
+
+
+               
                 <th class="w-1/5 px-6 py-3 text-left">Aksi</th>
             </tr>
         </thead>
@@ -148,6 +159,14 @@
                     <img src="{{ asset('storage/' . $product->gambar) }}" alt="{{ $product->gambar }}" class="w-16 h-16 object-cover rounded">
                 </td>
                 <td class="px-6 py-4 whitespace-nowrap">{{ $product->kategori }}</td>
+                <td class="px-6 py-4 whitespace-nowrap">
+                @if ($product->link_instagram)
+                    <a href="{{ $product->link_instagram }}" class="text-blue-600 underline" target="_blank">Link</a>
+                @else
+                    
+                @endif
+            </td>
+
                 <td class="px-6 py-4 whitespace-nowrap flex gap-2 items-center h-20">
                     <div class="flex gap-10">
                         <form action="{{ route('dashboard.product.destroy', $product) }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus produk ini?')">

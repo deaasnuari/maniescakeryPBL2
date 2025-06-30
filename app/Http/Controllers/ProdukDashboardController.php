@@ -28,6 +28,8 @@ class ProdukDashboardController extends Controller
             'harga' => 'required|numeric|min:0',
             'kategori' => 'required|string|max:255',
             'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'link_instagram' => 'nullable|url|starts_with:https://www.instagram.com/',
+
         ]);
 
         // Handle file upload
@@ -40,13 +42,15 @@ class ProdukDashboardController extends Controller
 
         // Create new product
         Produk::create([
-            'nama' => $request->nama,
-            'deskripsi' => $request->deskripsi,
-            'harga' => $request->harga,
-            'kategori' => $request->kategori,
-            'gambar' => $gambarName,
-            'status' => true,
-        ]);
+    'nama' => $request->nama,
+    'deskripsi' => $request->deskripsi,
+    'harga' => $request->harga,
+    'kategori' => $request->kategori,
+    'gambar' => $gambarName,
+    'status' => true,
+    'link_instagram' => $request->link_instagram,
+]);
+
 
         return redirect()->back()->with('success', 'Produk berhasil ditambahkan!');
     }
@@ -75,14 +79,21 @@ class ProdukDashboardController extends Controller
             'harga' => 'required|numeric|min:0',
             'kategori' => 'required|string|max:255',
             'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            
         ]);
 
-        $data = [
-            'nama' => $request->nama,
-            'deskripsi' => $request->deskripsi,
-            'harga' => $request->harga,
-            'kategori' => $request->kategori,
-        ];
+       $data = [
+    'nama' => $request->nama,
+    'deskripsi' => $request->deskripsi,
+    'harga' => $request->harga,
+    'kategori' => $request->kategori,
+    'link_instagram' => $request->link_instagram,
+];
+
+
+        $product->update($data);
+
+
 
         // Handle file upload if new image is provided
         if ($request->hasFile('gambar')) {

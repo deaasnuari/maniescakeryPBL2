@@ -17,17 +17,8 @@
             <a href="{{ route('produk.index', 'Brownies') }}" class="py-1 px-4 hover:text-[#DFAC6B] duration-100">Product</a>
             <a href="/about_us" class="py-1 px-4 hover:text-[#DFAC6B] duration-100">About Us</a>
 
-
             @auth
-                
-            @if (Auth::user()->role === 'customer')
-            <a href="/profile" class="py-1 px-4 hover:text-[#DFAC6B] duration-100">Profil</a>
-                
-            @endif
-            @endauth
-
-            @auth
-                @if (Auth::user()->role === 'admin')
+                @if (Auth::user()->role === 'superadmin')
                     <a href="/dashboard" class="py-1 px-4 hover:text-[#DFAC6B] duration-100">Dashboard</a>
                 @endif
 

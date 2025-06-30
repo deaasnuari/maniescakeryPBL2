@@ -33,7 +33,7 @@
             <tr>
                 <th class="px-6 py-3 text-left w-1/5">Name</th>
                 <th class="px-6 py-3 text-left w-1/4">Email</th>
-                <th class="px-6 py-3 text-left w-1/5">Telephone</th>
+                <!-- <th class="px-6 py-3 text-left w-1/5">Telephone</th> -->
                 <th class="px-6 py-3 text-left w-1/5">Username</th>
                 <th class="px-6 py-3 text-left w-1/5">Action</th>
             </tr>
@@ -43,7 +43,7 @@
             <tr class="hover:bg-gray-100">
                 <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">{{ $user->username }}</td>
                 <td class="px-6 py-4 whitespace-nowrap">{{ $user->email }}</td>
-                <td class="px-6 py-4 whitespace-nowrap">{{ $user->telepon }}</td>
+                <!-- <td class="px-6 py-4 whitespace-nowrap">{{ $user->telepon }}</td> -->
                 <td class="px-6 py-4 whitespace-nowrap">{{ $user->username }}</td>
                 <td class="px-6 py-4 whitespace-nowrap flex gap-2">
                     <button type="button" data-modal-target="editModal{{ $user->id }}" data-modal-toggle="editModal{{ $user->id }}" class="cursor-pointer px-3 py-1 text-sm font-medium text-blue-600 bg-blue-100 rounded hover:bg-blue-200 inline-flex items-center gap-1">✏️ Edit</button>
@@ -75,10 +75,10 @@
                                             <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
                                             <input type="email" name="email" value="{{ $user->email }}" required class="w-full border border-gray-300 p-2 rounded">
                                         </div>
-                                        <div class="mb-4">
+                                        <!-- <div class="mb-4">
                                             <label class="block text-sm font-medium text-gray-700 mb-1">Telephone</label>
                                             <input type="text" name="telepon" value="{{ $user->telepon }}" class="w-full border border-gray-300 p-2 rounded">
-                                        </div>
+                                        </div> -->
                                         <div class="flex justify-end gap-2">
                                             <button type="button" data-modal-hide="editModal{{ $user->id }}" class="cursor-pointer px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded hover:bg-gray-200">Cancel</button>
                                             <button type="submit" class="cursor-pointer px-4 py-2 text-sm text-white bg-blue-600 rounded hover:bg-blue-700">Simpan</button>
