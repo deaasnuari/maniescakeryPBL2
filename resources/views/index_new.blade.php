@@ -152,7 +152,7 @@
     <br>
     <section class="grid grid-cols-2 grid-rows-2 gap-x-8">
       <div class="relative group overflow-hidden rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform">
-        <a href="products">
+        <a href="{{ route('produk.index', 'Cookies') }}">
           <img src="{{ asset('assets/Cookies-M.png') }}" alt="Cookies" class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110">
           <div class="hover:bg-black/30 w-full h-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center flex-col text-center text-white">
             <h2 class="text-5xl">Cookies</h2>
@@ -161,7 +161,7 @@
         </a>
       </div>
       <div class="relative group overflow-hidden rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform">
-        <a href="products">
+        <a href="{{ route('produk.index', 'Brownies') }}">
           <img src="{{ asset('assets/Brownies-M.png') }}" alt="Cookies" class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110">
           <div class="hover:bg-black/30 w-full h-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center flex-col text-center text-white">
             <h2 class="text-5xl">Brownies</h2>
@@ -170,7 +170,7 @@
         </a>
       </div>
       <div class="relative group overflow-hidden rounded-lg shadow-xl hover:shadow-2xl mb-6 transition-all duration-300 transform">
-        <a href="products">
+        <a href="{{ route('produk.index', 'Cake') }}">
           <img src="{{ asset('assets/Cake-M.png') }}" alt="Cookies" class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110">
           <div class="hover:bg-black/30 w-full h-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center flex-col text-center text-white">
             <h2 class="text-5xl">Cake</h2>
@@ -179,7 +179,7 @@
         </a>
       </div>
        <div class="relative group overflow-hidden rounded-lg shadow-xl hover:shadow-2xl mb-6 transition-all duration-300 transform">
-        <a href="products">
+        <a href="{{ route('produk.index', 'Hampers') }}">
           <img src="{{ asset('assets/Hampers-M.png') }}" alt="Cookies" class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110">
           <div class="hover:bg-black/30 w-full h-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center flex-col text-center text-white">
             <h2 class="text-5xl">Hampers</h2>
