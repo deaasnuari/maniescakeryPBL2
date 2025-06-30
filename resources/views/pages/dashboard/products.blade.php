@@ -142,7 +142,7 @@
             @foreach($products as $product)
             <tr class="hover:bg-gray-100">
                 <td class="px-6 py-4 whitespace-nowrap">{{ $product->nama }}</td>
-                <td class="px-6 py-4 whitespace-wrap">{{  $product->gambar }}</td>
+                <td class="px-6 py-4 whitespace-wrap">{{  $product->deskripsi }}</td>
                 <td class="px-6 py-4 whitespace-nowrap">Rp {{ number_format($product->harga, 0, ',', '.') }}</td>
                 <td class="px-6 py-4 whitespace-nowrap">
                     <img src="{{ asset('storage/' . $product->gambar) }}" alt="{{ $product->gambar }}" class="w-16 h-16 object-cover rounded">
