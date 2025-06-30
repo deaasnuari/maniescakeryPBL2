@@ -67,7 +67,7 @@ KELAS: IF 2 A Malam
                     <th class="py-3 px-4 rounded-tl-xl text-center">Nama Produk</th>
                     <th class="py-3 px-4 text-center">Kategori</th>
                     <th class="py-3 px-4 text-center">Jumlah Ulasan</th>
-                    <th class="py-3 px-4 rounded-tr-xl text-center">Tanggal l Ditambahkan</th>
+                    <th class="py-3 px-4 rounded-tr-xl text-center">Tanggal Ditambahkan</th>
                 </tr>
             </thead>
             <tbody class="divide-y divide-[#E0D2C3]">
