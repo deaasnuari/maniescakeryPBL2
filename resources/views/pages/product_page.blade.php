@@ -28,7 +28,7 @@
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
         @foreach ($products as $produk)
             @include('components.catalogcard')
-            @include('components.review_modal')
+            {{-- @include('components.review_modal') --}}
         @endforeach
 
         <!-- Card admin-only -->
