@@ -10,12 +10,18 @@ class ProdukController extends Controller
 {
     public function index($param)
     {
-        $products = Produk::where('kategori', $param)->get();
-        $categories = Kategori::All();
+        if ($param == "*") {
+            $products = Produk::all(); // tampilkan semua produk
+        } else {
+            $products = Produk::where('kategori', $param)->get(); // filter berdasarkan kategori
+        }
+
+        $categories = Kategori::all();
         $selectedCategories = $param;
 
         return view('pages.product_page', compact('products', 'categories', 'selectedCategories'));
     }
+
 
     public function produkDetail($id)
     {

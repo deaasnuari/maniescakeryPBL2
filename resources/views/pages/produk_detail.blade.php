@@ -6,7 +6,7 @@
     <div class="flex w-full gap-5">
         <div class="flex flex-col">
             <div class="min-w-70 rounded-xl overflow-hidden h-80 shadow-md border">
-                <img src="{{ asset('assets/CustomMatcha.jpg') }}" alt="Custom Matcha" class="object-cover w-full h-full">
+                <img src="{{ asset('storage/' . $produk->gambar) }}" alt="Custom Matcha" class="object-cover w-full h-full">
             </div>
             <br>
         </div>
@@ -28,29 +28,24 @@
                 
             <!-- link whatsapp -->
             @php
-                $hargaFormat = number_format($produk->harga, 0, ',', '.');
+                  $hargaFormat = number_format($produk->harga, 0, ',', '.');
 
-                $pesan = <<<EOT
-                Halo Manies Cakery 👋
+                  $pesan = "Halo Manies Cakery 👋\n\n" .
+                          "Saya ingin melakukan pemesanan produk berikut:\n\n" .
+                          "Nama Pembeli    : \n" .
+                          "🧁 Nama Produk : {$produk->nama}\n" .
+                          "💰 Harga       : Rp {$hargaFormat}\n" .
+                          "🔢 Jumlah      : \n" .
+                          "📅 Tanggal Kirim : \n" .
+                          "📍 Alamat Pengiriman :\n" .
+                          "(isi di sini)\n\n" .
+                          "🧾 Catatan Tambahan:\n" .
+                          "-\n\n" .
+                          "Mohon konfirmasi ketersediaan dan total pembayaran ya. Terima kasih 😊";
 
-                Saya ingin melakukan pemesanan produk berikut:
+                  $linkWa = 'https://wa.me/6289665314602?text=' . urlencode($pesan);
+              @endphp
 
-                Nama Pembeli    : 
-                🧁 Nama Produk : {$produk->nama}
-                💰 Harga       : Rp {$hargaFormat}
-                🔢 Jumlah      : 
-                📅 Tanggal Kirim : 
-                📍 Alamat Pengiriman :
-                (isi di sini)
-
-                🧾 Catatan Tambahan:
-                -
-
-                Mohon konfirmasi ketersediaan dan total pembayaran ya. Terima kasih 😊
-                EOT;
-
-                    $linkWa = 'https://wa.me/6289665314602?text=' . urlencode($pesan);
-                @endphp
 
             <a href="{{ $linkWa }}" target="_blank" class="flex items-center gap-5 bg-secondary py-4 px-4 text-white rounded-lg">
               <!-- Icon WhatsApp -->

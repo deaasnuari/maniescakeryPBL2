@@ -108,7 +108,7 @@
                     <label class="block text-sm font-medium text-gray-700">Gambar</label>
                     <input type="file" name="gambar" class="w-full">
                     @if($editStatus && $product->gambar)
-                        <img src="{{ asset('storage/images/' . $product->gambar) }}" class="w-20 h-20 mt-2 object-cover rounded border">
+                        <img src="{{ asset('storage/' . $product->gambar) }}" class="w-20 h-20 mt-2 object-cover rounded border">
                     @endif
                 </div>
 
