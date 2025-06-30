@@ -20,9 +20,10 @@ public function index()
     {
         $latestUsers = User::latest()->take(5)->get();
         $jumlahPengguna = User::count();
+        $jumlahProduk = Produk::count();
         $latestProducts = Produk::latest()->take(5)->get();
         
 
-        return view('pages.dashboard.index', compact('latestUsers', 'jumlahPengguna', 'latestProducts'));
+        return view('pages.dashboard.index', compact('latestUsers', 'jumlahPengguna', 'latestProducts', 'jumlahProduk'));
     }
 }

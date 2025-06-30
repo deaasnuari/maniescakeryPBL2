@@ -33,7 +33,7 @@ KELAS: IF 2 A Malam
                 </div>
                 <span class="text-gray-500 text-lg uppercase ml-4">Jumlah Produk</span>
             </div>
-            <div class="text-5xl font-extrabold text-[#493C32]">128</div>
+            <div class="text-5xl font-extrabold text-[#493C32]">{{ $jumlahProduk }}</div>
             <p class="text-sm text-gray-600 mt-3">Tolong tambah lagi Produknya
 
             </p>
