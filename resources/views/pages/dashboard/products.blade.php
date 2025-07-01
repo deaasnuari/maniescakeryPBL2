@@ -45,91 +45,122 @@
 </div>
 
 <!-- Modal Tambah/Edit Produk -->
-<div id="modalTambah" tabindex="-1" aria-hidden="true" class="{{ $editStatus ? '' : 'hidden' }} fixed top-0 left-0 right-0 z-50 flex items-center justify-center w-full h-screen bg-black/50">
-    <div class="relative w-full max-w-md p-4">
-        <div class="relative bg-white rounded-lg shadow">
-            <!-- Header -->
-            <div class="flex items-start justify-between p-4 border-b rounded-t border-gray-200">
-                <h3 class="text-xl font-semibold text-gray-900">
+<div id="modalTambah" tabindex="-1" aria-hidden="true"
+    class="{{ $editStatus ? '' : 'hidden' }} fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+    <div class="relative w-full max-w-4xl p-4">
+        <!-- Modal utama dibagi dua: header tetap, isi bisa discroll -->
+        <div class="bg-white rounded-lg shadow-lg max-h-[90vh] flex flex-col">
+            
+            <!-- Header modal, nempel di atas -->
+            <div class="flex items-center justify-between px-6 py-4 border-b border-gray-200">
+                <h3 class="text-xl font-bold text-gray-800">
                     {{ $editStatus ? 'Edit Produk' : 'Tambah Produk' }}
                 </h3>
-                <a href="{{ route('dashboard.product.index') }}" class="text-gray-400 hover:bg-gray-100 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center">
+                <a href="{{ route('dashboard.product.index') }}" class="text-gray-500 hover:text-gray-700">
                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 0 1 1.414 0L10 8.586l4.293-4.293a1 1 0 0 1 1.414 1.414L11.414 10l4.293 4.293a1 1 0 0 1-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 0 1-1.414-1.414L8.586 10 4.293 5.707a1 1 0 0 1 0-1.414z" clip-rule="evenodd"/>
+                        <path fill-rule="evenodd"
+                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 011.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                            clip-rule="evenodd" />
                     </svg>
                 </a>
             </div>
 
-            <!-- Form -->
-            <form class="p-6 space-y-4" action="{{ $editStatus ? route('dashboard.product.update', $product) : route('dashboard.product.store') }}" method="POST" enctype="multipart/form-data">
-                @csrf
-                @if($editStatus)
-                    @method('PUT')
-                @endif
+            <!-- Konten isi modal, bisa discroll kalau panjang -->
+            <div class="overflow-y-auto px-6 py-4">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Bagian form input di kiri -->
+                    <form class="space-y-4" action="{{ $editStatus ? route('dashboard.product.update', $product) : route('dashboard.product.store') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        @if($editStatus)
+                            @method('PUT')
+                        @endif
 
-                <!-- Nama Produk -->
-                <div>
-                    <label class="block text-sm font-medium text-gray-700">Nama Produk</label>
-                    <input type="text" name="nama" class="w-full border border-gray-300 rounded px-3 py-2" value="{{ $editStatus ? $product->nama : '' }}" required>
-                </div>
+                        <!-- Nama produk, gak boleh kosong -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Nama Produk</label>
+                            <input type="text" name="nama"
+                                class="w-full border border-gray-300 rounded px-3 py-2 focus:ring focus:ring-blue-200"
+                                value="{{ $editStatus ? $product->nama : '' }}" required>
+                        </div>
 
-                <!-- Deskripsi -->
-                <div>
-                    <label class="block text-sm font-medium text-gray-700">Deskripsi</label>
-                    <textarea name="deskripsi" class="w-full border border-gray-300 rounded px-3 py-2" rows="3" required>{{ $editStatus ? $product->deskripsi : '' }}</textarea>
-                </div>
+                        <!-- Deskripsi buat penjelasan produk -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Deskripsi</label>
+                            <textarea name="deskripsi"
+                                class="w-full border border-gray-300 rounded px-3 py-2 focus:ring focus:ring-blue-200"
+                                rows="3" required>{{ $editStatus ? $product->deskripsi : '' }}</textarea>
+                        </div>
 
-                <!-- Kategori -->
-                <!-- Kategori -->
-                <div>
-                    <label class="block text-sm font-medium text-gray-700">Kategori</label>
-                    <select name="kategori" class="w-full border border-gray-300 rounded px-3 py-2" required>
-                        <option value="">-- Pilih Kategori --</option>
-                        @foreach($categories as $kategori)
-                            @php
-                                $selectedKategori = old('kategori', $editStatus ? $product->kategori : '');
-                            @endphp
-                            <option value="{{ $kategori->nama }}" {{ $selectedKategori === $kategori->nama ? 'selected' : '' }}>
-                                {{ $kategori->nama }}
-                            </option>
-                        @endforeach
-                    </select>
-                </div>
+                        <!-- Pilih kategori yang udah tersedia -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Kategori</label>
+                            <select name="kategori"
+                                class="w-full border border-gray-300 rounded px-3 py-2 focus:ring focus:ring-blue-200"
+                                required>
+                                <option value="">-- Pilih Kategori --</option>
+                                @foreach($categories as $kategori)
+                                    @php
+                                        $selectedKategori = old('kategori', $editStatus ? $product->kategori : '');
+                                    @endphp
+                                    <option value="{{ $kategori->nama }}" {{ $selectedKategori === $kategori->nama ? 'selected' : '' }}>
+                                        {{ $kategori->nama }}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </div>
 
-                
-                <!-- Harga -->
-                <div>
-                    <label class="block text-sm font-medium text-gray-700">Harga</label>
-                    <input type="number" name="harga" class="w-full border border-gray-300 rounded px-3 py-2" value="{{ $editStatus ? $product->harga : '' }}" required>
-                </div>
+                        <!-- Masukkan harga produk -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Harga</label>
+                            <input type="number" name="harga"
+                                class="w-full border border-gray-300 rounded px-3 py-2 focus:ring focus:ring-blue-200"
+                                value="{{ $editStatus ? $product->harga : '' }}" required>
+                        </div>
 
-                <!-- Gambar -->
-                <div>
-                    <label class="block text-sm font-medium text-gray-700">Gambar</label>
-                    <input type="file" name="gambar" class="w-full">
+                        <!-- Link IG kalau mau promosiin -->
+                        <div>
+                            <label for="link_instagram" class="block text-sm font-medium text-gray-700">Link Instagram</label>
+                            <input type="text" name="link_instagram" id="link_instagram"
+                                class="w-full border border-gray-300 rounded px-3 py-2 focus:ring focus:ring-blue-200"
+                                placeholder="https://www.instagram.com/p/xxxx"
+                                value="{{ old('link_instagram', $product->link_instagram ?? '') }}">
+                        </div>
+
+                        <!-- Upload gambar, pastikan format aman -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Gambar Produk</label>
+                            <input type="file" name="gambar"
+                                class="w-full border border-gray-300 rounded px-3 py-2">
+                        </div>
+
+                        <!-- Tombol simpan & batal, wajib ada -->
+                        <div class="flex justify-end gap-2 pt-4">
+                            <a href="{{ route('dashboard.product.index') }}"
+                                class="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300">Batal</a>
+                            <button type="submit"
+                                class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+                                {{ $editStatus ? 'Update' : 'Simpan' }}
+                            </button>
+                        </div>
+                    </form>
+
+                    <!-- Preview gambar di kanan, kalau ada -->
                     @if($editStatus && $product->gambar)
-                        <img src="{{ asset('storage/' . $product->gambar) }}" class="w-20 h-20 mt-2 object-cover rounded border">
+                        <div class="flex items-center justify-center bg-gray-50 border border-dashed border-gray-300 rounded p-4">
+                            <div class="text-center">
+                                <p class="text-sm text-gray-700 mb-2">Preview Gambar</p>
+                                <img src="{{ asset('storage/' . $product->gambar) }}" class="w-60 h-60 object-cover rounded border">
+                            </div>
+                        </div>
                     @endif
+
                 </div>
-
-                <!--Link instagram -->
-                <label for="link_instagram" class="block text-sm font-medium">Link Instagram</label>
-                <input type="text" name="link_instagram" id="link_instagram" class="form-input w-full" placeholder="https://www.instagram.com/p/xxxx" value="{{ old('link_instagram', $product->link_instagram ?? '') }}">
-
->
-                    
-
-                <!-- Tombol -->
-                <div class="flex justify-end gap-2">
-                    <a href="{{ route('dashboard.product.index') }}" class="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300">Batal</a>
-                    <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
-                        {{ $editStatus ? 'Update' : 'Simpan' }}
-                    </button>
-                </div>
-            </form>
+            </div>
         </div>
     </div>
 </div>
+
+
 
 
 <!-- TABEL PRODUK -->

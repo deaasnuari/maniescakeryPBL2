@@ -30,6 +30,7 @@
                     id="username" 
                     required 
                     placeholder="Username"
+                    autocomplete="off"
                     class="block w-full p-4 text-base text-gray-900 bg-gray-200 border border-transparent rounded focus:ring-[#DFAC6B] focus:border-[#DFAC6B] focus:outline-none"
                 >
             </div>
@@ -42,6 +43,7 @@
                         id="password"
                         required 
                         placeholder="Password"
+                        autocomplete="off"
                         class="block w-full p-4 pr-12 text-base text-gray-900 bg-gray-200 border border-transparent rounded focus:ring-[#DFAC6B] focus:border-[#DFAC6B] focus:outline-none"
                     >
                     <span

@@ -12,12 +12,16 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable;
 
-    protected $table = 'user';  // nama tabel
-
-    public $timestamps = false;  // nonaktifkan timestamps
-
-   protected $fillable = ['username', 'email', 'telepon', 'password', 'role', 'gambar'];
-
-
+    protected $table = 'user'; 
+    
+    protected $fillable = ['username', 'email', 'telepon', 'password', 'role', 'gambar'];
+    
     protected $hidden = ['password'];
+
+    // public $timestamps = true;
+
+    public function setUpdatedAt($value)
+    {
+        // kosongin aja guyss
+    }
 }
