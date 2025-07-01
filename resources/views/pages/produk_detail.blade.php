@@ -64,32 +64,29 @@
     <div class="text-5xl font-bold text-secondary font-norican">Produk lainnya</div>
     <div class="py-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 w-full">
         <!-- Item Start -->
-        {{-- @foreach ([
+        @foreach ([
           ['title' => 'Cake', 'image' => 'Cake-M.png'],
           ['title' => 'Brownies', 'image' => 'Brownies-M.png'],
           ['title' => 'Cookies', 'image' => 'Cookies-M.png'],
           ['title' => 'Hampers', 'image' => 'Hampers-M.png'],
           ['title' => 'Small Cake', 'image' => 'Small-M.png']
-        ] as $item) --}}
-
-        @foreach ($categories as $kategori)  
+        ] as $item)
         <div class="relative group overflow-hidden rounded-2xl bg-white shadow-lg transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
-          <a href="products">
+          <a href="{{ route('produk.index', $item['title']) }}">
             <!-- Background blur -->
-            <img src="assets/Cake-M.png" alt="Cake-M.png" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+            <img src="{{ asset('assets/' . $item['image']) }}" alt="{{ $item['title'] }}" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
       
             <!-- Gradient Overlay -->
             <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/30 to-black/60 group-hover:backdrop-blur-sm transition-all duration-500"></div>
       
             <!-- Content Overlay -->
             <div class="absolute bottom-0 w-full p-4 text-center">
-              <h2 class="text-white text-2xl font-bold tracking-wide uppercase drop-shadow-md">{{ $kategori->nama }}</h2>
+              <h2 class="text-white text-2xl font-bold tracking-wide uppercase drop-shadow-md">{{ $item['title'] }}</h2>
               <span class="mt-2 inline-block px-4 py-1 text-sm text-white border border-white rounded-full bg-white/10 hover:bg-white/20 transition-colors duration-300">See More</span>
             </div>
           </a>
         </div>
         @endforeach
-        {{-- @endforeach --}}
       </div>
 </section>
 </div>

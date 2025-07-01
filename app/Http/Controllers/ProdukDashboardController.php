@@ -128,4 +128,26 @@ class ProdukDashboardController extends Controller
 
         return redirect()->back()->with('success', 'Produk berhasil dihapus!');
     }
+
+    public function addNewCategory(Request $request)
+    {
+        $request->validate([
+            'new-category' => 'required|string|max:255'
+        ]);
+
+        Kategori::create([
+            'nama' => $request->input('new-category')
+        ]);
+
+        return back()->with('success', 'Kategori berhasil ditambahkan.');
+    }
+
+    public function deleteCategory($nama)
+    {
+        $kategori = Kategori::where('nama', $nama)->firstOrFail();
+        $kategori->delete();
+
+        return back()->with('success', 'Kategori berhasil dihapus.');
+    }
+
 }
