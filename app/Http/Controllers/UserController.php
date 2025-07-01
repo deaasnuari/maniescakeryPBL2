@@ -8,21 +8,21 @@ use App\Models\User;
 class UserController extends Controller
 {
     public function index(Request $request)
-{
-    $query = User::query();
+    {
+        $query = User::query();
 
-    if ($request->has('search')) {
-        $search = $request->search;
-        $query->where('username', 'like', "%{$search}%")
-              ->orWhere('email', 'like', "%{$search}%")
-              ->orWhere('telepon', 'like', "%{$search}%");
+        if ($request->has('search')) {
+            $search = $request->search;
+            $query->where('username', 'like', "%{$search}%")
+                ->orWhere('email', 'like', "%{$search}%")
+                ->orWhere('telepon', 'like', "%{$search}%");
+        }
+
+        $users = $query->get();
+        $latestUsers = User::orderBy('created_at', 'desc')->take(5)->get(); // << Tambahkan ini
+
+        return view('pages.dashboard.users', compact('users', 'latestUsers'));
     }
-
-    $users = $query->get();
-    $latestUsers = User::orderBy('created_at', 'desc')->take(5)->get(); // << Tambahkan ini
-
-    return view('pages.dashboard.users', compact('users', 'latestUsers'));
-}
 
 
     public function create()

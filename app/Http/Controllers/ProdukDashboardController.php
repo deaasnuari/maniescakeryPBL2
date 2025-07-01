@@ -42,14 +42,14 @@ class ProdukDashboardController extends Controller
 
         // Create new product
         Produk::create([
-    'nama' => $request->nama,
-    'deskripsi' => $request->deskripsi,
-    'harga' => $request->harga,
-    'kategori' => $request->kategori,
-    'gambar' => $gambarName,
-    'status' => true,
-    'link_instagram' => $request->link_instagram,
-]);
+            'nama' => $request->nama,
+            'deskripsi' => $request->deskripsi,
+            'harga' => $request->harga,
+            'kategori' => $request->kategori,
+            'gambar' => $gambarName,
+            'status' => true,
+            'link_instagram' => $request->link_instagram,
+        ]);
 
 
         return redirect()->back()->with('success', 'Produk berhasil ditambahkan!');
@@ -83,12 +83,12 @@ class ProdukDashboardController extends Controller
         ]);
 
        $data = [
-    'nama' => $request->nama,
-    'deskripsi' => $request->deskripsi,
-    'harga' => $request->harga,
-    'kategori' => $request->kategori,
-    'link_instagram' => $request->link_instagram,
-];
+            'nama' => $request->nama,
+            'deskripsi' => $request->deskripsi,
+            'harga' => $request->harga,
+            'kategori' => $request->kategori,
+            'link_instagram' => $request->link_instagram,
+        ];
 
 
         $product->update($data);
@@ -109,8 +109,9 @@ class ProdukDashboardController extends Controller
         }
 
         $product->update($data);
+        $editStatus = false;
 
-        return redirect()->back()->with('success', 'Produk berhasil diupdate!');
+        return redirect()->route('dashboard.product.index')->with('success', 'Produk berhasil diupdate.');
     }
 
     /**
@@ -127,4 +128,26 @@ class ProdukDashboardController extends Controller
 
         return redirect()->back()->with('success', 'Produk berhasil dihapus!');
     }
+
+    public function addNewCategory(Request $request)
+    {
+        $request->validate([
+            'new-category' => 'required|string|max:255'
+        ]);
+
+        Kategori::create([
+            'nama' => $request->input('new-category')
+        ]);
+
+        return back()->with('success', 'Kategori berhasil ditambahkan.');
+    }
+
+    public function deleteCategory($nama)
+    {
+        $kategori = Kategori::where('nama', $nama)->firstOrFail();
+        $kategori->delete();
+
+        return back()->with('success', 'Kategori berhasil dihapus.');
+    }
+
 }
