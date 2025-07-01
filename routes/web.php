@@ -31,6 +31,7 @@ Route::post('/profile/update', [ProfileController::class, 'update'])->name('prof
 // Produk Catalog Routes
 Route::get('/products/category={param}', [ProdukController::class, 'index'])->name('produk.index');
 Route::get('/produk/{id}', [ProdukController::class, 'produkDetail'])->name('produk.detail');
+Route::get('/produk', [ProdukController::class, 'toggleStatus'])->name('produk.toggle-status');
 
 // Produk Catalog Routes
 Route::prefix('dashboard')->name('dashboard.')->group(function () {

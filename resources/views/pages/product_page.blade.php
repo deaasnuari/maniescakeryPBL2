@@ -25,21 +25,59 @@
 
     <br><hr><br>
 
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-        @foreach ($products as $produk)
-            @include('components.catalogcard')
-            {{-- @include('components.review_modal') --}}
-        @endforeach
+    <form method="POST" action="{{ route('produk.toggle-status') }}" id="cardStatusForm">
+        @csrf
+        @method('GET')
+        <input type="hidden" name="action" id="cardActionType">
 
-        <!-- Card admin-only -->
-        <div id="admin-only" data-modal-target="new-catalog" data-modal-toggle="new-catalog"
-            class="hidden border border-gray-300 rounded-lg p-4 flex flex-col items-center justify-center cursor-pointer hover:shadow-md">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
-            </svg>
-            <span class="mt-2 text-sm text-gray-600">Tambah Produk</span>
+        <div class="flex justify-between mb-6">
+            {{-- <div></div> --}}
+            <div class="flex gap-2">
+                <button
+                    type="button"
+                    onclick="enterEditMode()"
+                    id="editModeBtn"
+                    class="flex items-center gap-2 px-4 py-2 border border-yellow-500 text-yellow-600 hover:bg-yellow-500 hover:text-white transition rounded-md font-semibold shadow-sm">
+                    Edit Katalog
+                </button>
+
+                <button
+                    type="button"
+                    onclick="exitEditMode()"
+                    id="cancelEditBtn"
+                    class="hidden flex items-center gap-2 px-4 py-2 border border-gray-400 text-gray-600 hover:bg-gray-100 transition rounded-md font-semibold shadow-sm"
+                >
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                    Batal
+                </button>
+            </div>
         </div>
-    </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            @foreach ($products as $produk)
+                @include('components.catalogcard', ['produk' => $produk])
+            @endforeach
+        </div>
+
+        <div class="edit-target hidden fixed bottom-6 right-6 rounded-xl shadow-lg p-3 flex gap-2 z-50">
+            <button 
+                type="submit" 
+                onclick="setCardAction('enable')" 
+                class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition hover:cursor-pointer">
+                Enable
+            </button>
+
+            <button 
+                type="submit" 
+                onclick="setCardAction('disable')" 
+                class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg transition hover:cursor-pointer">
+                Disable
+            </button>
+        </div>
+
+    </form>
 </div>
 
 <!-- Modal Tambah Catalog -->
@@ -84,4 +122,77 @@
         </div>
     </div>
 </div>
+
+
+<script>
+    let editMode = false;
+
+    function enterEditMode() {
+        editMode = true;
+
+        // Tampilkan elemen untuk mode edit
+        document.querySelectorAll('.edit-target').forEach(el => el.classList.remove('hidden'));
+        document.getElementById('editModeBtn').classList.add('hidden');
+        document.getElementById('cancelEditBtn').classList.remove('hidden');
+
+        // Nonaktifkan semua link ke produk
+        document.querySelectorAll('.card-link').forEach(el => {
+            el.classList.add('pointer-events-none', 'select-none');
+        });
+    }
+
+    function exitEditMode() {
+        editMode = false;
+
+        // Sembunyikan elemen mode edit
+        document.querySelectorAll('.edit-target').forEach(el => el.classList.add('hidden'));
+        document.getElementById('editModeBtn').classList.remove('hidden');
+        document.getElementById('cancelEditBtn').classList.add('hidden');
+
+        // Reset semua checkbox
+        document.querySelectorAll('.card-checkbox').forEach(cb => cb.checked = false);
+        document.querySelectorAll('.selected-overlay').forEach(el => el.classList.add('hidden'));
+        document.querySelectorAll('.selected-check').forEach(el => el.classList.add('hidden'));
+        document.querySelectorAll('.card-container').forEach(card => card.classList.remove('ring-2', 'ring-blue-500'));
+
+        // Aktifkan kembali link ke produk
+        document.querySelectorAll('.card-link').forEach(el => {
+            el.classList.remove('pointer-events-none', 'select-none');
+        });
+    }
+
+    function handleCardClick(card) {
+        if (!editMode) return; // kalau bukan mode edit, jangan toggle checkbox
+
+        const checkbox = card.querySelector('.card-checkbox');
+        const overlay = card.querySelector('.selected-overlay');
+        const checkmark = card.querySelector('.selected-check');
+
+        checkbox.checked = !checkbox.checked;
+
+        if (checkbox.checked) {
+            overlay.classList.remove('hidden');
+            checkmark.classList.remove('hidden');
+            card.classList.add('ring-2', 'ring-blue-500');
+        } else {
+            overlay.classList.add('hidden');
+            checkmark.classList.add('hidden');
+            card.classList.remove('ring-2', 'ring-blue-500');
+        }
+    }
+
+    function setCardAction(action) {
+        document.getElementById('cardActionType').value = action;
+    }
+
+    document.getElementById('cardStatusForm').addEventListener('submit', function(e) {
+        const checked = document.querySelectorAll('.card-checkbox:checked');
+        if (checked.length === 0) {
+            e.preventDefault();
+            alert('Pilih minimal satu produk dulu, ya!');
+        }
+    });
+</script>
+
+
 @endsection
