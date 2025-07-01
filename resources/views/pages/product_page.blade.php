@@ -30,8 +30,8 @@
         @method('GET')
         <input type="hidden" name="action" id="cardActionType">
 
+         @if (Auth::check() && Auth::user()->role === 'admin')
         <div class="flex justify-between mb-6">
-            {{-- <div></div> --}}
             <div class="flex gap-2">
                 <button
                     type="button"
@@ -54,10 +54,14 @@
                 </button>
             </div>
         </div>
+        @endif
+
 
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             @foreach ($products as $produk)
+                @if ($produk->status)    
                 @include('components.catalogcard', ['produk' => $produk])
+                @endif
             @endforeach
         </div>
 
@@ -76,7 +80,6 @@
                 Disable
             </button>
         </div>
-
     </form>
 </div>
 
