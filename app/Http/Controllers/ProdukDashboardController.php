@@ -129,6 +129,7 @@ class ProdukDashboardController extends Controller
         return redirect()->back()->with('success', 'Produk berhasil dihapus!');
     }
 
+    //kategori produk
     public function addNewCategory(Request $request)
     {
         $request->validate([
