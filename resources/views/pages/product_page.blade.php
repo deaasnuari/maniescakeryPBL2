@@ -59,10 +59,24 @@
 
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             @foreach ($products as $produk)
-                @if ($produk->status)    
-                @include('components.catalogcard', ['produk' => $produk])
+                @if (!Auth::check())
+                    {{-- Belum login, tampilkan hanya produk yang aktif --}}
+                    @if ($produk->status)
+                        @include('components.catalogcard', ['produk' => $produk])
+                    @endif
+
+                @elseif (Auth::user()->role === 'admin')
+                    {{-- Admin dan Superadmin bisa lihat semua produk --}}
+                    @include('components.catalogcard', ['produk' => $produk])
+
+                @else
+                    {{-- User login biasa (bukan admin), hanya lihat produk aktif --}}
+                    @if ($produk->status)
+                        @include('components.catalogcard', ['produk' => $produk])
+                    @endif
                 @endif
             @endforeach
+
         </div>
 
         <div class="edit-target hidden fixed bottom-6 right-6 rounded-xl shadow-lg p-3 flex gap-2 z-50">
