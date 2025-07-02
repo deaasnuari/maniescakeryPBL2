@@ -19,6 +19,22 @@ class ProdukDashboardController extends Controller
         return view('pages.dashboard.products', compact('products', 'categories', 'editStatus'));
     }
 
+    public function search(Request $request)
+    {
+        $keyword = $request->input('keyword');
+
+        $products = Produk::where('nama', 'like', "%$keyword%")
+            ->orWhere('deskripsi', 'like', "%$keyword%")
+            ->orWhere('kategori', 'like', "%$keyword%")
+            ->latest()
+            ->get();
+
+        $categories = Kategori::all();
+        $editStatus = false;
+
+        return view('pages.dashboard.products', compact('products', 'categories', 'editStatus', 'keyword'));
+    }
+
     public function store(Request $request)
     {
         // Validasi input

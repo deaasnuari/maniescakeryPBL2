@@ -37,6 +37,7 @@ Route::get('/produk', [ProdukController::class, 'toggleStatus'])->name('produk.t
 Route::prefix('dashboard')->name('dashboard.')->group(function () {
     Route::get('/products', [ProdukDashboardController::class, 'index'])->name('product.index');
     Route::post('/products', [ProdukDashboardController::class, 'store'])->name('product.store');
+    Route::get('products/search', [ProdukDashboardController::class, 'search'])->name('product.search');
     Route::get('/products/{product}/edit', [ProdukDashboardController::class, 'edit'])->name('product.edit');
     Route::put('/products/{product}', [ProdukDashboardController::class, 'update'])->name('product.update');
     Route::delete('/products/{product}', [ProdukDashboardController::class, 'destroy'])->name('product.destroy');
