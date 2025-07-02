@@ -12,7 +12,7 @@ class ProdukDashboardController extends Controller
 {
     public function index()
     {
-        $products = Produk::all();
+        $products = Produk::latest()->take(25)->get();
         $categories = Kategori::all();
         $editStatus = false;
 

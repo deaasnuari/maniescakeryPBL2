@@ -66,7 +66,7 @@
                     @endif
 
                 @elseif (Auth::user()->role === 'admin')
-                    {{-- Admin dan Superadmin bisa lihat semua produk --}}
+                    {{-- Admin bisa lihat semua produk --}}
                     @include('components.catalogcard', ['produk' => $produk])
 
                 @else

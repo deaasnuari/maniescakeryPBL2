@@ -14,17 +14,58 @@
             <p class="text-2xl font-bold capitalize text-accent">{{ $produk->nama }}</p>
             <p>{{ $produk->deskripsi }}</p>
             <br>
-            <div class="flex gap-4 flex-col w-80 mt-4">
-              @if($produk->link_instagram)
-                <a href="{{ $produk->link_instagram }}" target="_blank"
+            <p class="text-2xl font-bold capitalize text-secondary">Rp. {{ number_format($produk->harga, 0, ',', '.') }}</p>
+            <br>
+            <div class="flex gap-4 mt-4">
+                {{-- <a href="{{ $produk->link_instagram }}" target="_blank"
                   class="flex items-center gap-5 bg-secondary py-4 px-4 text-white rounded-lg">
                     <!-- Icon Instagram -->
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="size-6">
                         <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.206.056 2.003.24 2.466.403a4.92 4.92 0 011.675 1.085 4.92 4.92 0 011.085 1.675c.163.463.347 1.26.403 2.466.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.056 1.206-.24 2.003-.403 2.466a4.92 4.92 0 01-1.085 1.675 4.92 4.92 0 01-1.675 1.085c-.463.163-1.26.347-2.466.403-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.206-.056-2.003-.24-2.466-.403a4.902 4.902 0 01-2.76-2.76c-.163-.463-.347-1.26-.403-2.466C2.175 15.747 2.163 15.367 2.163 12s.012-3.584.07-4.85c.056-1.206.24-2.003.403-2.466a4.902 4.902 0 012.76-2.76c.463-.163 1.26-.347 2.466-.403C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.741 0 8.332.013 7.052.07 5.775.127 4.828.315 4.003.634 3.148.96 2.44 1.416 1.757 2.1.996 2.862.54 3.57.213 4.425.059 4.94-.127 5.775-.184 7.052-.241 8.332-.254 8.741-.254 12s.013 3.668.07 4.948c.057 1.277.245 2.224.564 3.049.326.855.782 1.563 1.465 2.247.763.762 1.47 1.219 2.325 1.545.825.319 1.772.507 3.049.564 1.28.057 1.689.07 4.948.07s3.668-.013 4.948-.07c1.277-.057 2.224-.245 3.049-.564.855-.326 1.563-.782 2.247-1.465.762-.763 1.219-1.47 1.545-2.325.319-.825.507-1.772.564-3.049.057-1.28.07-1.689.07-4.948s-.013-3.668-.07-4.948c-.057-1.277-.245-2.224-.564-3.049-.326-.855-.782-1.563-1.465-2.247a5.935 5.935 0 00-2.325-1.545c-.825-.319-1.772-.507-3.049-.564C15.668.013 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z"/>
                     </svg>
                     <span>lihat di instagram</span>
+                </a> --}}
+                <a
+                  @if ($produk->link_instagram)
+                    href="{{ $produk->link_instagram }}"
+                    target="_blank"
+                  @else
+                    href="#"
+                    data-modal-target="noLinkModal"
+                    data-modal-toggle="noLinkModal"
+                  @endif
+                  class="flex items-center gap-5 bg-secondary py-4 px-4 text-white rounded-lg hover:bg-secondary/80 transition"
+                >
+                  <!-- Icon Instagram -->
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg" class="size-6">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.206.056 2.003.24 2.466.403a4.92 4.92 0 011.675 1.085 4.92 4.92 0 011.085 1.675c.163.463.347 1.26.403 2.466.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.056 1.206-.24 2.003-.403 2.466a4.92 4.92 0 01-1.085 1.675 4.92 4.92 0 01-1.675 1.085c-.463.163-1.26.347-2.466.403-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.206-.056-2.003-.24-2.466-.403a4.902 4.902 0 01-2.76-2.76c-.163-.463-.347-1.26-.403-2.466C2.175 15.747 2.163 15.367 2.163 12s.012-3.584.07-4.85c.056-1.206.24-2.003.403-2.466a4.902 4.902 0 012.76-2.76c.463-.163 1.26-.347 2.466-.403C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.741 0 8.332.013 7.052.07 5.775.127 4.828.315 4.003.634 3.148.96 2.44 1.416 1.757 2.1.996 2.862.54 3.57.213 4.425.059 4.94-.127 5.775-.184 7.052-.241 8.332-.254 8.741-.254 12s.013 3.668.07 4.948c.057 1.277.245 2.224.564 3.049.326.855.782 1.563 1.465 2.247.763.762 1.47 1.219 2.325 1.545.825.319 1.772.507 3.049.564 1.28.057 1.689.07 4.948.07s3.668-.013 4.948-.07c1.277-.057 2.224-.245 3.049-.564.855-.326 1.563-.782 2.247-1.465.762-.763 1.219-1.47 1.545-2.325.319-.825.507-1.772.564-3.049.057-1.28.07-1.689.07-4.948s-.013-3.668-.07-4.948c-.057-1.277-.245-2.224-.564-3.049-.326-.855-.782-1.563-1.465-2.247a5.935 5.935 0 00-2.325-1.545c-.825-.319-1.772-.507-3.049-.564C15.668.013 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z"/>
+                  </svg>
+                  <span>lihat di instagram</span>
                 </a>
-                @endif
+                <div id="noLinkModal" tabindex="-1" aria-hidden="true"
+                  class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto inset-0 max-h-full bg-black/20">
+                  <div class="relative w-full max-w-md max-h-full m-auto">
+                    <div class="relative bg-white rounded-lg shadow">
+                      <div class="p-6 text-center">
+                        <svg class="mx-auto mb-4 text-red-500 w-12 h-12" fill="none" stroke="currentColor"
+                          viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                        <h3 class="mb-5 text-lg font-normal text-gray-500">
+                          Maaf, link Instagram belum tersedia.
+                        </h3>
+                        <button data-modal-hide="noLinkModal" type="button"
+                          class="bg-primary hover:bg-primary/90 focus:ring-4 focus:outline-none focus:ring-primary font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                          Tutup
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
                 
             <!-- link whatsapp -->
             @php
