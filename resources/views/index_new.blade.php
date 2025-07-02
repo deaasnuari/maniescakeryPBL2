@@ -195,14 +195,14 @@
         <br>
         <div class="flex justify-between">
             @foreach ($produkFavorit as $produk)    
-            <div class="relative group overflow-hidden rounded-full size-70 shadow-xl hover:shadow-2xl hover:scale-90 transition-all duration-300 transform hover:cursor-pointer">
-                <a href="products">
-                <img src="{{ asset('storage/' . $produk->gambar) }}" alt="Cookies" class="w-full object-cover  transition-transform duration-500 group-hover:scale-110">
-                </a>
-                <div class="w-full h-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center flex-col text-center text-white">
-                <h2 class="text-xl">{{ $produk->nama }}</h2>
+            <a href="{{ route('produk.detail', $produk->id) }}">
+                <div class="relative group overflow-hidden rounded-full size-70 shadow-xl hover:shadow-2xl hover:scale-90 transition-all duration-300 transform hover:cursor-pointer">
+                    <img src="{{ asset('storage/' . $produk->gambar) }}" alt="Cookies" class="w-full object-cover  transition-transform duration-500 group-hover:scale-110">
+                    <div class="w-full h-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center flex-col text-center text-white">
+                        <h2 class="text-xl">{{ $produk->nama }}</h2>
+                    </div>
                 </div>
-            </div>
+            </a>
             @endforeach
         </div>
     </section>
