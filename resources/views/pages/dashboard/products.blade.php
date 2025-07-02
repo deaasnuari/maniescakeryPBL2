@@ -240,7 +240,7 @@
         <tbody class="bg-white divide-y divide-gray-200">
             @foreach($products as $product)
             <tr class="hover:bg-gray-100">
-                <td class="px-6 py-4 whitespace-nowrap">{{ $product->nama }}</td>
+                <td class="px-6 py-4 whitespace-wrap">{{ $product->nama }}</td>
                 <td class="px-6 py-4 whitespace-wrap truncate max-w-70">{{  $product->deskripsi }}</td>
                 <td class="px-6 py-4 whitespace-nowrap">Rp {{ number_format($product->harga, 0, ',', '.') }}</td>
                 {{-- <td class="px-6 py-4 whitespace-nowrap">
@@ -262,11 +262,7 @@
                             <button type="submit" class="cursor-pointer px-3 py-1 text-sm font-medium text-red-600 bg-red-100 rounded hover:bg-red-200">🗑️ Delete</button>
                         </form>
                         <a href="{{ route('dashboard.product.edit', $product) }}" class="cursor-pointer px-3 py-1 text-sm font-medium text-yellow-600 bg-yellow-100 rounded hover:bg-yellow-200">✏️ Edit</a>
-                        <a href="">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
-                            </svg>
-                        </a>
+                        @livewire('favourite-toggle', ['productId' => $product->id, 'isFavourite' => $product->favourit], key($product->id))
                     </div>
                 </td>
             </tr>
