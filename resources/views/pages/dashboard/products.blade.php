@@ -146,7 +146,7 @@
                             </button>
                         </div>
                     </form>
-
+                    
                     <!-- Preview gambar di kanan, kalau ada -->
                     @if($editStatus && $product->gambar)
                         <div class="flex items-center justify-center bg-gray-50 border border-dashed border-gray-300 rounded p-4">
