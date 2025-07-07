@@ -8,6 +8,9 @@
 @section('title', 'Manies Cakery - About Us')
 @section('content')
 
+<!-- Button kecil fixed di kiri atas -->
+<!--   -->
+
     <!-- Main Section -->
     <div class="max-w-5xl mx-auto px-6 md:px-12 py-8 space-y-16">
         <div class="max-w-5xl mx-auto px-6 md:px-12 py-8 space-y-16">

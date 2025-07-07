@@ -5,7 +5,7 @@
 @section('title', 'Users Dashboard')
 
 @section('content')
-<div class="text-center font-bold text-xl">Welcome to the Users Dashboard</div>
+{{-- <div class="text-center font-bold text-xl">Welcome to the Users Dashboard</div> --}}
 <h1 class="text-2xl font-bold mb-6 mt-4">User Dashboard</h1>
 
 <!-- Search Only -->

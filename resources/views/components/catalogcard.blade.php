@@ -1,27 +1,34 @@
-<div class="flex flex-col border border-gray-500 rounded overflow-hidden">
-  <a href="{{ route('produk.detail', $produk->id) }}" class="w-full h-fit">
-      <img src="{{ asset('storage/'. $produk->gambar) }}" alt="Custom Matcha" class="object-cover w-full h-55"/>
-      <div class="h-12 text-center flex items-center justify-center font-bold bg-white text-secondary">{{ $produk->nama }}</div>
-  </a>
-  <button type="submit" class="px-2 h-8 flex items-center justify-between bg-secondary text-white cursor-pointer" id="openModal">
-      <div class="flex gap-1">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="yellow" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
-            </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="yellow" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
-            </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="yellow" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
-            </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="yellow" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
-            </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
-            </svg>
-      </div>
-      <div>ulasan ></div>
-  </button>
-</div>
+<div 
+    class="relative border border-gray-500 rounded overflow-hidden cursor-pointer transition-all duration-200 card-container {{ $produk->status ? '' : 'opacity-50' }}"
+    onclick="handleCardClick(this)"
+>
+    <!-- Checkbox tersembunyi -->
+    <input type="checkbox" name="selected_products[]" value="{{ $produk->id }}" class="hidden card-checkbox">
 
+    <!-- Link ke detail produk -->
+    <a href="{{ route('produk.detail', $produk->id) }}" class="block card-link w-full h-fit">
+        <img src="{{ asset('storage/' . $produk->gambar) }}" alt="{{ $produk->nama }}" class="object-cover w-full h-55">
+        <div class="h-12 text-center flex items-center justify-center font-bold bg-white text-secondary">
+            {{ $produk->nama }}
+        </div>
+    </a>
+
+    <!-- Indikator Nonaktif -->
+    @if (!$produk->status)
+        <div class="absolute top-0 left-0 bg-red-600 text-white text-xs font-semibold px-2 py-1 rounded-br">
+            Nonaktif
+        </div>
+    @endif
+
+    <!-- Overlay saat dipilih -->
+    <div class="absolute inset-0 bg-blue-500/20 hidden selected-overlay rounded-lg ring-2 ring-blue-600"></div>
+
+    <!-- Centang di pojok kanan atas -->
+    <div class="absolute top-2 right-2 hidden selected-check">
+        <div class="w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center shadow-md">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+            </svg>
+        </div>
+    </div>
+</div>

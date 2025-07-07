@@ -18,7 +18,7 @@
 
     <div id="default-carousel" class="relative w-full" data-carousel="slide">
         <!-- Carousel wrapper -->
-      <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+      <div class="relative h-100 overflow-hidden rounded-lg md:h-130">
     @for ($i = 1; $i <= 5; $i++)
         @php
             $slider = \App\Models\Slider::find($i);
@@ -30,20 +30,20 @@
                      alt="Slider {{ $i }}">
             @else
                 <img src="{{ asset('assets/default.png') }}"
-                     class="absolute block w-full h-full object-cover opacity-30 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                     class="absolute block w-full h-full object-cover opacity-40 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                      alt="Default Slider {{ $i }}">
             @endif
         </div>
     @endfor
 </div>
         <!-- Slider indicators -->
-        <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
-            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
-            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
-        </div>
+         <div class="absolute z-40 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+        <button type="button" class="w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+        <button type="button" class="w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+        <button type="button" class="w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+        <button type="button" class="w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
+        <button type="button" class="w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
+    </div>
         <!-- Slider controls -->
         <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
             <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
@@ -139,7 +139,7 @@
             <p class="text-accent  text-3xl capitalize">RASAKAN LEZATNYA BAHAN PILIHAN! <br> Temukan Produk Kami</p><br>
             <p class="text-xl">Kami menyediakan berbagai varian kue lengkap dan kekinian, cocok untuk segala moment spesial Anda. Dengan bahan berkualitas dan cita rasa terbaik, kami juga siap memenuhi permintaan khusus sesuai keinginan pelanggan.</p>
             <br><br>
-            <a href="{{ route('catalog', '6') }}" class="italic tracking-wide rounded underline text-xl text-secondary">lihat produk manies cakery -></a>
+            <a href="{{ route('produk.index', '*') }}" class="italic tracking-wide rounded underline text-xl text-secondary">lihat produk manies cakery -></a>
         </div>
         <img src="{{ asset('assets/cake6.png') }}" alt="" class="w-120 rounded-2xl">
     </section>
@@ -152,7 +152,7 @@
     <br>
     <section class="grid grid-cols-2 grid-rows-2 gap-x-8">
       <div class="relative group overflow-hidden rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform">
-        <a href="products">
+        <a href="{{ route('produk.index', 'Cookies') }}">
           <img src="{{ asset('assets/Cookies-M.png') }}" alt="Cookies" class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110">
           <div class="hover:bg-black/30 w-full h-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center flex-col text-center text-white">
             <h2 class="text-5xl">Cookies</h2>
@@ -161,7 +161,7 @@
         </a>
       </div>
       <div class="relative group overflow-hidden rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform">
-        <a href="products">
+        <a href="{{ route('produk.index', 'Brownies') }}">
           <img src="{{ asset('assets/Brownies-M.png') }}" alt="Cookies" class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110">
           <div class="hover:bg-black/30 w-full h-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center flex-col text-center text-white">
             <h2 class="text-5xl">Brownies</h2>
@@ -170,7 +170,7 @@
         </a>
       </div>
       <div class="relative group overflow-hidden rounded-lg shadow-xl hover:shadow-2xl mb-6 transition-all duration-300 transform">
-        <a href="products">
+        <a href="{{ route('produk.index', 'Cake') }}">
           <img src="{{ asset('assets/Cake-M.png') }}" alt="Cookies" class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110">
           <div class="hover:bg-black/30 w-full h-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center flex-col text-center text-white">
             <h2 class="text-5xl">Cake</h2>
@@ -179,7 +179,7 @@
         </a>
       </div>
        <div class="relative group overflow-hidden rounded-lg shadow-xl hover:shadow-2xl mb-6 transition-all duration-300 transform">
-        <a href="products">
+        <a href="{{ route('produk.index', 'Hampers') }}">
           <img src="{{ asset('assets/Hampers-M.png') }}" alt="Cookies" class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110">
           <div class="hover:bg-black/30 w-full h-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center flex-col text-center text-white">
             <h2 class="text-5xl">Hampers</h2>
@@ -194,30 +194,16 @@
         <p class="text-center text-5xl font-norican text-accent capitalize">menu favourite</p>
         <br>
         <div class="flex justify-between">
-            <div class="relative group overflow-hidden rounded-full size-70 shadow-xl hover:shadow-2xl hover:scale-90 transition-all duration-300 transform hover:cursor-pointer">
-                <a href="products">
-                <img src="{{ asset('assets/CustomMatcha.jpg') }}" alt="Cookies" class="w-full object-cover  transition-transform duration-500 group-hover:scale-110">
-                </a>
-                <div class="w-full h-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center flex-col text-center text-white">
-                <h2 class="text-xl">cake 1</h2>
+            @foreach ($produkFavorit as $produk)    
+            <a href="{{ route('produk.detail', $produk->id) }}">
+                <div class="relative group overflow-hidden rounded-full size-70 shadow-xl hover:shadow-2xl hover:scale-90 transition-all duration-300 transform hover:cursor-pointer">
+                    <img src="{{ asset('storage/' . $produk->gambar) }}" alt="Cookies" class="w-full object-cover  transition-transform duration-500 group-hover:scale-110">
+                    <div class="w-full h-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center flex-col text-center text-white">
+                        <h2 class="text-xl">{{ $produk->nama }}</h2>
+                    </div>
                 </div>
-            </div>
-            <div class="relative group overflow-hidden rounded-full size-70 shadow-xl hover:shadow-2xl hover:scale-90 transition-all duration-300 transform hover:cursor-pointer">
-                <a href="products">
-                <img src="{{ asset('assets/CustomMatcha.jpg') }}" alt="Cookies" class="w-full object-cover transition-transform duration-500 group-hover:scale-110">
-                </a>
-                <div class="w-full h-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center flex-col text-center text-white">
-                <h2 class="text-xl">cake 2</h2>
-                </div>
-            </div>
-            <div class="relative group overflow-hidden rounded-full size-70 shadow-xl hover:shadow-2xl hover:scale-90 transition-all duration-300 transform hover:cursor-pointer">
-                <a href="products">
-                <img src="{{ asset('assets/CustomMatcha.jpg') }}" alt="Cookies" class="w-full object-cover transition-transform duration-500 group-hover:scale-110">
-                </a>
-                <div class="w-full h-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center flex-col text-center text-white">
-                <h2 class="text-xl">cake 3</h2>
-                </div>
-            </div>
+            </a>
+            @endforeach
         </div>
     </section>
     <br>

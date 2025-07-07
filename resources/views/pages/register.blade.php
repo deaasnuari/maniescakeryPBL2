@@ -32,6 +32,7 @@ nim: 3312411001 -->
                     id="username" 
                     required 
                     placeholder="Username"
+                    autocomplete="off"
                     class="w-full p-3 bg-gray-100 border border-transparent rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#DFAC6B]"
                 >
             </div>
@@ -43,6 +44,7 @@ nim: 3312411001 -->
                     id="email" 
                     required 
                     placeholder="Email"
+                    autocomplete="off"
                     class="w-full p-3 bg-gray-100 border border-transparent rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#DFAC6B]"
                 >
             </div>
@@ -55,6 +57,7 @@ nim: 3312411001 -->
                             name="password"
                             required
                             placeholder="password"
+                            autocomplete="off"
                             class="w-full p-3 pr-12 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-100 focus:ring-[#DFAC6B] focus:border-[#DFAC6B]"
                         >
                         <button type="button"
@@ -82,6 +85,7 @@ nim: 3312411001 -->
                             name="password_confirmation"
                             required
                             placeholder="konfirmasi password"
+                            autocomplete="off"
                             class="w-full p-3 pr-12 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-100 focus:ring-[#DFAC6B] focus:border-[#DFAC6B]"
                         >
                         <button type="button"

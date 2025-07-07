@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Produk;
 use App\Models\kategori;
+use Illuminate\Support\Facades\Auth;
 
 class ProdukController extends Controller
 {
@@ -27,6 +28,25 @@ class ProdukController extends Controller
     {
         $produk = Produk::findOrFail($id); // akan throw 404 kalau tidak ketemu
         return view('pages.produk_detail', compact('produk'));
+    }
+
+    public function toggleStatus(Request $request)
+    {
+        // if (in_array(Auth::user()->role, ['admin', 'superadmin'])) {
+        //     abort(403, 'Unauthorized');
+        // }
+
+        $ids = $request->input('selected_products', []);
+        $action = $request->input('action');
+        if (empty($ids)) {
+            return back()->with('error', 'Tidak ada produk yang dipilih.');
+        }
+
+        $status = $action === 'enable' ? 1 : 0;
+
+        Produk::whereIn('id', $ids)->update(['status' => $status]);
+
+        return back()->with('success', 'Status produk berhasil diperbarui.');
     }
 
 }

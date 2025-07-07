@@ -33,7 +33,7 @@ KELAS: IF 2 A Malam
                 </div>
                 <span class="text-gray-500 text-lg uppercase ml-4">Jumlah Produk</span>
             </div>
-            <div class="text-5xl font-extrabold text-[#493C32]">128</div>
+            <div class="text-5xl font-extrabold text-[#493C32]">{{ $jumlahProduk }}</div>
             <p class="text-sm text-gray-600 mt-3">Tolong tambah lagi Produknya
 
             </p>
@@ -66,8 +66,8 @@ KELAS: IF 2 A Malam
                 <tr class="text-left uppercase text-[#7A5C3E] tracking-wider bg-[#EFE3D8]">
                     <th class="py-3 px-4 rounded-tl-xl text-center">Nama Produk</th>
                     <th class="py-3 px-4 text-center">Kategori</th>
-                    <th class="py-3 px-4 text-center">Jumlah Ulasan</th>
-                    <th class="py-3 px-4 rounded-tr-xl text-center">Tanggal l Ditambahkan</th>
+                    <!-- <th class="py-3 px-4 text-center">Jumlah Ulasan</th> -->
+                    <th class="py-3 px-4 rounded-tr-xl text-center">Tanggal Ditambahkan</th>
                 </tr>
             </thead>
             <tbody class="divide-y divide-[#E0D2C3]">
@@ -75,7 +75,7 @@ KELAS: IF 2 A Malam
                 <tr class="hover:bg-[#F4ECE4] transition">
                     <td class="py-3 px-4 text-center">{{ $product->nama }}</td>
                     <td class="py-3 px-4 text-center">{{ $product->kategori }}</td>
-                    <td class="py-3 px-4 text-center">{{ '-' }}</td>
+                    <!-- <td class="py-3 px-4 text-center">{{ '-' }}</td> -->
                     <td class="py-3 px-4 text-center">{{ $product->created_at }}</td>
                 </tr>
                 @endforeach
