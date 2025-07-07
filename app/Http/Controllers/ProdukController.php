@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Produk;
 use App\Models\kategori;
+use Illuminate\Support\Facades\Auth;
 
 class ProdukController extends Controller
 {
@@ -31,9 +32,9 @@ class ProdukController extends Controller
 
     public function toggleStatus(Request $request)
     {
-        if (auth()->user()->role !== 'admin') {
-            abort(403, 'Unauthorized');
-        }
+        // if (in_array(Auth::user()->role, ['admin', 'superadmin'])) {
+        //     abort(403, 'Unauthorized');
+        // }
 
         $ids = $request->input('selected_products', []);
         $action = $request->input('action');
