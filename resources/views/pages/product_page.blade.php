@@ -30,7 +30,7 @@
         @method('GET')
         <input type="hidden" name="action" id="cardActionType">
 
-         @if (Auth::check() && Auth::user()->role === 'admin')
+        @if (Auth::check() && in_array(Auth::user()->role, ['admin', 'superadmin']))                          
         <div class="flex justify-between mb-6">
             <div class="flex gap-2">
                 <button
@@ -65,7 +65,7 @@
                         @include('components.catalogcard', ['produk' => $produk])
                     @endif
 
-                @elseif (Auth::user()->role === 'admin')
+                @elseif (Auth::check() && in_array(Auth::user()->role, ['admin', 'superadmin']))
                     {{-- Admin bisa lihat semua produk --}}
                     @include('components.catalogcard', ['produk' => $produk])
 
