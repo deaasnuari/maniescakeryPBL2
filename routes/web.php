@@ -6,8 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
-// use App\Http\Controllers\AboutController;
-// use App\Http\Controllers\AboutController;
+use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\ProdukDashboardController;
 use App\Http\Controllers\DashboardController;
@@ -51,8 +50,14 @@ Route::prefix('dashboard')->name('dashboard.')->group(function () {
     Route::delete('/products/{product}', [ProdukDashboardController::class, 'destroy'])->name('product.destroy');
 });
 
-Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
-Route::get('/register', [RegisterController::class, 'showRegisterForm'])->name('register');
+// Route About Us
+Route::get('/about-us', [AboutUsController::class, 'index'])->name('about.index');
+Route::get('/about-us/{id}/edit', [AboutUsController::class, 'edit'])->name('about.edit');
+Route::put('/about-us/{id}/update/about', [AboutUsController::class, 'updateAbout'])->name('about.update.about');
+Route::put('/about-us/{id}/update/philosophy', [AboutUsController::class, 'updatePhilosophy'])->name('about.update.philosophy');
+Route::put('/about-us/{id}/update/images', [AboutUsController::class, 'updateImages'])->name('about.update.images');
+Route::delete('/about-us/{id}/delete/{section}', [AboutUsController::class, 'destroyText'])->name('about.destroyText');
+
 
 Route::get('/usersdashboard', [UserController::class, 'index']);
 Route::get('/usersdashboard', [UserController::class, 'index'])->name('usersdashboard');
