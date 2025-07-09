@@ -49,7 +49,7 @@ Route::get('/about-us', [AboutUsController::class, 'index'])->name('about.index'
 Route::get('/about-us/{id}/edit', [AboutUsController::class, 'edit'])->name('about.edit');
 Route::put('/about-us/{id}/update/about', [AboutUsController::class, 'updateAbout'])->name('about.update.about');
 Route::put('/about-us/{id}/update/philosophy', [AboutUsController::class, 'updatePhilosophy'])->name('about.update.philosophy');
-Route::put('/about-us/{id}/update/images', [AboutUsController::class, 'updateImages'])->name('about.update.images');
+Route::put('/about-us/update/galeri', [AboutUsController::class, 'updateGaleri'])->name('about.update.galeri');
 Route::delete('/about-us/{id}/delete/{section}', [AboutUsController::class, 'destroyText'])->name('about.destroyText');
 
 

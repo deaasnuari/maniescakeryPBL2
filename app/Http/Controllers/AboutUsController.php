@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Models\AboutUs;
 
 class AboutUsController extends Controller
@@ -12,22 +13,27 @@ class AboutUsController extends Controller
         $about = AboutUs::first();
 
         if (!$about) {
-            // Buat record kosong pertama kali jika belum ada
+            
             $about = AboutUs::create([
-                'section_left' => '',
-                'section_right' => '',
+                'about_left' => '',
+                'about_right' => '',
+                'philosophy_left' => '',
+                'philosophy_right' => '',
             ]);
         }
 
-        return view('pages.about_us', compact('about'));
+        $galeriItems = AboutUs::whereNotNull('galeri')->take(6)->get();
+
+        return view('pages.about_us', compact('about', 'galeriItems'));    
     }
+
     public function updateAbout(Request $request, $id)
     {
         $about = AboutUs::findOrFail($id);
 
         $about->update([
-            'section_left' => $request->section_left,
-            'section_right' => $request->section_right,
+            'about_left' => $request->about_left,
+            'about_right' => $request->about_right,
         ]);
 
         return redirect()->back()->with('success', 'About Us updated successfully.');
@@ -44,31 +50,28 @@ class AboutUsController extends Controller
 
         return redirect()->back()->with('success', 'Philosophy updated successfully.');
     }
-    public function updateImages(Request $request, $id)
+   
+    public function updateGaleri(Request $request)
     {
-        $about = AboutUs::findOrFail($id);
+        $request->validate([
+            'images.*' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+        ]);
 
-        $fields = ['image_1', 'image_2', 'image_3', 'image_4', 'image_5', 'image_6'];
+        $galeriItems = AboutUs::whereNotNull('galeri')->take(6)->get();
 
-        foreach ($fields as $field) {
-            if ($request->hasFile($field)) {
-                $path = $request->file($field)->store('about_images', 'public');
-                $about->$field = $path;
+        foreach ($request->file('images', []) as $index => $image) {
+            if ($image && isset($galeriItems[$index])) {
+                $galeri = $galeriItems[$index];
+
+                if ($galeri->galeri) {
+                    Storage::delete('public/' . $galeri->galeri);
+                }
+
+                $path = $image->store('galeri', 'public');
+                $galeri->update(['galeri' => $path]);
             }
         }
 
-        $about->save();
-
-        return redirect()->back()->with('success', 'Images updated successfully.');
+        return redirect()->back()->with('success', 'Galeri berhasil diperbarui.');
     }
 }
-
-//     public function destroyText($id, $section)
-//     {
-//         $about = AboutUs::findOrFail($id);
-//         $about->$section = null; // kosongkan hanya field tertentu
-//         $about->save();
-
-//         return redirect()->back()->with('success', ucfirst($section).' Deleted');
-//     }
-// }

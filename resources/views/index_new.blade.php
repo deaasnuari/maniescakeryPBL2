@@ -128,7 +128,7 @@
             <p class="text-accent font-norican text-5xl capitalize">manies cakery</p><br>
             <p class="text-xl">Toko kue rumahan yang menyajikan berbagai pilihan manisan yang dibuat dengan sepenuh hati. Menyajikan berbagai brownies, kue kering, dan kue-kue istimewa lainnya dengan cita rasa lezat dan tekstur yang sempurna. Kami juga menawarkan kue-kue yang dapat disesuaikan dengan preferensi pribadi Anda, baik untuk ulang tahun, pernikahan, atau perayaan apa pun. Setiap pesanan dibuat segar untuk memastikan kualitas dan kepuasan dalam setiap gigitan.</p>
             <br><br>
-            <a href="{{ route('about_us') }}" class="bg-secondary px-10 py-2 text-white font-bold tracking-wide uppercase rounded">
+            <a href="/about-us" class="bg-secondary px-10 py-2 text-white font-bold tracking-wide uppercase rounded">
             about us</a>
         </div>
         <img src="{{ asset('assets/image.png') }}" alt="" class="w-120 rounded-2xl">
