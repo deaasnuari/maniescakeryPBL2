@@ -42,6 +42,8 @@ Route::prefix('dashboard')->name('dashboard.')->group(function () {
     Route::get('/products/{product}/edit', [ProdukDashboardController::class, 'edit'])->name('product.edit');
     Route::put('/products/{product}', [ProdukDashboardController::class, 'update'])->name('product.update');
     Route::delete('/products/{product}', [ProdukDashboardController::class, 'destroy'])->name('product.destroy');
+    Route::post('/kategori/tambah', [ProdukDashboardController::class, 'addNewCategory'])->name('kategori.tambah');
+    Route::delete('/kategori/{id}', [ProdukDashboardController::class, 'deleteCategory'])->name('kategori.hapus');
 });
 
 // Route About Us
