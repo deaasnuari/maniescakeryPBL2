@@ -13,6 +13,8 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SliderController;
 use App\Models\Slider;
 use Illuminate\Support\Facades\Storage;
+use App\Http\Controllers\Auth\ForgotPasswordController;
+
 
 // Routes LOGIN
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
@@ -92,11 +94,34 @@ Route::post('/logout', function () {
         return redirect('/login');
     })->name('logout');
 
-// Routes lupa password
+// // Routes lupa password
+// Route::get('/lupapassword', function () {
+//     return view('pages.lupa_password');
+// })->name('lupapassword');
+// // END Routes lupa password
+
+// // Routes reset password
+// Route::get('/resetpassword', function () {
+//     return view('pages.reset_password');
+// });
+
+
+
+
 Route::get('/lupapassword', function () {
     return view('pages.lupa_password');
 })->name('lupapassword');
-// END Routes lupa password
+
+Route::post('/lupapassword', [ForgotPasswordController::class, 'checkEmail'])->name('password.check');
+
+Route::get('/resetpassword', function () {
+    return view('pages.reset_password');
+})->name('resetpassword');
+
+Route::post('/resetpassword', [ForgotPasswordController::class, 'resetPassword'])->name('password.reset');
+
+
+
 
 Route::get('/about_us', function () {
     return view('pages.about_us');
