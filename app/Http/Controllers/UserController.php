@@ -29,7 +29,7 @@ class UserController extends Controller
     {
         return view('dashboard.users.create');
     }
-
+ 
     public function store(Request $request)
     {
         $request->validate([

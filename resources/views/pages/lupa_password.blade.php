@@ -21,14 +21,13 @@ nim: 3312411001 -->
             </div>
         @endif
 
-        <form method="POST" action="{{ route('register.post') }}">
+        <form method="POST" action="{{ route('password.check') }}">
 
             @csrf
         
-
             <div class="mb-6">
                 <input 
-                    type="lupapassword" 
+                    type="email" 
                     name="lupapassword" 
                     id="lupapassword" 
                     required 
@@ -39,7 +38,7 @@ nim: 3312411001 -->
 
             <div class="flex justify-center">
                 <button type="submit" class="text-white bg-[#4B372F] hover:bg-[#3a2b25] focus:ring-10 focus:outline-none focus:ring-[#DFAC6B] shadow-lg shadow-[#4B372F]/50 font-large rounded-lg text-sm px-15 py-3 text-center mb-2">
-                    Kirim
+                    Check email
                 </button>
             </div>
 
