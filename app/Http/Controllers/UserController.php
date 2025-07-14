@@ -29,7 +29,7 @@ class UserController extends Controller
     {
         return view('dashboard.users.create');
     }
-
+ 
     public function store(Request $request)
     {
         $request->validate([
@@ -65,14 +65,14 @@ class UserController extends Controller
         $request->validate([
             'username' => 'required|string|max:255',
             'email' => 'required|email',
-            'telepon' => 'required',
+            // 'telepon' => 'required',
         ]);
 
         $user = User::findOrFail($id);
         $user->update([
             'username' => $request->username,
             'email' => $request->email,
-            'telepon' => $request->telepon,
+            // 'telepon' => $request->telepon,
         ]);
 
         return redirect()->route('users.index')->with('success', 'User updated successfully.');
