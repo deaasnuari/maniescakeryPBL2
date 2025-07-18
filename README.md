@@ -3,49 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Cake & Brownies "Manies Cakery" - README</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Pacifico&display=swap" rel="stylesheet">
+  <title>Logo Polibatam</title>
   <style>
     body {
-      font-family: 'Poppins', sans-serif;
+      background-color: #f5faff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
       margin: 0;
-      padding: 30px;
-      background-color: #f9f9f9;
-      color: #333;
+      font-family: Arial, sans-serif;
+    }
+    .logo-container {
+      text-align: center;
+    }
+    img {
+      width: 300px;
+      height: auto;
     }
     h1 {
-      font-family: 'Pacifico', cursive;
-      color: #e05d5d;
-    }
-    h2 {
-      color: #444;
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 4px;
-    }
-    table {
-      border-collapse: collapse;
-      width: 100%;
-      margin-bottom: 20px;
-    }
-    table th, table td {
-      border: 1px solid #ccc;
-      padding: 10px;
-      text-align: left;
-    }
-    ul {
-      padding-left: 20px;
-    }
-    .section {
-      margin-bottom: 30px;
-    }
-    .tagline {
-      font-size: 1.2rem;
-      color: #555;
-      margin-top: -10px;
-      margin-bottom: 20px;
+      margin-top: 20px;
+      color: #0078b4;
     }
   </style>
 </head>
+<body>
+  <div class="logo-container">
+    <img src="b4268a1d-2f6f-48d6-a698-ef1bc85417bb.png" alt="Logo Polibatam">
+    <h1>Politeknik Negeri Batam</h1>
+  </div>
+</body>
+</html>
 <body>
 
   <h1>Cake & Brownies Logo</h1>
