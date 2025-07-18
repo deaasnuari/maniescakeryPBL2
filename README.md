@@ -10,7 +10,7 @@ CMS Website For Cake & Brownies **"Manies.Cakery"**
 
 ---
 
-## 📄 Project Best Learning Kelompok 2
+## 📄 Project Best Learning Kelompok 3
 
 | NIM        | Nama Lengkap          | Role                | Posisi       |
 |------------|------------------------|---------------------|--------------|
@@ -23,10 +23,9 @@ CMS Website For Cake & Brownies **"Manies.Cakery"**
 
 ## 🔧 Fitur yang Tersedia
 - Dashboard  
-- Menu  
+- Catalog  
 - About Us  
-- Contact  
-- Location  
+- Contact   
 
 ## 📦 Manajemen Produk
 - Daftar produk  
@@ -39,8 +38,7 @@ CMS Website For Cake & Brownies **"Manies.Cakery"**
 - Manajemen user & produk  
 
 ## 🧭 Navigasi & UI
-- Navbar responsif (desktop & mobile)  
-- Dropdown menu profil  
+- Navbar responsif (desktop & mobile)   
 - Tombol WhatsApp langsung ke admin  
 - Footer dengan informasi kontak  
 
@@ -96,4 +94,4 @@ Proyek ini masih dalam tahap pengembangan dan akan terus ditingkatkan dari sisi 
 
 ## 📌 Lisensi
 - Proyek ini dibuat untuk tujuan pembelajaran dalam kegiatan Project Based Learning dan bukan untuk penggunaan komersial.  
-- Semua hak cipta milik Kelompok 2 – Informatika 2A Malam, Polibatam.
+- Semua hak cipta milik Kelompok 3 – Informatika 2A Malam, Polibatam.
