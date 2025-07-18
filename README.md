@@ -46,9 +46,7 @@ CMS Website For Cake & Brownies **"Manies.Cakery"**
 ## 📄 Halaman
 - Home  
 - Products  
-- About  
-- Location  
-- Profile  
+- About    
 - Admin Dashboard  
 
 ## 📱 Responsivitas
@@ -58,7 +56,7 @@ CMS Website For Cake & Brownies **"Manies.Cakery"**
 
 ## 🔗 Integrasi
 - WhatsApp API  
-- Google Maps untuk lokasi toko  
+ 
 
 ## 🎨 Styling & UI/UX
 - Desain modern dengan Tailwind CSS  
