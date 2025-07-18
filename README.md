@@ -26,7 +26,7 @@ CMS Website For Cake & Brownies **"Manies.Cakery"**
 - Dashboard  
 - Catalog  
 - About Us  
-- Contact   
+   
 
 ## 📦 Manajemen Produk
 - Daftar produk  
