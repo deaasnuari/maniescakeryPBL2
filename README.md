@@ -88,8 +88,10 @@ CMS Website For Cake & Brownies **"Manies.Cakery"**
 
 ## 🚀 Catatan Pengembangan
 
-Proyek ini masih dalam tahap pengembangan dan akan terus ditingkatkan dari sisi fungsionalitas dan user experience.  
-**Stay tuned for more updates! 🌸**
+Proyek CMS Manies.Cakery saat ini berada dalam tahap pengembangan aktif.
+Kami berfokus pada peningkatan fitur, penyempurnaan tampilan antarmuka, dan optimalisasi pengalaman pengguna. 
+Kami berkomitmen untuk terus menyempurnakan sistem ini agar lebih bermanfaat, terutama bagi pelaku UMKM seperti Manies.Cakery.
+Update terbaru akan terus kami rilis secara berkala.
 
 ---
 
