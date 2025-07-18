@@ -1,5 +1,6 @@
 <p align="center">
-  <img src="logo-polibatam.png" alt="Logo Polibatam" width="300">
+  <img src="https://upload.wikimedia.org/wikipedia/id/b/b2/Polibatam.png" width="200">
+
 </p>
 
 <h1 align="center">Politeknik Negeri Batam</h1>
