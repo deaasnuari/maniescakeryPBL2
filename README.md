@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/id/b/b2/Polibatam.png" width="200">
+  <img src="logo-polibatam.png" width="200">
 
 </p>
 
