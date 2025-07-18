@@ -1,191 +1,99 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Logo Polibatam</title>
-  <style>
-    body {
-      background-color: #f5faff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      font-family: Arial, sans-serif;
-    }
-    .logo-container {
-      text-align: center;
-    }
-    img {
-      width: 300px;
-      height: auto;
-    }
-    h1 {
-      margin-top: 20px;
-      color: #0078b4;
-    }
-  </style>
-</head>
-<body>
-  <div class="logo-container">
-    <img src="b4268a1d-2f6f-48d6-a698-ef1bc85417bb.png" alt="Logo Polibatam">
-    <h1>Politeknik Negeri Batam</h1>
-  </div>
-</body>
-</html>
-<body>
+<p align="center">
+  <img src="logo-polibatam.png" alt="Logo Polibatam" width="300">
+</p>
 
-  <h1>Cake & Brownies Logo</h1>
-  <p class="tagline">CMS Website For Cake & Brownies "Manies.Cakery"</p>
+<h1 align="center">Politeknik Negeri Batam</h1>
 
-  <div class="section">
-    <h2>📄 Project Best Learning Kelompok 2</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>NIM</th>
-          <th>Nama Lengkap</th>
-          <th>Role</th>
-          <th>Posisi</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>3312411001</td><td>Dea Asnuari</td><td>Frontend and Backend</td><td>Ketua Tim</td></tr>
-        <tr><td>3312411004</td><td>Hamdan Azmi</td><td>Frontend and Backend</td><td>Anggota Tim</td></tr>
-        <tr><td>3312411008</td><td>Christian Marcelino</td><td>Frontend and Backend</td><td>Anggota Tim</td></tr>
-        <tr><td>3312411031</td><td>Fatra Syahreza</td><td>Frontend and Backend</td><td>Anggota Tim</td></tr>
-      </tbody>
-    </table>
-  </div>
+## 🍰 Cake & Brownies Logo
 
-  <div class="section">
-    <h2>🔧 Fitur yang Tersedia</h2>
-    <ul>
-      <li>Dashboard</li>
-      <li>Menu</li>
-      <li>About Us</li>
-      <li>Contact</li>
-      <li>Location</li>
-    </ul>
-  </div>
+CMS Website For Cake & Brownies **"Manies.Cakery"**
 
-  <div class="section">
-    <h2>📦 Manajemen Produk</h2>
-    <ul>
-      <li>Daftar produk</li>
-      <li>Detail produk</li>
-      <li>Kategori produk</li>
-      <li>CRUD produk untuk admin</li>
-    </ul>
-  </div>
+---
 
-  <div class="section">
-    <h2>🧑‍💼 Manajemen Admin</h2>
-    <ul>
-      <li>Dashboard admin</li>
-      <li>Manajemen user & produk</li>
-    </ul>
-  </div>
+## 📄 Project Best Learning Kelompok 2
 
-  <div class="section">
-    <h2>🧭 Navigasi & UI</h2>
-    <ul>
-      <li>Navbar responsif (desktop & mobile)</li>
-      <li>Dropdown menu profil</li>
-      <li>Tombol WhatsApp langsung ke admin</li>
-      <li>Footer dengan informasi kontak</li>
-    </ul>
-  </div>
+| NIM        | Nama Lengkap          | Role                | Posisi       |
+|------------|------------------------|---------------------|--------------|
+| 3312411001 | Dea Asnuari            | Frontend & Backend  | Ketua Tim    |
+| 3312411004 | Hamdan Azmi            | Frontend & Backend  | Anggota Tim  |
+| 3312411008 | Christian Marcelino    | Frontend & Backend  | Anggota Tim  |
+| 3312411031 | Fatra Syahreza         | Frontend & Backend  | Anggota Tim  |
 
-  <div class="section">
-    <h2>📄 Halaman</h2>
-    <ul>
-      <li>Home</li>
-      <li>Products</li>
-      <li>About</li>
-      <li>Location</li>
-      <li>Profile</li>
-      <li>Admin Dashboard</li>
-    </ul>
-  </div>
+---
 
-  <div class="section">
-    <h2>📱 Responsivitas</h2>
-    <ul>
-      <li>Tampilan mobile-friendly</li>
-      <li>Menu mobile</li>
-      <li>Layout yang responsif</li>
-    </ul>
-  </div>
+## 🔧 Fitur yang Tersedia
+- Dashboard  
+- Menu  
+- About Us  
+- Contact  
+- Location  
 
-  <div class="section">
-    <h2>🔗 Integrasi</h2>
-    <ul>
-      <li>WhatsApp API</li>
-      <li>Google Maps untuk lokasi toko</li>
-    </ul>
-  </div>
+## 📦 Manajemen Produk
+- Daftar produk  
+- Detail produk  
+- Kategori produk  
+- CRUD produk untuk admin  
 
-  <div class="section">
-    <h2>🎨 Styling & UI/UX</h2>
-    <ul>
-      <li>Desain modern dengan Tailwind CSS</li>
-      <li>Animasi & transisi</li>
-      <li>Font Awesome icons</li>
-      <li>Google Fonts (Poppins & Pacifico)</li>
-    </ul>
-  </div>
+## 🧑‍💼 Manajemen Admin
+- Dashboard admin  
+- Manajemen user & produk  
 
-  <div class="section">
-    <h2>🔒 Keamanan</h2>
-    <ul>
-      <li>Middleware untuk autentikasi & admin</li>
-      <li>CSRF protection</li>
-      <li>Validasi form</li>
-    </ul>
-  </div>
+## 🧭 Navigasi & UI
+- Navbar responsif (desktop & mobile)  
+- Dropdown menu profil  
+- Tombol WhatsApp langsung ke admin  
+- Footer dengan informasi kontak  
 
-  <div class="section">
-    <h2>🗄️ Database</h2>
-    <ul>
-      <li>MySQL / MariaDB</li>
-      <li>Eloquent ORM (Laravel)</li>
-    </ul>
-  </div>
+## 📄 Halaman
+- Home  
+- Products  
+- About  
+- Location  
+- Profile  
+- Admin Dashboard  
 
-  <div class="section">
-    <h2>🛠️ Teknologi yang Digunakan</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Kategori</th>
-          <th>Teknologi</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>Backend</td><td>PHP (Laravel Framework), MySQL/MariaDB</td></tr>
-        <tr><td>Frontend</td><td>HTML, CSS (Tailwind CSS), JavaScript, Blade Template</td></tr>
-        <tr><td>Styling & UI</td><td>Tailwind CSS, Font Awesome, Google Fonts (Poppins, Pacifico)</td></tr>
-        <tr><td>Dependency Tools</td><td>Composer (PHP), npm (Node.js modules)</td></tr>
-      </tbody>
-    </table>
-  </div>
+## 📱 Responsivitas
+- Tampilan mobile-friendly  
+- Menu mobile  
+- Layout yang responsif  
 
-  <div class="section">
-    <h2>🚀 Catatan Pengembangan</h2>
-    <p>Proyek ini masih dalam tahap pengembangan dan akan terus ditingkatkan dari sisi fungsionalitas dan user experience.</p>
-    <p><strong>Stay tuned for more updates! 🌸</strong></p>
-  </div>
+## 🔗 Integrasi
+- WhatsApp API  
+- Google Maps untuk lokasi toko  
 
-  <div class="section">
-    <h2>📌 Lisensi</h2>
-    <ul>
-      <li>Proyek ini dibuat untuk tujuan pembelajaran dalam kegiatan Project Based Learning dan bukan untuk penggunaan komersial.</li>
-      <li>Semua hak cipta milik Kelompok 2 – Informatika 2A Malam, Polibatam.</li>
-    </ul>
-  </div>
+## 🎨 Styling & UI/UX
+- Desain modern dengan Tailwind CSS  
+- Animasi & transisi  
+- Font Awesome icons  
+- Google Fonts (Poppins & Pacifico)  
 
-</body>
-</html>
+## 🔒 Keamanan
+- Middleware untuk autentikasi & admin  
+- CSRF protection  
+- Validasi form  
 
+## 🗄️ Database
+- MySQL / MariaDB  
+- Eloquent ORM (Laravel)  
+
+## 🛠️ Teknologi yang Digunakan
+
+| Kategori        | Teknologi                                                                 |
+|-----------------|---------------------------------------------------------------------------|
+| Backend         | PHP (Laravel Framework), MySQL/MariaDB                                   |
+| Frontend        | HTML, CSS (Tailwind CSS), JavaScript, Blade Template                     |
+| Styling & UI    | Tailwind CSS, Font Awesome, Google Fonts (Poppins, Pacifico)             |
+| Dependency Tools| Composer (PHP), npm (Node.js modules)                                    |
+
+---
+
+## 🚀 Catatan Pengembangan
+
+Proyek ini masih dalam tahap pengembangan dan akan terus ditingkatkan dari sisi fungsionalitas dan user experience.  
+**Stay tuned for more updates! 🌸**
+
+---
+
+## 📌 Lisensi
+- Proyek ini dibuat untuk tujuan pembelajaran dalam kegiatan Project Based Learning dan bukan untuk penggunaan komersial.  
+- Semua hak cipta milik Kelompok 2 – Informatika 2A Malam, Polibatam.
