@@ -53,9 +53,6 @@ CMS Website For Cake & Brownies **"Manies.Cakery"**
 - Tampilan mobile-friendly  
 - Menu mobile  
 - Layout yang responsif  
-
-## 🔗 Integrasi
-- WhatsApp API  
  
 
 ## 🎨 Styling & UI/UX
