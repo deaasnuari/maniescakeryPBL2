@@ -93,3 +93,19 @@ Update terbaru akan terus kami rilis secara berkala.
 ## 📌 Lisensi
 - Proyek ini dibuat untuk tujuan pembelajaran dalam kegiatan Project Based Learning dan bukan untuk penggunaan komersial.  
 - Semua hak cipta milik Kelompok 3 – Informatika 2A Malam, Polibatam.
+
+---
+
+## 🔗 Tautan Pendukung
+
+- 🎥 **Link Video Presentasi AAS:**  
+  [https://youtu.be/IwjETgcDqxo](https://youtu.be/IwjETgcDqxo)
+
+- 🎬 **Link Video Demonstrasi AAS:**  
+  [https://youtu.be/7kyzS2FiB9M](https://youtu.be/7kyzS2FiB9M)
+
+- 💻 **Link GitHub Repository:**  
+  [https://github.com/deaasnuari/maniescakeryPBL2](https://github.com/deaasnuari/maniescakeryPBL2)
+
+- 📁 **Link Google Drive (Dokumentasi Proyek):**  
+  [https://drive.google.com/drive/folders/1V4q574awOzFtXxhyko7kDMahntyJ1iEE?usp=sharing](https://drive.google.com/drive/folders/1V4q574awOzFtXxhyko7kDMahntyJ1iEE?usp=sharing)
